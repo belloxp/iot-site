@@ -1,0 +1,908 @@
+/* ============================================================
+   STYLE.CSS — RoboHub 4.0
+   Tema técnico-industrial (blueprint escuro).
+   Tipografia: Space Grotesk (títulos) · Inter (texto) ·
+               IBM Plex Mono (rótulos técnicos)
+   Organização:
+   1. Variáveis e reset
+   2. Elementos base (tipografia, container, botões)
+   3. Cabeçalho e menu de navegação (responsivo)
+   4. Hero da página inicial
+   5. Seções e cartões de conteúdo
+   6. Catálogo de robôs (cards e busca)
+   7. Página de detalhe do robô (abas e modelos)
+   8. Rodapé
+   9. Animações
+   10. Media queries (responsividade)
+   ============================================================ */
+
+/* ---------- 1. VARIÁVEIS E RESET ---------- */
+:root {
+  /* Paleta industrial escura */
+  --cor-fundo: #0a0c10;
+  --cor-fundo-alt: #0e1116;
+  --cor-superficie: #12161d;
+  --cor-borda: #222a35;
+  --cor-primaria: #ff9f1c;      /* laranja industrial */
+  --cor-primaria-forte: #e88a00;
+  --cor-secundaria: #5ac8fa;    /* azul técnico (usado com moderação) */
+  --cor-texto: #e8edf4;
+  --cor-texto-suave: #8d99a8;
+
+  /* Fontes */
+  --fonte-titulo: "Space Grotesk", sans-serif;
+  --fonte-texto: "Inter", system-ui, sans-serif;
+  --fonte-mono: "IBM Plex Mono", monospace;
+
+  --raio: 6px;                  /* cantos discretos, visual técnico */
+  --transicao: 0.22s ease;
+  --largura-max: 1120px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave nos links de âncora */
+}
+
+body {
+  font-family: var(--fonte-texto);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.75;
+  font-size: 15.5px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  letter-spacing: -0.01em;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--cor-secundaria);
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style-position: inside;
+}
+
+/* ---------- 2. ELEMENTOS BASE ---------- */
+.container {
+  width: min(100% - 2.5rem, var(--largura-max));
+  margin-inline: auto;
+}
+
+.centro {
+  text-align: center;
+}
+
+/* Rótulo técnico numerado acima dos títulos de seção */
+.kicker {
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--cor-primaria);
+  margin-bottom: 0.6rem;
+}
+
+/* Botões reutilizáveis — retangulares, com rótulo em mono */
+.botao {
+  display: inline-block;
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--cor-primaria);
+  color: #17110a;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--raio);
+  transition: background var(--transicao), transform var(--transicao), border-color var(--transicao);
+}
+
+.botao:hover {
+  background: var(--cor-primaria-forte);
+  transform: translateY(-2px);
+}
+
+.botao-vazado {
+  background: transparent;
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+}
+
+.botao-vazado:hover {
+  background: var(--cor-superficie);
+  border-color: var(--cor-primaria);
+}
+
+/* ---------- 3. CABEÇALHO E MENU ---------- */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(10, 12, 16, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 66px;
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.logo span:not(.logo-marca) {
+  color: var(--cor-primaria);
+}
+
+.logo-marca {
+  color: var(--cor-primaria);
+  font-size: 1rem;
+  align-self: center;
+}
+
+.logo em {
+  font-family: var(--fonte-mono);
+  font-style: normal;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+  border: 1px solid var(--cor-borda);
+  border-radius: 3px;
+  padding: 0.05rem 0.35rem;
+}
+
+.nav-lista {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-lista a {
+  font-family: var(--fonte-mono);
+  color: var(--cor-texto-suave);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color var(--transicao);
+}
+
+.nav-lista a:hover,
+.nav-lista a.ativo {
+  color: var(--cor-primaria);
+}
+
+/* Botão hambúrguer — escondido no desktop, exibido no mobile */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--cor-texto);
+  transition: transform var(--transicao), opacity var(--transicao);
+}
+
+/* Hambúrguer vira um "X" quando o menu está aberto */
+.nav-toggle.ativo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.ativo span:nth-child(2) { opacity: 0; }
+.nav-toggle.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- 4. HERO ---------- */
+.hero {
+  padding: 6rem 0 4.5rem;
+  border-bottom: 1px solid var(--cor-borda);
+  /* Malha quadriculada estilo prancheta técnica (blueprint) */
+  background-image:
+    linear-gradient(rgba(141, 153, 168, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(141, 153, 168, 0.055) 1px, transparent 1px),
+    radial-gradient(ellipse 90% 70% at 15% 0%, rgba(255, 159, 28, 0.09), transparent 60%);
+  background-size: 42px 42px, 42px 42px, 100% 100%;
+}
+
+.hero-tag {
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--cor-primaria);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 5.5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  max-width: 18ch;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 span {
+  color: var(--cor-primaria);
+}
+
+.hero-texto {
+  color: var(--cor-texto-suave);
+  max-width: 54ch;
+  margin: 1.5rem 0 2.25rem;
+  font-size: 1.06rem;
+}
+
+.hero-botoes {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+/* Contadores animados — estilo painel de instrumentação */
+.hero-numeros {
+  display: inline-flex;
+  margin-top: 3.5rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: rgba(18, 22, 29, 0.75);
+  overflow: hidden;
+}
+
+.numero-item {
+  padding: 1.1rem 1.9rem;
+}
+
+.numero-item + .numero-item {
+  border-left: 1px solid var(--cor-borda);
+}
+
+.numero-item strong {
+  display: block;
+  font-family: var(--fonte-mono);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  line-height: 1.2;
+}
+
+.numero-item > span {
+  font-family: var(--fonte-mono);
+  color: var(--cor-texto-suave);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- 5. SEÇÕES E CARTÕES ---------- */
+.secao {
+  padding: 4.75rem 0;
+}
+
+.secao-alt {
+  background: var(--cor-fundo-alt);
+  border-top: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.pagina-topo {
+  padding-top: 3rem;
+}
+
+.secao-titulo {
+  font-size: clamp(1.5rem, 3.5vw, 2.15rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.secao-subtitulo {
+  color: var(--cor-texto-suave);
+  max-width: 72ch;
+  margin-bottom: 2.5rem;
+}
+
+/* Grade de duas colunas usada nas seções conceituais */
+.grade-2 {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.cartao-texto p + p {
+  margin-top: 1rem;
+}
+
+.cartao-texto p {
+  color: #b9c3cf;
+}
+
+.cartao-destaque {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.9rem;
+  position: relative;
+}
+
+/* Marcação de canto estilo desenho técnico */
+.cartao-destaque::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 22px;
+  height: 22px;
+  border-top: 2px solid var(--cor-primaria);
+  border-left: 2px solid var(--cor-primaria);
+  border-top-left-radius: var(--raio);
+}
+
+.cartao-destaque h3 {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.lista-passos,
+.lista-marcada {
+  list-style: none;
+}
+
+.lista-passos li,
+.lista-marcada li {
+  margin-bottom: 0.65rem;
+  color: var(--cor-texto-suave);
+  padding-left: 1.1rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+/* Marcador customizado em vez do bullet padrão */
+.lista-marcada li::before,
+.lista-passos li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--cor-primaria);
+}
+
+.lista-passos {
+  counter-reset: passo;
+}
+
+.lista-passos li::before {
+  counter-increment: passo;
+  content: counter(passo, decimal-leading-zero);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  top: 0.2rem;
+}
+
+.lista-passos li {
+  padding-left: 1.9rem;
+}
+
+.lista-marcada li strong,
+.lista-passos li strong {
+  color: var(--cor-texto);
+}
+
+/* Grade de cartões com ícone (automação e protocolos) */
+.grade-cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.cartao-icone {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.75rem;
+  transition: transform var(--transicao), border-color var(--transicao);
+}
+
+.cartao-icone:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 159, 28, 0.55);
+}
+
+/* Ícones SVG dentro de uma moldura quadrada */
+.cartao-icone .icone {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  color: var(--cor-primaria);
+  margin-bottom: 1.1rem;
+  background: rgba(255, 159, 28, 0.06);
+}
+
+.cartao-icone .icone svg {
+  width: 22px;
+  height: 22px;
+}
+
+.cartao-icone h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.02rem;
+}
+
+.cartao-icone p {
+  color: var(--cor-texto-suave);
+  font-size: 0.92rem;
+}
+
+/* ---------- 6. CATÁLOGO DE ROBÔS ---------- */
+.busca-caixa {
+  margin-bottom: 2.5rem;
+}
+
+#campoBusca {
+  width: 100%;
+  max-width: 540px;
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--raio);
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  font-family: var(--fonte-mono);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color var(--transicao);
+}
+
+#campoBusca::placeholder {
+  color: var(--cor-texto-suave);
+}
+
+#campoBusca:focus {
+  border-color: var(--cor-primaria);
+}
+
+.grade-robos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-robo {
+  display: flex;
+  flex-direction: column;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  color: var(--cor-texto);
+  position: relative;
+  transition: transform var(--transicao), border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.card-robo:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 159, 28, 0.55);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.4);
+}
+
+/* Índice numerado do card (01–07) */
+.card-robo-indice {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 2;
+  font-family: var(--fonte-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #3a4657;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #d8dde4;
+  border-radius: 3px;
+  padding: 0.1rem 0.45rem;
+}
+
+.card-robo-imagem {
+  background: #f4f5f7; /* fundo claro para destacar as imagens dos robôs */
+  height: 205px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.card-robo-imagem img {
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply; /* integra as imagens ao fundo claro */
+  transition: transform var(--transicao);
+}
+
+.card-robo:hover .card-robo-imagem img {
+  transform: scale(1.05);
+}
+
+.card-robo-corpo {
+  padding: 1.35rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  flex: 1;
+}
+
+.card-robo-tag {
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cor-secundaria);
+}
+
+.card-robo-corpo h3 {
+  font-size: 1.15rem;
+}
+
+.card-robo-corpo p {
+  color: var(--cor-texto-suave);
+  font-size: 0.92rem;
+  flex: 1;
+}
+
+.card-robo-link {
+  font-family: var(--fonte-mono);
+  color: var(--cor-primaria);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sem-resultados {
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-family: var(--fonte-mono);
+  font-size: 0.95rem;
+  padding: 3rem 0;
+}
+
+/* ---------- 7. PÁGINA DE DETALHE DO ROBÔ ---------- */
+.breadcrumb {
+  font-family: var(--fonte-mono);
+  color: var(--cor-texto-suave);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2rem;
+}
+
+.robo-hero {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.robo-hero-imagem {
+  background: #f4f5f7;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.robo-hero-imagem img {
+  max-height: 300px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.robo-hero-texto h1 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  margin: 0.6rem 0 0.8rem;
+}
+
+.robo-hero-texto p {
+  color: var(--cor-texto-suave);
+  font-size: 1.05rem;
+  max-width: 55ch;
+}
+
+/* Abas (tabs) da ficha técnica */
+.abas {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+}
+
+.abas-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--cor-borda);
+  background: var(--cor-fundo-alt);
+}
+
+.aba-botao {
+  background: none;
+  border: none;
+  font-family: var(--fonte-mono);
+  color: var(--cor-texto-suave);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.3rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transicao), border-color var(--transicao);
+}
+
+.aba-botao:hover {
+  color: var(--cor-texto);
+}
+
+.aba-botao.ativo {
+  color: var(--cor-primaria);
+  border-bottom-color: var(--cor-primaria);
+}
+
+.aba-painel {
+  display: none; /* painéis escondidos por padrão... */
+  padding: 2rem;
+  animation: aparecer 0.35s ease;
+}
+
+.aba-painel.ativo {
+  display: block; /* ...apenas o ativo é exibido */
+}
+
+.aba-painel h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.aba-painel p {
+  color: #b9c3cf;
+  max-width: 90ch;
+}
+
+/* Modelos comerciais */
+.modelos-titulo {
+  margin-bottom: 2rem;
+}
+
+.grade-modelos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.card-modelo {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.6rem;
+  position: relative;
+  transition: transform var(--transicao), border-color var(--transicao);
+}
+
+.card-modelo::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 22px;
+  height: 22px;
+  border-top: 2px solid var(--cor-secundaria);
+  border-left: 2px solid var(--cor-secundaria);
+  border-top-left-radius: var(--raio);
+}
+
+.card-modelo:hover {
+  transform: translateY(-4px);
+  border-color: rgba(90, 200, 250, 0.5);
+}
+
+.card-modelo h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.card-modelo-fabricante {
+  font-family: var(--fonte-mono);
+  color: var(--cor-secundaria);
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+}
+
+.card-modelo p {
+  color: var(--cor-texto-suave);
+  font-size: 0.92rem;
+}
+
+/* Navegação anterior/próximo entre robôs */
+.robo-navegacao {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- 8. RODAPÉ ---------- */
+.rodape {
+  border-top: 1px solid var(--cor-borda);
+  background: var(--cor-fundo-alt);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.rodape-conteudo .logo {
+  justify-content: center;
+  display: inline-flex;
+  margin-bottom: 0.75rem;
+}
+
+.rodape-conteudo p {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+.rodape-copy {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  margin-top: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- 9. ANIMAÇÕES ---------- */
+/* Estado inicial dos elementos com .revelar; o JS adiciona .visivel ao rolar */
+.revelar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.revelar.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 10. RESPONSIVIDADE ---------- */
+/* Tablets */
+@media (max-width: 900px) {
+  .grade-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .robo-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .robo-hero-imagem {
+    max-width: 420px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 720px) {
+  /* Exibe o hambúrguer e transforma o menu em painel vertical */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-lista {
+    position: absolute;
+    top: 66px;
+    left: 0;
+    right: 0;
+    background: var(--cor-fundo-alt);
+    border-bottom: 1px solid var(--cor-borda);
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    /* Menu fechado por padrão */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  /* Classe .aberto adicionada pelo JavaScript ao clicar no hambúrguer */
+  .nav-lista.aberto {
+    max-height: 320px;
+  }
+
+  .nav-lista li {
+    text-align: center;
+  }
+
+  .nav-lista a {
+    display: block;
+    padding: 0.95rem 0;
+  }
+
+  .hero {
+    padding: 3.75rem 0 3.25rem;
+  }
+
+  .hero-numeros {
+    display: flex;
+    width: 100%;
+  }
+
+  .numero-item {
+    flex: 1;
+    padding: 0.9rem 0.8rem;
+  }
+
+  .numero-item strong {
+    font-size: 1.5rem;
+  }
+
+  .secao {
+    padding: 3.25rem 0;
+  }
+
+  .abas-botoes {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .aba-botao {
+    white-space: nowrap;
+  }
+
+  .robo-navegacao {
+    flex-direction: column;
+  }
+
+  .robo-navegacao .botao {
+    text-align: center;
+  }
+}

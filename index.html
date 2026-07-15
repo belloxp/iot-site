@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portal técnico e educativo sobre robôs industriais e Internet das Coisas (IoT) na Indústria 4.0." />
+  <title>RoboHub 4.0 — Robótica Industrial &amp; IoT</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%2215%22 y=%2225%22 width=%2270%22 height=%2255%22 rx=%2210%22 fill=%22%23ff9f1c%22/><circle cx=%2238%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><circle cx=%2262%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><rect x=%2247%22 y=%2210%22 width=%226%22 height=%2215%22 fill=%22%23ff9f1c%22/></svg>" />
+  <!-- Tipografia do projeto: Space Grotesk (títulos), Inter (texto), IBM Plex Mono (rótulos técnicos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== CABEÇALHO / MENU DE NAVEGAÇÃO ===== -->
+  <header class="cabecalho">
+    <nav class="nav container">
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Robo<span>Hub</span><em>4.0</em></a>
+
+      <!-- Botão hambúrguer exibido apenas no mobile (controlado pelo JS) -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-lista" id="navLista">
+        <li><a href="index.html" class="ativo">Início</a></li>
+        <li><a href="robos.html">Catálogo</a></li>
+        <li><a href="index.html#iot">IoT</a></li>
+        <li><a href="index.html#protocolos">Protocolos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero-conteudo revelar">
+      <p class="hero-tag">/// catálogo técnico — indústria 4.0</p>
+      <h1>Robótica industrial na era da <span>Internet das Coisas</span></h1>
+      <p class="hero-texto">
+        Os 7 principais modelos de robôs industriais — características técnicas,
+        aplicações e como eles se conectam à fábrica por meio da IoT.
+      </p>
+      <div class="hero-botoes">
+        <a href="robos.html" class="botao">Explorar os robôs</a>
+        <a href="#iot" class="botao botao-vazado">Entender a IoT</a>
+      </div>
+
+      <!-- Contadores animados via JavaScript -->
+      <div class="hero-numeros">
+        <div class="numero-item">
+          <strong><span class="contador" data-alvo="7">0</span></strong>
+          <span>modelos de robôs</span>
+        </div>
+        <div class="numero-item">
+          <strong><span class="contador" data-alvo="21">0</span></strong>
+          <span>modelos comerciais</span>
+        </div>
+        <div class="numero-item">
+          <strong><span class="contador" data-alvo="4">0</span></strong>
+          <span>protocolos industriais</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ===== 1. CONCEITO DE IOT ===== -->
+    <section class="secao" id="iot">
+      <div class="container">
+        <p class="kicker revelar">01 — conceito</p>
+        <h2 class="secao-titulo revelar">O que é Internet das Coisas?</h2>
+        <div class="grade-2 revelar">
+          <div class="cartao-texto">
+            <p>
+              A <strong>Internet das Coisas (IoT — Internet of Things)</strong> é o paradigma
+              tecnológico em que objetos físicos — máquinas, sensores, veículos, eletrodomésticos —
+              são equipados com <strong>sensores, software e conectividade</strong> para coletar e
+              trocar dados pela internet, com pouca ou nenhuma intervenção humana.
+            </p>
+            <p>
+              Em um sistema IoT, cada "coisa" percebe o ambiente por meio de sensores
+              (temperatura, vibração, posição, corrente elétrica), processa essas informações e as
+              transmite por redes de comunicação a plataformas em nuvem, onde os dados são
+              armazenados, analisados e transformados em <strong>decisões e ações</strong> — como
+              acionar um atuador, gerar um alerta de manutenção ou otimizar um processo.
+            </p>
+            <p>
+              No ambiente fabril esse conceito recebe o nome de <strong>IIoT (Industrial Internet
+              of Things)</strong> e é um dos pilares da <strong>Indústria 4.0</strong>, ao lado da
+              robótica, da computação em nuvem, do big data e da inteligência artificial.
+            </p>
+          </div>
+          <div class="cartao-destaque">
+            <h3>Arquitetura básica de um sistema IoT</h3>
+            <ol class="lista-passos">
+              <li><strong>Percepção —</strong> sensores e atuadores capturam dados do mundo físico.</li>
+              <li><strong>Rede —</strong> os dados trafegam por Wi-Fi, Ethernet industrial, 5G ou LoRa.</li>
+              <li><strong>Processamento —</strong> gateways e plataformas em nuvem analisam as informações.</li>
+              <li><strong>Aplicação —</strong> dashboards, alertas e comandos de controle fecham o ciclo.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. CONCEITO DE ROBÓTICA INDUSTRIAL ===== -->
+    <section class="secao secao-alt" id="robotica">
+      <div class="container">
+        <p class="kicker revelar">02 — conceito</p>
+        <h2 class="secao-titulo revelar">O que é Robótica Industrial?</h2>
+        <div class="grade-2 revelar">
+          <div class="cartao-destaque">
+            <h3>Definição segundo a ISO 8373</h3>
+            <p>
+              Um <strong>robô industrial</strong> é um "manipulador multipropósito, reprogramável,
+              controlado automaticamente, programável em três ou mais eixos, que pode ser fixo ou
+              móvel, para uso em aplicações de automação industrial".
+            </p>
+            <ul class="lista-marcada">
+              <li><strong>Manipulador:</strong> estrutura mecânica de elos e juntas.</li>
+              <li><strong>Atuadores:</strong> motores que movimentam cada junta.</li>
+              <li><strong>Sensores:</strong> encoders e transdutores que medem posição e força.</li>
+              <li><strong>Controlador:</strong> o "cérebro" que executa o programa.</li>
+              <li><strong>Efetuador:</strong> a ferramenta na ponta (garra, tocha, ventosa).</li>
+            </ul>
+          </div>
+          <div class="cartao-texto">
+            <p>
+              A <strong>robótica industrial</strong> é o ramo da engenharia dedicado ao projeto,
+              construção, programação e aplicação de robôs em processos produtivos. Os robôs
+              executam tarefas <strong>repetitivas, perigosas ou de alta precisão</strong> —
+              soldagem, pintura, montagem, paletização — com velocidade e repetibilidade
+              impossíveis para o trabalho manual.
+            </p>
+            <p>
+              Os robôs são classificados principalmente pela sua <strong>configuração
+              cinemática</strong>, ou seja, pela combinação de juntas rotativas e lineares que
+              define o formato do seu volume de trabalho. É exatamente essa classificação que
+              você encontra no nosso <a href="robos.html">catálogo de robôs</a>: cartesiano,
+              SCARA, articulado, cilíndrico, delta, polar e colaborativo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. IMPORTÂNCIA DA AUTOMAÇÃO INDUSTRIAL ===== -->
+    <section class="secao" id="automacao">
+      <div class="container">
+        <p class="kicker revelar">03 — automação</p>
+        <h2 class="secao-titulo revelar">A importância da Automação Industrial</h2>
+        <p class="secao-subtitulo revelar">
+          Automatizar é usar máquinas, sistemas de controle e tecnologia da informação para operar
+          processos com o mínimo de intervenção humana. Os impactos são diretos na competitividade:
+        </p>
+        <div class="grade-cartoes revelar">
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Produtividade</h3>
+            <p>Operação contínua 24/7, ciclos mais rápidos e maior volume de produção com os mesmos recursos.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h3>Qualidade</h3>
+            <p>Repetibilidade de centésimos de milímetro elimina variações e reduz drasticamente refugos e retrabalho.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <h3>Segurança</h3>
+            <p>Robôs assumem tarefas insalubres e perigosas: cargas pesadas, calor extremo, produtos químicos e movimentos repetitivos.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
+            </div>
+            <h3>Redução de custos</h3>
+            <p>Menos desperdício de material e energia, menos paradas não planejadas e melhor aproveitamento da planta.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+            </div>
+            <h3>Flexibilidade</h3>
+            <p>Robôs reprogramáveis permitem trocar de produto rapidamente, viabilizando lotes menores e customização.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+            </div>
+            <h3>Dados para decisão</h3>
+            <p>Processos automatizados geram dados contínuos que alimentam sistemas MES/ERP e a melhoria contínua.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. RELAÇÃO ROBÓTICA × IOT ===== -->
+    <section class="secao secao-alt" id="relacao">
+      <div class="container">
+        <p class="kicker revelar">04 — convergência</p>
+        <h2 class="secao-titulo revelar">Robótica + IoT: a fábrica conectada</h2>
+        <div class="grade-2 revelar">
+          <div class="cartao-texto">
+            <p>
+              Um robô isolado executa tarefas; um <strong>robô conectado</strong> participa de um
+              ecossistema inteligente. Quando integrados à IoT, os robôs industriais deixam de ser
+              apenas "braços mecânicos" e passam a ser <strong>fontes e consumidores de dados</strong>
+              em tempo real.
+            </p>
+            <p>
+              Sensores embarcados (torque, temperatura, vibração, corrente) publicam continuamente
+              o estado de saúde do robô, permitindo a <strong>manutenção preditiva</strong>:
+              a falha é prevista e corrigida antes de parar a linha. Sistemas de
+              <strong>visão computacional</strong> e sensores de presença informam ao robô a
+              posição exata das peças, e sistemas MES na nuvem enviam ordens de produção
+              diretamente ao controlador.
+            </p>
+            <p>
+              Essa convergência dá origem a conceitos como o <strong>digital twin</strong>
+              (gêmeo digital) — a réplica virtual do robô alimentada por dados reais — e às
+              <strong>células autônomas</strong>, em que robôs, esteiras e máquinas CNC negociam
+              entre si o fluxo de produção via mensagens padronizadas.
+            </p>
+          </div>
+          <div class="cartao-destaque">
+            <h3>O que o robô conectado entrega</h3>
+            <ul class="lista-marcada">
+              <li><strong>Monitoramento remoto:</strong> status e alarmes acessíveis de qualquer lugar.</li>
+              <li><strong>Manutenção preditiva:</strong> análise de vibração e torque antecipa falhas.</li>
+              <li><strong>OEE em tempo real:</strong> disponibilidade, performance e qualidade ao vivo.</li>
+              <li><strong>Rastreabilidade:</strong> cada peça fica vinculada aos dados do processo.</li>
+              <li><strong>Sensoriamento e controle:</strong> o robô reage a sensores da linha e comanda atuadores.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROTOCOLOS DE COMUNICAÇÃO INDUSTRIAL (Capacidade C4) ===== -->
+    <section class="secao" id="protocolos">
+      <div class="container">
+        <p class="kicker revelar">05 — comunicação de dados</p>
+        <h2 class="secao-titulo revelar">Como os robôs trocam dados</h2>
+        <p class="secao-subtitulo revelar">
+          A integração entre robôs, CLPs, sensores e a nuvem depende de protocolos de comunicação
+          de dados padronizados. Estes são os principais utilizados na Indústria 4.0:
+        </p>
+        <div class="grade-cartoes revelar">
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+            </div>
+            <h3>Ethernet Industrial</h3>
+            <p>Base física das redes de fábrica (EtherNet/IP, EtherCAT). Comunicação determinística e de alta velocidade no chão de fábrica com cabeamento Ethernet padrão.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/></svg>
+            </div>
+            <h3>MQTT</h3>
+            <p>Protocolo leve de publicação/assinatura criado para IoT. Sensores e robôs publicam dados em tópicos de um broker; sistemas em nuvem assinam apenas o que interessa.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <h3>OPC UA</h3>
+            <p>Padrão aberto de interoperabilidade da Indústria 4.0. Transporta dados com segurança (criptografia e autenticação) e descreve semanticamente as informações da máquina.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg>
+            </div>
+            <h3>PROFINET</h3>
+            <p>Evolução do Profibus sobre Ethernet, dominante em CLPs Siemens. Comunicação em tempo real entre controladores, robôs, inversores e periferia descentralizada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRÉVIA DO CATÁLOGO ===== -->
+    <section class="secao secao-alt" id="previa">
+      <div class="container">
+        <p class="kicker revelar">06 — catálogo</p>
+        <h2 class="secao-titulo revelar">Os 7 modelos de robôs industriais</h2>
+        <p class="secao-subtitulo revelar">
+          Clique em um modelo para ver conceito, funcionamento, especificações técnicas,
+          aplicações, integração com IoT e exemplos comerciais de fabricantes.
+        </p>
+        <!-- A grade abaixo é preenchida dinamicamente pelo JavaScript (js/catalogo.js) -->
+        <div class="grade-robos revelar" id="gradeRobos"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Robo<span>Hub</span><em>4.0</em></a>
+      <p>Portal técnico de Robótica Industrial &amp; Internet das Coisas</p>
+      <p class="rodape-copy">© <span id="anoAtual"></span> RoboHub 4.0</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: dados + comportamento geral + renderização do catálogo -->
+  <script src="js/dados-robos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>
