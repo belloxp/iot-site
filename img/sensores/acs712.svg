@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <!-- Ilustração vetorial do sensor (desenhada para o catálogo, sem dependência externa) -->
+
+  
+  <rect x="70" y="90" width="260" height="120" rx="6" fill="#1f6feb" stroke="#12508f" stroke-width="3"/>
+  <circle cx="82" cy="102" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="318" cy="102" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="82" cy="198" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="318" cy="198" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <rect x="86" y="112" width="86" height="76" rx="5" fill="#2f8f4e" stroke="#1e6b38" stroke-width="3"/>
+  <circle cx="108" cy="150" r="13" fill="#12331f"/><circle cx="150" cy="150" r="13" fill="#12331f"/>
+  <line x1="102" y1="150" x2="114" y2="150" stroke="#c8d0da" stroke-width="3"/>
+  <line x1="144" y1="150" x2="156" y2="150" stroke="#c8d0da" stroke-width="3"/>
+  <rect x="198" y="128" width="70" height="44" rx="2" fill="#20262e" stroke="#131820" stroke-width="2"/><circle cx="205" cy="135" r="2.5" fill="#7c8794"/><rect x="202.5" y="124" width="3" height="4" fill="#c8d0da"/><rect x="202.5" y="172" width="3" height="4" fill="#c8d0da"/><rect x="217" y="124" width="3" height="4" fill="#c8d0da"/><rect x="217" y="172" width="3" height="4" fill="#c8d0da"/><rect x="231.5" y="124" width="3" height="4" fill="#c8d0da"/><rect x="231.5" y="172" width="3" height="4" fill="#c8d0da"/><rect x="246" y="124" width="3" height="4" fill="#c8d0da"/><rect x="246" y="172" width="3" height="4" fill="#c8d0da"/><rect x="260.5" y="124" width="3" height="4" fill="#c8d0da"/><rect x="260.5" y="172" width="3" height="4" fill="#c8d0da"/><text x="233" y="154" font-family="monospace" font-size="11" fill="#aab3c0" text-anchor="middle">ACS712</text>
+  
+  <rect x="288" y="107" width="16" height="10" rx="2" fill="#d94f3d" stroke="#0d1117" stroke-width="1.5" opacity="0.9"/>
+  <rect x="210" y="210" width="72" height="12" rx="2" fill="#20262e"/><rect x="220.5" y="220" width="5" height="30" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="244.5" y="220" width="5" height="30" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="268.5" y="220" width="5" height="30" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/>
+  <text x="129" y="234" font-family="monospace" font-size="11" fill="#7c8794" text-anchor="middle">carga CA/CC</text>
+  <text x="200" y="288" font-family="monospace" font-size="13" letter-spacing="1.5" fill="#7c8794" text-anchor="middle">ACS712 · efeito Hall</text>
+</svg>

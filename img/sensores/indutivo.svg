@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <!-- Ilustração vetorial do sensor (desenhada para o catálogo, sem dependência externa) -->
+
+  <rect x="70" y="112" width="180" height="76" rx="6" fill="#c8d0da" stroke="#98a2b0" stroke-width="3"/>
+  <line x1="78" y1="115" x2="78" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="84" y1="115" x2="84" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="90" y1="115" x2="90" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="96" y1="115" x2="96" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="102" y1="115" x2="102" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="108" y1="115" x2="108" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="114" y1="115" x2="114" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="120" y1="115" x2="120" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="126" y1="115" x2="126" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="132" y1="115" x2="132" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="138" y1="115" x2="138" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="144" y1="115" x2="144" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="150" y1="115" x2="150" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/><line x1="156" y1="115" x2="156" y2="185" stroke="#98a2b0" stroke-width="2" opacity="0.7"/>
+  <rect x="98" y="103" width="26" height="94" rx="3" fill="#7c8794" stroke="#6d7683" stroke-width="2"/>
+  <rect x="132" y="103" width="26" height="94" rx="3" fill="#7c8794" stroke="#6d7683" stroke-width="2"/>
+  <rect x="58" y="112" width="14" height="76" rx="3" fill="#8a6a4a"/>
+  <ellipse cx="60" cy="150" rx="6" ry="38" fill="#9b7a55"/>
+  <rect x="248" y="116" width="34" height="68" rx="6" fill="#20262e"/>
+  <path d="M 280 150 C 320 150 320 96 360 96" stroke="#20262e" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <text x="200" y="288" font-family="monospace" font-size="13" letter-spacing="1.5" fill="#7c8794" text-anchor="middle">LJ12A3-4-Z/BX · indutivo</text>
+</svg>

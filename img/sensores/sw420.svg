@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <!-- Ilustração vetorial do sensor (desenhada para o catálogo, sem dependência externa) -->
+
+  
+  <rect x="80" y="105" width="240" height="105" rx="6" fill="#1f6feb" stroke="#12508f" stroke-width="3"/>
+  <circle cx="92" cy="117" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="308" cy="117" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="92" cy="198" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="308" cy="198" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <rect x="100" y="138" width="86" height="34" rx="16" fill="#20262e" stroke="#131820" stroke-width="3"/>
+  <line x1="108" y1="140" x2="104" y2="170" stroke="#d8a63c" stroke-width="2.6"/><line x1="117" y1="140" x2="113" y2="170" stroke="#d8a63c" stroke-width="2.6"/><line x1="126" y1="140" x2="122" y2="170" stroke="#d8a63c" stroke-width="2.6"/><line x1="135" y1="140" x2="131" y2="170" stroke="#d8a63c" stroke-width="2.6"/><line x1="144" y1="140" x2="140" y2="170" stroke="#d8a63c" stroke-width="2.6"/><line x1="153" y1="140" x2="149" y2="170" stroke="#d8a63c" stroke-width="2.6"/><line x1="162" y1="140" x2="158" y2="170" stroke="#d8a63c" stroke-width="2.6"/><line x1="171" y1="140" x2="167" y2="170" stroke="#d8a63c" stroke-width="2.6"/><line x1="180" y1="140" x2="176" y2="170" stroke="#d8a63c" stroke-width="2.6"/>
+  <rect x="186" y="150" width="26" height="10" rx="4" fill="#98a2b0"/>
+  
+  <rect x="225" y="140" width="30" height="30" rx="3" fill="#2b4fd4" stroke="#1b34a0" stroke-width="2"/>
+  <circle cx="240" cy="155" r="11" fill="#f1f3f6"/>
+  <line x1="234" y1="155" x2="246" y2="155" stroke="#0d1117" stroke-width="3"/>
+  <rect x="272" y="142" width="38" height="26" rx="2" fill="#20262e" stroke="#131820" stroke-width="2"/><circle cx="279" cy="149" r="2.5" fill="#7c8794"/><rect x="276.5" y="138" width="3" height="4" fill="#c8d0da"/><rect x="276.5" y="168" width="3" height="4" fill="#c8d0da"/><rect x="289.5" y="138" width="3" height="4" fill="#c8d0da"/><rect x="289.5" y="168" width="3" height="4" fill="#c8d0da"/><rect x="302.5" y="138" width="3" height="4" fill="#c8d0da"/><rect x="302.5" y="168" width="3" height="4" fill="#c8d0da"/>
+  
+  <rect x="270" y="181" width="16" height="10" rx="2" fill="#d94f3d" stroke="#0d1117" stroke-width="1.5" opacity="0.9"/> 
+  <rect x="296" y="181" width="16" height="10" rx="2" fill="#3fb950" stroke="#0d1117" stroke-width="1.5" opacity="0.9"/>
+  <rect x="108" y="210" width="66" height="12" rx="2" fill="#20262e"/><rect x="117.5" y="220" width="5" height="30" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="139.5" y="220" width="5" height="30" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="161.5" y="220" width="5" height="30" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/>
+  <path d="M 143 118 q 10 -14 20 0 M 133 110 q 20 -24 40 0" fill="none" stroke="#aab3c0" stroke-width="3" opacity="0.7"/>
+  <text x="200" y="288" font-family="monospace" font-size="13" letter-spacing="1.5" fill="#7c8794" text-anchor="middle">SW-420 · vibração</text>
+</svg>

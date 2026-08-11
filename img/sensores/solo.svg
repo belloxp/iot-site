@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <!-- Ilustração vetorial do sensor (desenhada para o catálogo, sem dependência externa) -->
+
+  <path d="M 175 22 h 50 a 6 6 0 0 1 6 6 v 200 l -31 42 l -31 -42 v -200 a 6 6 0 0 1 6 -6 z"
+        fill="#161b22" stroke="#2b323c" stroke-width="3"/>
+  <rect x="180" y="118" width="40" height="120" rx="4" fill="#0d1117"/>
+  <rect x="184" y="124" width="32" height="5" rx="2" fill="#2f3742"/><rect x="184" y="134" width="32" height="5" rx="2" fill="#2f3742"/><rect x="184" y="144" width="32" height="5" rx="2" fill="#2f3742"/><rect x="184" y="154" width="32" height="5" rx="2" fill="#2f3742"/><rect x="184" y="164" width="32" height="5" rx="2" fill="#2f3742"/><rect x="184" y="174" width="32" height="5" rx="2" fill="#2f3742"/><rect x="184" y="184" width="32" height="5" rx="2" fill="#2f3742"/><rect x="184" y="194" width="32" height="5" rx="2" fill="#2f3742"/><rect x="184" y="204" width="32" height="5" rx="2" fill="#2f3742"/><rect x="184" y="214" width="32" height="5" rx="2" fill="#2f3742"/><rect x="184" y="224" width="32" height="5" rx="2" fill="#2f3742"/>
+  <rect x="180" y="60" width="40" height="26" rx="2" fill="#20262e" stroke="#131820" stroke-width="2"/><circle cx="187" cy="67" r="2.5" fill="#7c8794"/><rect x="184.5" y="56" width="3" height="4" fill="#c8d0da"/><rect x="184.5" y="86" width="3" height="4" fill="#c8d0da"/><rect x="198.5" y="56" width="3" height="4" fill="#c8d0da"/><rect x="198.5" y="86" width="3" height="4" fill="#c8d0da"/><rect x="212.5" y="56" width="3" height="4" fill="#c8d0da"/><rect x="212.5" y="86" width="3" height="4" fill="#c8d0da"/>
+  <rect x="176" y="96" width="48" height="12" rx="3" fill="#20262e"/>
+  <rect x="176" y="26" width="48" height="12" rx="2" fill="#20262e"/>
+  <rect x="184" y="18" width="5" height="10" fill="#d8a63c"/><rect x="200" y="18" width="5" height="10" fill="#d8a63c"/><rect x="216" y="18" width="5" height="10" fill="#d8a63c"/>
+  <text x="296" y="126" font-family="monospace" font-size="12" fill="#7c8794" text-anchor="middle">área de</text>
+  <text x="296" y="144" font-family="monospace" font-size="12" fill="#7c8794" text-anchor="middle">medição</text>
+  <path d="M 262 136 h -32 l 8 -6 m -8 6 l 8 6" stroke="#7c8794" stroke-width="2" fill="none"/>
+  <text x="200" y="288" font-family="monospace" font-size="13" letter-spacing="1.5" fill="#7c8794" text-anchor="middle">umidade do solo · capacitivo</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <!-- Ilustração vetorial do sensor (desenhada para o catálogo, sem dependência externa) -->
+
+  <rect x="120" y="90" width="160" height="120" rx="14" fill="#1b2028" stroke="#2b323c" stroke-width="3"/>
+  <rect x="132" y="104" width="136" height="60" rx="8" fill="#252c36"/>
+  <circle cx="200" cy="150" r="36" fill="none" stroke="#3d8fd4" stroke-width="4" opacity="0.8"/>
+  <line x1="200" y1="150" x2="234" y2="150" stroke="#3d8fd4" stroke-width="4"/><line x1="200" y1="150" x2="217" y2="179.44486372867092" stroke="#3d8fd4" stroke-width="4"/><line x1="200" y1="150" x2="183" y2="179.44486372867092" stroke="#3d8fd4" stroke-width="4"/><line x1="200" y1="150" x2="166" y2="150" stroke="#3d8fd4" stroke-width="4"/><line x1="200" y1="150" x2="183" y2="120.55513627132909" stroke="#3d8fd4" stroke-width="4"/><line x1="200" y1="150" x2="217" y2="120.55513627132909" stroke="#3d8fd4" stroke-width="4"/>
+  <rect x="52" y="118" width="70" height="64" rx="6" fill="#20262e" stroke="#131820" stroke-width="3"/>
+  <line x1="58" y1="118" x2="58" y2="182" stroke="#39414d" stroke-width="3"/><line x1="69" y1="118" x2="69" y2="182" stroke="#39414d" stroke-width="3"/><line x1="80" y1="118" x2="80" y2="182" stroke="#39414d" stroke-width="3"/><line x1="91" y1="118" x2="91" y2="182" stroke="#39414d" stroke-width="3"/><line x1="102" y1="118" x2="102" y2="182" stroke="#39414d" stroke-width="3"/><line x1="113" y1="118" x2="113" y2="182" stroke="#39414d" stroke-width="3"/>
+  <rect x="278" y="118" width="70" height="64" rx="6" fill="#20262e" stroke="#131820" stroke-width="3"/>
+  <line x1="284" y1="118" x2="284" y2="182" stroke="#39414d" stroke-width="3"/><line x1="295" y1="118" x2="295" y2="182" stroke="#39414d" stroke-width="3"/><line x1="306" y1="118" x2="306" y2="182" stroke="#39414d" stroke-width="3"/><line x1="317" y1="118" x2="317" y2="182" stroke="#39414d" stroke-width="3"/><line x1="328" y1="118" x2="328" y2="182" stroke="#39414d" stroke-width="3"/><line x1="339" y1="118" x2="339" y2="182" stroke="#39414d" stroke-width="3"/>
+  <path d="M 200 90 v -30" stroke="#20262e" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 200 62 h -28 M 200 62 h 28" stroke="#d94f3d" stroke-width="4"/>
+  <text x="86" y="212" font-family="monospace" font-size="12" fill="#7c8794" text-anchor="middle">IN</text>
+  <text x="313" y="212" font-family="monospace" font-size="12" fill="#7c8794" text-anchor="middle">OUT</text>
+  <text x="200" y="288" font-family="monospace" font-size="13" letter-spacing="1.5" fill="#7c8794" text-anchor="middle">YF-S201 · vazão de água</text>
+</svg>

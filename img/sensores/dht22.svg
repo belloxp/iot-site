@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <!-- Ilustração vetorial do sensor (desenhada para o catálogo, sem dependência externa) -->
+
+  <rect x="135" y="50" width="130" height="155" rx="8" fill="#f1f3f6" stroke="#cfd5de" stroke-width="3"/>
+  <rect x="148" y="63" width="104" height="98" rx="4" fill="#dfe4ea"/>
+  <rect x="152" y="68" width="96" height="7" rx="3" fill="#b9c1cb"/><rect x="152" y="83" width="96" height="7" rx="3" fill="#b9c1cb"/><rect x="152" y="98" width="96" height="7" rx="3" fill="#b9c1cb"/><rect x="152" y="113" width="96" height="7" rx="3" fill="#b9c1cb"/><rect x="152" y="128" width="96" height="7" rx="3" fill="#b9c1cb"/><rect x="152" y="143" width="96" height="7" rx="3" fill="#b9c1cb"/>
+  <text x="200" y="188" font-family="monospace" font-size="15" fill="#5c6673" text-anchor="middle">AM2302</text>
+  <rect x="150" y="205" width="96" height="12" rx="2" fill="#20262e"/><rect x="160.5" y="215" width="5" height="40" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="184.5" y="215" width="5" height="40" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="208.5" y="215" width="5" height="40" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="232.5" y="215" width="5" height="40" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/>
+  <text x="200" y="288" font-family="monospace" font-size="13" letter-spacing="1.5" fill="#7c8794" text-anchor="middle">DHT22</text>
+</svg>

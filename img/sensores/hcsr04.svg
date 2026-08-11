@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <!-- Ilustração vetorial do sensor (desenhada para o catálogo, sem dependência externa) -->
+
+  
+  <rect x="80" y="80" width="240" height="110" rx="6" fill="#1f6feb" stroke="#12508f" stroke-width="3"/>
+  <circle cx="92" cy="92" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="308" cy="92" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="92" cy="178" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="308" cy="178" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="140" cy="130" r="44" fill="#98a2b0" stroke="#6d7683" stroke-width="3"/>
+  <circle cx="140" cy="130" r="36" fill="#8f99a6"/>
+  <circle cx="140" cy="130" r="26" fill="#5f6874"/>
+  <text x="140" y="135" font-family="monospace" font-size="12" fill="#f1f3f6" text-anchor="middle">T</text>
+  <circle cx="260" cy="130" r="44" fill="#98a2b0" stroke="#6d7683" stroke-width="3"/>
+  <circle cx="260" cy="130" r="36" fill="#8f99a6"/>
+  <circle cx="260" cy="130" r="26" fill="#5f6874"/>
+  <text x="260" y="135" font-family="monospace" font-size="12" fill="#f1f3f6" text-anchor="middle">R</text>
+  <rect x="185" y="112" width="30" height="18" rx="4" fill="#c8d0da" stroke="#98a2b0" stroke-width="2"/>
+  <rect x="184" y="145" width="32" height="22" rx="2" fill="#20262e" stroke="#131820" stroke-width="2"/><circle cx="191" cy="152" r="2.5" fill="#7c8794"/><rect x="188.5" y="141" width="3" height="4" fill="#c8d0da"/><rect x="188.5" y="167" width="3" height="4" fill="#c8d0da"/><rect x="198.5" y="141" width="3" height="4" fill="#c8d0da"/><rect x="198.5" y="167" width="3" height="4" fill="#c8d0da"/><rect x="208.5" y="141" width="3" height="4" fill="#c8d0da"/><rect x="208.5" y="167" width="3" height="4" fill="#c8d0da"/>
+  <rect x="148" y="190" width="96" height="12" rx="2" fill="#20262e"/><rect x="158.5" y="200" width="5" height="34" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="182.5" y="200" width="5" height="34" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="206.5" y="200" width="5" height="34" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="230.5" y="200" width="5" height="34" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/>
+  <text x="200" y="288" font-family="monospace" font-size="13" letter-spacing="1.5" fill="#7c8794" text-anchor="middle">HC-SR04 · ultrassônico</text>
+</svg>

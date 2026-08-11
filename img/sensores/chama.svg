@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <!-- Ilustração vetorial do sensor (desenhada para o catálogo, sem dependência externa) -->
+
+  
+  <rect x="110" y="110" width="210" height="100" rx="6" fill="#1f6feb" stroke="#12508f" stroke-width="3"/>
+  <circle cx="122" cy="122" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="308" cy="122" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="122" cy="198" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="308" cy="198" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <ellipse cx="146" cy="152" rx="20" ry="24" fill="#122052" stroke="#0a1436" stroke-width="3"/>
+  <ellipse cx="140" cy="145" rx="7" ry="9" fill="#3f5bb5" opacity="0.8"/>
+  <rect x="136" y="176" width="4" height="34" fill="#c8d0da"/>
+  <rect x="152" y="176" width="4" height="34" fill="#c8d0da"/>
+  
+  <rect x="197" y="135" width="30" height="30" rx="3" fill="#2b4fd4" stroke="#1b34a0" stroke-width="2"/>
+  <circle cx="212" cy="150" r="11" fill="#f1f3f6"/>
+  <line x1="206" y1="150" x2="218" y2="150" stroke="#0d1117" stroke-width="3"/>
+  <rect x="250" y="134" width="40" height="28" rx="2" fill="#20262e" stroke="#131820" stroke-width="2"/><circle cx="257" cy="141" r="2.5" fill="#7c8794"/><rect x="254.5" y="130" width="3" height="4" fill="#c8d0da"/><rect x="254.5" y="162" width="3" height="4" fill="#c8d0da"/><rect x="268.5" y="130" width="3" height="4" fill="#c8d0da"/><rect x="268.5" y="162" width="3" height="4" fill="#c8d0da"/><rect x="282.5" y="130" width="3" height="4" fill="#c8d0da"/><rect x="282.5" y="162" width="3" height="4" fill="#c8d0da"/>
+  
+  <rect x="246" y="177" width="16" height="10" rx="2" fill="#d94f3d" stroke="#0d1117" stroke-width="1.5" opacity="0.9"/> 
+  <rect x="274" y="177" width="16" height="10" rx="2" fill="#3fb950" stroke="#0d1117" stroke-width="1.5" opacity="0.9"/>
+  <rect x="122" y="210" width="66" height="12" rx="2" fill="#20262e"/><rect x="131.5" y="220" width="5" height="26" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="153.5" y="220" width="5" height="26" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="175.5" y="220" width="5" height="26" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/>
+  <path d="M 66 168 c -22 -30 14 -34 4 -60 c 26 18 34 44 20 62 c 4 -14 -6 -22 -10 -26 c 2 14 -8 18 -14 24 z"
+        fill="#e8873a" stroke="#c8642a" stroke-width="2"/>
+  <path d="M 96 132 h 26" stroke="#e8873a" stroke-width="2.5" stroke-dasharray="5 4" opacity="0.8"/><path d="M 96 148 h 26" stroke="#e8873a" stroke-width="2.5" stroke-dasharray="5 4" opacity="0.8"/><path d="M 96 164 h 26" stroke="#e8873a" stroke-width="2.5" stroke-dasharray="5 4" opacity="0.8"/>
+  <text x="200" y="288" font-family="monospace" font-size="13" letter-spacing="1.5" fill="#7c8794" text-anchor="middle">sensor de chama IR</text>
+</svg>

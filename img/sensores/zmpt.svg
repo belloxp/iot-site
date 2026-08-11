@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <!-- Ilustração vetorial do sensor (desenhada para o catálogo, sem dependência externa) -->
+
+  
+  <rect x="70" y="80" width="260" height="140" rx="6" fill="#1f6feb" stroke="#12508f" stroke-width="3"/>
+  <circle cx="82" cy="92" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="318" cy="92" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="82" cy="208" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <circle cx="318" cy="208" r="4.5" fill="#f1f3f6" stroke="#12508f" stroke-width="2"/>
+  <rect x="88" y="100" width="94" height="100" rx="4" fill="#20262e" stroke="#131820" stroke-width="3"/>
+  <rect x="98" y="112" width="74" height="76" rx="3" fill="#2b323c"/>
+  <text x="135" y="156" font-family="monospace" font-size="12" fill="#aab3c0" text-anchor="middle">ZMPT</text>
+  <text x="135" y="172" font-family="monospace" font-size="12" fill="#aab3c0" text-anchor="middle">101B</text>
+  
+  <rect x="198" y="112" width="32" height="32" rx="3" fill="#2b4fd4" stroke="#1b34a0" stroke-width="2"/>
+  <circle cx="214" cy="128" r="12" fill="#f1f3f6"/>
+  <line x1="208" y1="128" x2="220" y2="128" stroke="#0d1117" stroke-width="3"/>
+  <rect x="196" y="160" width="46" height="30" rx="2" fill="#20262e" stroke="#131820" stroke-width="2"/><circle cx="203" cy="167" r="2.5" fill="#7c8794"/><rect x="200.5" y="156" width="3" height="4" fill="#c8d0da"/><rect x="200.5" y="190" width="3" height="4" fill="#c8d0da"/><rect x="217.5" y="156" width="3" height="4" fill="#c8d0da"/><rect x="217.5" y="190" width="3" height="4" fill="#c8d0da"/><rect x="234.5" y="156" width="3" height="4" fill="#c8d0da"/><rect x="234.5" y="190" width="3" height="4" fill="#c8d0da"/>
+  <rect x="258" y="104" width="58" height="48" rx="4" fill="#2f8f4e" stroke="#1e6b38" stroke-width="3"/>
+  <circle cx="273" cy="128" r="10" fill="#12331f"/><circle cx="301" cy="128" r="10" fill="#12331f"/>
+  <rect x="258" y="178" width="72" height="12" rx="2" fill="#20262e"/><rect x="265.5" y="188" width="5" height="30" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="283.5" y="188" width="5" height="30" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="301.5" y="188" width="5" height="30" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/><rect x="319.5" y="188" width="5" height="30" fill="#d8a63c" stroke="#a97d21" stroke-width="1"/>
+  <text x="287" y="96" font-family="monospace" font-size="11" fill="#7c8794" text-anchor="middle">220 V CA</text>
+  <text x="200" y="288" font-family="monospace" font-size="13" letter-spacing="1.5" fill="#7c8794" text-anchor="middle">ZMPT101B · tensão CA</text>
+</svg>
