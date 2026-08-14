@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portal técnico e educativo sobre robôs industriais e Internet das Coisas (IoT) na Indústria 4.0." />
-  <title>RoboHub 4.0 — Robótica Industrial &amp; IoT</title>
+  <meta name="description" content="Catálogo técnico digital de sensores IoT e industriais: conceito de sensoriamento, importância na automação, comunicação de dados, Arduino e 25 fichas técnicas completas." />
+  <title>SensorHub 4.0 — Sensores IoT &amp; Automação Industrial</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%2215%22 y=%2225%22 width=%2270%22 height=%2255%22 rx=%2210%22 fill=%22%23ff9f1c%22/><circle cx=%2238%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><circle cx=%2262%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><rect x=%2247%22 y=%2210%22 width=%226%22 height=%2215%22 fill=%22%23ff9f1c%22/></svg>" />
   <!-- Tipografia do projeto: Space Grotesk (títulos), Inter (texto), IBM Plex Mono (rótulos técnicos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,7 @@
   <!-- ===== CABEÇALHO / MENU DE NAVEGAÇÃO ===== -->
   <header class="cabecalho">
     <nav class="nav container">
-      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Robo<span>Hub</span><em>4.0</em></a>
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Sensor<span>Hub</span><em>4.0</em></a>
 
       <!-- Botão hambúrguer exibido apenas no mobile (controlado pelo JS) -->
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
@@ -26,8 +26,9 @@
 
       <ul class="nav-lista" id="navLista">
         <li><a href="index.html" class="ativo">Início</a></li>
-        <li><a href="robos.html">Catálogo</a></li>
-        <li><a href="index.html#iot">IoT</a></li>
+        <li><a href="sensores.html">Sensores</a></li>
+        <li><a href="arduino.html">Arduino</a></li>
+        <li><a href="robos.html">Robôs</a></li>
         <li><a href="index.html#protocolos">Protocolos</a></li>
       </ul>
     </nav>
@@ -37,39 +38,225 @@
   <section class="hero">
     <div class="container hero-conteudo revelar">
       <p class="hero-tag">/// catálogo técnico — indústria 4.0</p>
-      <h1>Robótica industrial na era da <span>Internet das Coisas</span></h1>
+      <h1>Sensores: os <span>sentidos</span> da fábrica conectada</h1>
       <p class="hero-texto">
-        Os 7 principais modelos de robôs industriais — características técnicas,
-        aplicações e como eles se conectam à fábrica por meio da IoT.
+        Catálogo técnico dos sensores utilizados em projetos de Internet das Coisas e Automação
+        Industrial — conceito, princípio de funcionamento, especificações, tipo de sinal e
+        exemplos práticos de programação com Arduino.
       </p>
       <div class="hero-botoes">
-        <a href="robos.html" class="botao">Explorar os robôs</a>
-        <a href="#iot" class="botao botao-vazado">Entender a IoT</a>
+        <a href="sensores.html" class="botao">Explorar os sensores</a>
+        <a href="arduino.html" class="botao botao-vazado">Programar com Arduino</a>
       </div>
 
       <!-- Contadores animados via JavaScript -->
       <div class="hero-numeros">
         <div class="numero-item">
-          <strong><span class="contador" data-alvo="7">0</span></strong>
-          <span>modelos de robôs</span>
+          <strong><span class="contador" data-alvo="25">0</span></strong>
+          <span>sensores catalogados</span>
         </div>
         <div class="numero-item">
-          <strong><span class="contador" data-alvo="21">0</span></strong>
-          <span>modelos comerciais</span>
+          <strong><span class="contador" data-alvo="20">0</span></strong>
+          <span>categorias</span>
         </div>
         <div class="numero-item">
-          <strong><span class="contador" data-alvo="4">0</span></strong>
-          <span>protocolos industriais</span>
+          <strong><span class="contador" data-alvo="25">0</span></strong>
+          <span>exemplos de código</span>
         </div>
       </div>
     </div>
   </section>
 
   <main>
-    <!-- ===== 1. CONCEITO DE IOT ===== -->
-    <section class="secao" id="iot">
+
+    <!-- ===== 1. CONCEITO DE SENSORIAMENTO ===== -->
+    <section class="secao" id="sensoriamento">
       <div class="container">
         <p class="kicker revelar">01 — conceito</p>
+        <h2 class="secao-titulo revelar">O que é Sensoriamento?</h2>
+        <div class="grade-2 revelar">
+          <div class="cartao-texto">
+            <p>
+              <strong>Sensoriamento</strong> é o processo de perceber e medir grandezas do mundo
+              físico — temperatura, luz, pressão, distância, presença, corrente elétrica, vibração —
+              convertendo-as em <strong>sinais elétricos</strong> que podem ser interpretados por um
+              sistema de controle.
+            </p>
+            <p>
+              O dispositivo que realiza essa conversão é o <strong>sensor</strong>, um transdutor
+              que transforma uma grandeza física em uma grandeza elétrica proporcional: tensão,
+              corrente, resistência, frequência ou um quadro de dados digital. Sem sensores, um
+              sistema automatizado é cego: ele executa comandos, mas não sabe o que está
+              acontecendo no processo.
+            </p>
+            <p>
+              É importante distinguir <strong>sensor</strong> de <strong>transdutor</strong> e de
+              <strong>atuador</strong>. O sensor detecta e mede; o transdutor converte a grandeza de
+              uma forma de energia para outra e normalmente já entrega o sinal condicionado e
+              padronizado (por exemplo, em 4–20 mA); e o atuador faz o caminho inverso, convertendo
+              um sinal elétrico de comando em ação física — girar um motor, abrir uma válvula,
+              acionar um alarme.
+            </p>
+            <p>
+              Todo sensor é avaliado por características metrológicas que definem sua adequação ao
+              processo: <strong>faixa de medição</strong>, <strong>precisão</strong>,
+              <strong>resolução</strong>, <strong>sensibilidade</strong>,
+              <strong>tempo de resposta</strong>, <strong>repetibilidade</strong> e
+              <strong>linearidade</strong>. Escolher o sensor errado compromete toda a malha de
+              controle — por isso este catálogo detalha as especificações de cada modelo.
+            </p>
+          </div>
+          <div class="cartao-destaque">
+            <h3>Da grandeza física ao dado útil</h3>
+            <ol class="lista-passos">
+              <li><strong>Grandeza física —</strong> temperatura, luz, distância ou corrente existem no processo real.</li>
+              <li><strong>Transdução —</strong> o elemento sensor converte essa grandeza em um sinal elétrico.</li>
+              <li><strong>Condicionamento —</strong> o sinal é amplificado, filtrado e ajustado à faixa de leitura.</li>
+              <li><strong>Conversão A/D —</strong> o microcontrolador digitaliza o sinal (no Arduino, em 10 bits).</li>
+              <li><strong>Processamento —</strong> o valor bruto vira grandeza de engenharia (°C, lux, cm, A).</li>
+              <li><strong>Decisão —</strong> a lógica compara com o setpoint e aciona a saída correspondente.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. IMPORTÂNCIA DOS SENSORES NA AUTOMAÇÃO INDUSTRIAL ===== -->
+    <section class="secao secao-alt" id="automacao">
+      <div class="container">
+        <p class="kicker revelar">02 — automação industrial</p>
+        <h2 class="secao-titulo revelar">A importância dos sensores na Automação Industrial</h2>
+        <p class="secao-subtitulo revelar">
+          Automatizar é operar processos com o mínimo de intervenção humana — e isso só é possível
+          porque os sensores fornecem, continuamente, a informação de que o controlador precisa para
+          decidir. São eles que sustentam os ganhos da automação:
+        </p>
+        <div class="grade-cartoes revelar">
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Produtividade</h3>
+            <p>Sensores permitem operação contínua 24/7 sem supervisão humana: a máquina detecta a peça, executa o ciclo e segue para a próxima automaticamente.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h3>Qualidade</h3>
+            <p>Medição em tempo real de temperatura, peso e dimensão mantém o processo dentro da faixa especificada e reprova o produto fora do padrão ainda na linha.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <h3>Segurança</h3>
+            <p>Sensores de presença, chama, gás e nível protegem pessoas e patrimônio: detectam a condição de risco e desligam o equipamento antes do acidente.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
+            </div>
+            <h3>Manutenção preditiva</h3>
+            <p>A leitura contínua de vibração, corrente e temperatura revela o desgaste do equipamento antes da falha, substituindo a parada emergencial pela programada.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+            </div>
+            <h3>Eficiência de recursos</h3>
+            <p>Medir consumo de água, energia e insumos é o primeiro passo para reduzi-lo: sem sensor não há medição, e sem medição não há como identificar o desperdício.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+            </div>
+            <h3>Rastreabilidade</h3>
+            <p>Sensores RFID e de identificação vinculam cada peça aos dados do seu processo, permitindo reconstruir o histórico completo de produção de um lote.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. SENSORES, COMUNICAÇÃO DE DADOS E CONTROLE DE PROCESSOS ===== -->
+    <section class="secao" id="controle">
+      <div class="container">
+        <p class="kicker revelar">03 — sensoriamento e controle</p>
+        <h2 class="secao-titulo revelar">Sensores, comunicação de dados e controle de processos</h2>
+        <p class="secao-subtitulo revelar">
+          O sensor sozinho não controla nada: ele é o primeiro elo de uma cadeia que só se completa
+          quando o dado é transmitido, processado e devolvido ao processo em forma de ação. Esse
+          caminho é sempre o mesmo, do chão de fábrica até a nuvem:
+        </p>
+
+        <!-- Fluxo do dado: aquisição → comunicação → processamento → atuação -->
+        <div class="fluxo-dados revelar">
+          <article class="fluxo-etapa">
+            <h3>Aquisição</h3>
+            <p>O sensor mede a grandeza física e gera o sinal elétrico correspondente — analógico, digital ou em barramento.</p>
+          </article>
+          <article class="fluxo-etapa">
+            <h3>Condicionamento</h3>
+            <p>O sinal é amplificado, filtrado e convertido para digital pelo microcontrolador ou pelo módulo de entrada do CLP.</p>
+          </article>
+          <article class="fluxo-etapa">
+            <h3>Comunicação</h3>
+            <p>O dado trafega por I2C, SPI e UART dentro do dispositivo, e por Ethernet Industrial, MQTT, OPC UA ou PROFINET pela rede.</p>
+          </article>
+          <article class="fluxo-etapa">
+            <h3>Processamento</h3>
+            <p>O controlador compara o valor medido com o setpoint; a nuvem armazena o histórico e aplica análises e alertas.</p>
+          </article>
+          <article class="fluxo-etapa">
+            <h3>Atuação</h3>
+            <p>A saída aciona o atuador — relé, motor, válvula, alarme — corrigindo o processo e fechando a malha de controle.</p>
+          </article>
+        </div>
+
+        <div class="grade-2 revelar" style="margin-top: 3rem;">
+          <div class="cartao-texto">
+            <p>
+              Esse ciclo é o que a automação chama de <strong>malha fechada</strong> (ou
+              <em>closed loop</em>): a saída do processo é medida por um sensor e realimentada na
+              entrada do controlador, que corrige continuamente o desvio em relação ao valor
+              desejado. É assim que um forno mantém a temperatura estável, que um reservatório
+              nunca transborda e que um motor gira exatamente na rotação programada.
+            </p>
+            <p>
+              Na <strong>malha aberta</strong>, ao contrário, não existe realimentação: o comando é
+              executado "às cegas", sem verificação do resultado. A diferença entre as duas é
+              justamente o sensor — ele é o elemento que transforma um acionamento em um
+              <strong>controle</strong>.
+            </p>
+            <p>
+              Quando esse dado, além de fechar a malha local, é publicado em uma rede e enviado à
+              nuvem, o sistema de automação passa a ser um sistema de
+              <strong>Internet das Coisas</strong>: o mesmo sinal que aciona um relé alimenta um
+              painel de supervisão, um histórico de produção e algoritmos de manutenção preditiva.
+            </p>
+          </div>
+          <div class="cartao-destaque">
+            <h3>Onde cada sinal é usado</h3>
+            <ul class="lista-marcada">
+              <li><strong>Analógico:</strong> grandezas contínuas — temperatura, corrente, luminosidade.</li>
+              <li><strong>Digital:</strong> estados discretos — presença, nível alto/baixo, chave aberta.</li>
+              <li><strong>I2C:</strong> vários sensores endereçados em apenas 2 fios.</li>
+              <li><strong>SPI:</strong> alta velocidade para leitores RFID, memórias e conversores.</li>
+              <li><strong>UART:</strong> comunicação serial entre placas e módulos de rede.</li>
+              <li><strong>4–20 mA:</strong> padrão industrial imune a ruído e com diagnóstico de cabo rompido.</li>
+            </ul>
+            <p style="margin-top: 1rem;">
+              <a href="arduino.html#comunicacao">Ver como cada sinal é lido pelo Arduino →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. CONCEITO DE IOT ===== -->
+    <section class="secao secao-alt" id="iot">
+      <div class="container">
+        <p class="kicker revelar">04 — internet das coisas</p>
         <h2 class="secao-titulo revelar">O que é Internet das Coisas?</h2>
         <div class="grade-2 revelar">
           <div class="cartao-texto">
@@ -81,7 +268,7 @@
             </p>
             <p>
               Em um sistema IoT, cada "coisa" percebe o ambiente por meio de sensores
-              (temperatura, vibração, posição, corrente elétrica), processa essas informações e as
+              (temperatura, vibração, presença, corrente elétrica), processa essas informações e as
               transmite por redes de comunicação a plataformas em nuvem, onde os dados são
               armazenados, analisados e transformados em <strong>decisões e ações</strong> — como
               acionar um atuador, gerar um alerta de manutenção ou otimizar um processo.
@@ -89,7 +276,9 @@
             <p>
               No ambiente fabril esse conceito recebe o nome de <strong>IIoT (Industrial Internet
               of Things)</strong> e é um dos pilares da <strong>Indústria 4.0</strong>, ao lado da
-              robótica, da computação em nuvem, do big data e da inteligência artificial.
+              robótica, da computação em nuvem, do big data e da inteligência artificial. Os
+              sensores deste catálogo são, literalmente, a <strong>camada de percepção</strong>
+              dessa arquitetura.
             </p>
           </div>
           <div class="cartao-destaque">
@@ -100,158 +289,61 @@
               <li><strong>Processamento —</strong> gateways e plataformas em nuvem analisam as informações.</li>
               <li><strong>Aplicação —</strong> dashboards, alertas e comandos de controle fecham o ciclo.</li>
             </ol>
+            <p style="margin-top: 1rem;">
+              <a href="arduino.html#placas">Ver um nó IoT completo com ESP32 e MQTT →</a>
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 2. CONCEITO DE ROBÓTICA INDUSTRIAL ===== -->
-    <section class="secao secao-alt" id="robotica">
+    <!-- ===== 5. ARDUINO: CONCEITO, FUNCIONAMENTO E PROGRAMAÇÃO ===== -->
+    <section class="secao" id="arduino">
       <div class="container">
-        <p class="kicker revelar">02 — conceito</p>
-        <h2 class="secao-titulo revelar">O que é Robótica Industrial?</h2>
-        <div class="grade-2 revelar">
-          <div class="cartao-destaque">
-            <h3>Definição segundo a ISO 8373</h3>
-            <p>
-              Um <strong>robô industrial</strong> é um "manipulador multipropósito, reprogramável,
-              controlado automaticamente, programável em três ou mais eixos, que pode ser fixo ou
-              móvel, para uso em aplicações de automação industrial".
-            </p>
-            <ul class="lista-marcada">
-              <li><strong>Manipulador:</strong> estrutura mecânica de elos e juntas.</li>
-              <li><strong>Atuadores:</strong> motores que movimentam cada junta.</li>
-              <li><strong>Sensores:</strong> encoders e transdutores que medem posição e força.</li>
-              <li><strong>Controlador:</strong> o "cérebro" que executa o programa.</li>
-              <li><strong>Efetuador:</strong> a ferramenta na ponta (garra, tocha, ventosa).</li>
-            </ul>
+        <p class="kicker revelar">05 — plataforma</p>
+        <h2 class="secao-titulo revelar">Arduino: conceito, funcionamento e programação</h2>
+
+        <div class="arduino-hero revelar">
+          <div class="arduino-imagem">
+            <img src="img/arduino-uno.png" alt="Placa Arduino Uno R3" loading="lazy" />
           </div>
           <div class="cartao-texto">
             <p>
-              A <strong>robótica industrial</strong> é o ramo da engenharia dedicado ao projeto,
-              construção, programação e aplicação de robôs em processos produtivos. Os robôs
-              executam tarefas <strong>repetitivas, perigosas ou de alta precisão</strong> —
-              soldagem, pintura, montagem, paletização — com velocidade e repetibilidade
-              impossíveis para o trabalho manual.
+              <strong>Conceito —</strong> o Arduino é uma plataforma aberta de prototipagem
+              eletrônica composta por uma placa com microcontrolador e um ambiente de programação
+              simplificado. É o elemento que <strong>lê os sensores, processa a lógica e aciona os
+              atuadores</strong> em um projeto de sensoriamento.
             </p>
             <p>
-              Os robôs são classificados principalmente pela sua <strong>configuração
-              cinemática</strong>, ou seja, pela combinação de juntas rotativas e lineares que
-              define o formato do seu volume de trabalho. É exatamente essa classificação que
-              você encontra no nosso <a href="robos.html">catálogo de robôs</a>: cartesiano,
-              SCARA, articulado, cilíndrico, delta, polar e colaborativo.
+              <strong>Funcionamento —</strong> o programa gravado na placa executa a função
+              <code>setup()</code> uma única vez, para configurar pinos e bibliotecas, e em seguida
+              repete indefinidamente a função <code>loop()</code>, onde acontece o ciclo
+              <em>ler entradas → processar → acionar saídas</em> — o mesmo princípio do ciclo de
+              varredura de um CLP industrial.
             </p>
+            <p>
+              <strong>Programação —</strong> os sketches são escritos em uma linguagem derivada de
+              C/C++. Sensores analógicos são lidos com <code>analogRead()</code>, digitais com
+              <code>digitalRead()</code>, e sensores com protocolo próprio (I2C, SPI, 1-Wire) são
+              acessados por bibliotecas específicas.
+            </p>
+            <div class="hero-botoes" style="margin-top: 1.5rem;">
+              <a href="arduino.html" class="botao">Ver a página completa do Arduino</a>
+              <a href="arduino.html#exemplos" class="botao botao-vazado">25 exemplos de código</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 3. IMPORTÂNCIA DA AUTOMAÇÃO INDUSTRIAL ===== -->
-    <section class="secao" id="automacao">
+    <!-- ===== 6. PROTOCOLOS DE COMUNICAÇÃO INDUSTRIAL (Capacidade C4) ===== -->
+    <section class="secao secao-alt" id="protocolos">
       <div class="container">
-        <p class="kicker revelar">03 — automação</p>
-        <h2 class="secao-titulo revelar">A importância da Automação Industrial</h2>
+        <p class="kicker revelar">06 — comunicação de dados</p>
+        <h2 class="secao-titulo revelar">Protocolos que levam o dado do sensor à nuvem</h2>
         <p class="secao-subtitulo revelar">
-          Automatizar é usar máquinas, sistemas de controle e tecnologia da informação para operar
-          processos com o mínimo de intervenção humana. Os impactos são diretos na competitividade:
-        </p>
-        <div class="grade-cartoes revelar">
-          <article class="cartao-icone">
-            <div class="icone">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <h3>Produtividade</h3>
-            <p>Operação contínua 24/7, ciclos mais rápidos e maior volume de produção com os mesmos recursos.</p>
-          </article>
-          <article class="cartao-icone">
-            <div class="icone">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            </div>
-            <h3>Qualidade</h3>
-            <p>Repetibilidade de centésimos de milímetro elimina variações e reduz drasticamente refugos e retrabalho.</p>
-          </article>
-          <article class="cartao-icone">
-            <div class="icone">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-            </div>
-            <h3>Segurança</h3>
-            <p>Robôs assumem tarefas insalubres e perigosas: cargas pesadas, calor extremo, produtos químicos e movimentos repetitivos.</p>
-          </article>
-          <article class="cartao-icone">
-            <div class="icone">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
-            </div>
-            <h3>Redução de custos</h3>
-            <p>Menos desperdício de material e energia, menos paradas não planejadas e melhor aproveitamento da planta.</p>
-          </article>
-          <article class="cartao-icone">
-            <div class="icone">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
-            </div>
-            <h3>Flexibilidade</h3>
-            <p>Robôs reprogramáveis permitem trocar de produto rapidamente, viabilizando lotes menores e customização.</p>
-          </article>
-          <article class="cartao-icone">
-            <div class="icone">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
-            </div>
-            <h3>Dados para decisão</h3>
-            <p>Processos automatizados geram dados contínuos que alimentam sistemas MES/ERP e a melhoria contínua.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 4. RELAÇÃO ROBÓTICA × IOT ===== -->
-    <section class="secao secao-alt" id="relacao">
-      <div class="container">
-        <p class="kicker revelar">04 — convergência</p>
-        <h2 class="secao-titulo revelar">Robótica + IoT: a fábrica conectada</h2>
-        <div class="grade-2 revelar">
-          <div class="cartao-texto">
-            <p>
-              Um robô isolado executa tarefas; um <strong>robô conectado</strong> participa de um
-              ecossistema inteligente. Quando integrados à IoT, os robôs industriais deixam de ser
-              apenas "braços mecânicos" e passam a ser <strong>fontes e consumidores de dados</strong>
-              em tempo real.
-            </p>
-            <p>
-              Sensores embarcados (torque, temperatura, vibração, corrente) publicam continuamente
-              o estado de saúde do robô, permitindo a <strong>manutenção preditiva</strong>:
-              a falha é prevista e corrigida antes de parar a linha. Sistemas de
-              <strong>visão computacional</strong> e sensores de presença informam ao robô a
-              posição exata das peças, e sistemas MES na nuvem enviam ordens de produção
-              diretamente ao controlador.
-            </p>
-            <p>
-              Essa convergência dá origem a conceitos como o <strong>digital twin</strong>
-              (gêmeo digital) — a réplica virtual do robô alimentada por dados reais — e às
-              <strong>células autônomas</strong>, em que robôs, esteiras e máquinas CNC negociam
-              entre si o fluxo de produção via mensagens padronizadas.
-            </p>
-          </div>
-          <div class="cartao-destaque">
-            <h3>O que o robô conectado entrega</h3>
-            <ul class="lista-marcada">
-              <li><strong>Monitoramento remoto:</strong> status e alarmes acessíveis de qualquer lugar.</li>
-              <li><strong>Manutenção preditiva:</strong> análise de vibração e torque antecipa falhas.</li>
-              <li><strong>OEE em tempo real:</strong> disponibilidade, performance e qualidade ao vivo.</li>
-              <li><strong>Rastreabilidade:</strong> cada peça fica vinculada aos dados do processo.</li>
-              <li><strong>Sensoriamento e controle:</strong> o robô reage a sensores da linha e comanda atuadores.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROTOCOLOS DE COMUNICAÇÃO INDUSTRIAL (Capacidade C4) ===== -->
-    <section class="secao" id="protocolos">
-      <div class="container">
-        <p class="kicker revelar">05 — comunicação de dados</p>
-        <h2 class="secao-titulo revelar">Como os robôs trocam dados</h2>
-        <p class="secao-subtitulo revelar">
-          A integração entre robôs, CLPs, sensores e a nuvem depende de protocolos de comunicação
-          de dados padronizados. Estes são os principais utilizados na Indústria 4.0:
+          A integração entre sensores, CLPs, robôs e plataformas em nuvem depende de protocolos de
+          comunicação padronizados. Estes são os principais utilizados na Indústria 4.0:
         </p>
         <div class="grade-cartoes revelar">
           <article class="cartao-icone">
@@ -266,7 +358,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/></svg>
             </div>
             <h3>MQTT</h3>
-            <p>Protocolo leve de publicação/assinatura criado para IoT. Sensores e robôs publicam dados em tópicos de um broker; sistemas em nuvem assinam apenas o que interessa.</p>
+            <p>Protocolo leve de publicação/assinatura criado para IoT. Sensores publicam suas leituras em tópicos de um broker; sistemas em nuvem assinam apenas o que interessa.</p>
           </article>
           <article class="cartao-icone">
             <div class="icone">
@@ -280,39 +372,97 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg>
             </div>
             <h3>PROFINET</h3>
-            <p>Evolução do Profibus sobre Ethernet, dominante em CLPs Siemens. Comunicação em tempo real entre controladores, robôs, inversores e periferia descentralizada.</p>
+            <p>Evolução do Profibus sobre Ethernet, dominante em CLPs Siemens. Comunicação em tempo real entre controladores, sensores, inversores e periferia descentralizada.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== PRÉVIA DO CATÁLOGO ===== -->
-    <section class="secao secao-alt" id="previa">
+    <!-- ===== 7. PRÉVIA DO CATÁLOGO DE SENSORES ===== -->
+    <section class="secao" id="previa-sensores">
       <div class="container">
-        <p class="kicker revelar">06 — catálogo</p>
-        <h2 class="secao-titulo revelar">Os 7 modelos de robôs industriais</h2>
+        <p class="kicker revelar">07 — catálogo</p>
+        <h2 class="secao-titulo revelar">25 sensores IoT e industriais</h2>
         <p class="secao-subtitulo revelar">
-          Clique em um modelo para ver conceito, funcionamento, especificações técnicas,
-          aplicações, integração com IoT e exemplos comerciais de fabricantes.
+          Clique em um sensor para ver conceito, princípio de funcionamento, especificações
+          técnicas, tipo de sinal, aplicações, exemplo de projeto com Arduino e fabricantes.
         </p>
-        <!-- A grade abaixo é preenchida dinamicamente pelo JavaScript (js/catalogo.js) -->
-        <div class="grade-robos revelar" id="gradeRobos"></div>
+
+        <!-- Chips de categoria e grade preenchidos pelo js/catalogo-sensores.js -->
+        <div class="filtros revelar" id="filtrosCategoria"></div>
+        <p class="contagem-resultados" id="contagemSensores"></p>
+        <div class="grade-robos revelar" id="gradeSensores"></div>
+        <p class="sem-resultados" id="semSensores" hidden>
+          [ nenhum sensor encontrado para essa busca ]
+        </p>
+
+        <div class="hero-botoes" style="margin-top: 2.5rem;">
+          <a href="sensores.html" class="botao">Abrir o catálogo completo</a>
+        </div>
       </div>
     </section>
+
+    <!-- ===== 8. ROBÓTICA INDUSTRIAL ===== -->
+    <section class="secao secao-alt" id="robotica">
+      <div class="container">
+        <p class="kicker revelar">08 — robótica industrial</p>
+        <h2 class="secao-titulo revelar">Sensoriamento aplicado à robótica</h2>
+        <div class="grade-2 revelar">
+          <div class="cartao-texto">
+            <p>
+              Um <strong>robô industrial</strong> é, segundo a norma ISO 8373, um "manipulador
+              multipropósito, reprogramável, controlado automaticamente, programável em três ou mais
+              eixos". Ele só consegue se movimentar com precisão porque é, antes de tudo, uma
+              máquina densamente sensoriada.
+            </p>
+            <p>
+              <strong>Encoders</strong> em cada junta informam a posição angular ao controlador —
+              o mesmo princípio do KY-040 deste catálogo, porém em versão óptica de alta resolução.
+              Sensores de <strong>corrente</strong> monitoram o torque dos motores,
+              sensores de <strong>proximidade</strong> confirmam a presença da peça na garra e
+              sensores de <strong>vibração e temperatura</strong> alimentam a manutenção preditiva.
+            </p>
+            <p>
+              A parametrização de um robô — velocidade, aceleração, limites de eixo, tolerância de
+              posicionamento — é feita justamente a partir das leituras desses sensores. Explore o
+              <a href="robos.html">catálogo de robôs industriais</a> para ver as 7 configurações
+              cinemáticas e como cada uma se integra à automação e à IoT.
+            </p>
+          </div>
+          <div class="cartao-destaque">
+            <h3>Sensores presentes em um robô</h3>
+            <ul class="lista-marcada">
+              <li><strong>Encoder incremental/absoluto:</strong> posição e velocidade de cada junta.</li>
+              <li><strong>Sensor de corrente:</strong> torque aplicado e detecção de colisão.</li>
+              <li><strong>Sensor de proximidade:</strong> presença de peça e referenciamento de eixo.</li>
+              <li><strong>Célula de carga:</strong> força de aperto da garra e controle de montagem.</li>
+              <li><strong>Acelerômetro/vibração:</strong> diagnóstico de desgaste e desbalanceamento.</li>
+              <li><strong>Cortina de luz e scanner laser:</strong> segurança do operador na célula.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Grade preenchida dinamicamente pelo JavaScript (js/catalogo.js) -->
+        <div class="grade-robos revelar" id="gradeRobos" style="margin-top: 3rem;"></div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ===== RODAPÉ ===== -->
   <footer class="rodape">
     <div class="container rodape-conteudo">
-      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Robo<span>Hub</span><em>4.0</em></a>
-      <p>Portal técnico de Robótica Industrial &amp; Internet das Coisas</p>
-      <p class="rodape-copy">© <span id="anoAtual"></span> RoboHub 4.0</p>
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Sensor<span>Hub</span><em>4.0</em></a>
+      <p>Catálogo técnico de Sensores, Internet das Coisas &amp; Automação Industrial</p>
+      <p class="rodape-copy">© <span id="anoAtual"></span> SensorHub 4.0</p>
     </div>
   </footer>
 
-  <!-- Scripts: dados + comportamento geral + renderização do catálogo -->
+  <!-- Scripts: bases de dados + comportamento geral + renderização dos catálogos -->
+  <script src="js/dados-sensores.js"></script>
   <script src="js/dados-robos.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/catalogo-sensores.js"></script>
   <script src="js/catalogo.js"></script>
 </body>
 </html>

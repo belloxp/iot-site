@@ -14,6 +14,9 @@
    8. Rodapé
    9. Animações
    10. Media queries (responsividade)
+   11. Catálogo de sensores (filtros, selos e fichas)
+   12. Blocos de código Arduino
+   13. Página do Arduino
    ============================================================ */
 
 /* ---------- 1. VARIÁVEIS E RESET ---------- */
@@ -904,5 +907,413 @@ ul, ol {
 
   .robo-navegacao .botao {
     text-align: center;
+  }
+}
+
+/* ============================================================
+   11. CATÁLOGO DE SENSORES
+   Reaproveita os componentes .card-robo e .abas do catálogo de
+   robôs, acrescentando os elementos próprios do sensor:
+   filtros por categoria, selo do tipo de sinal e ficha técnica.
+   ============================================================ */
+
+/* ---------- Filtros por categoria (chips clicáveis) ---------- */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.chip {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cor-texto-suave);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: color var(--transicao), border-color var(--transicao), background var(--transicao);
+}
+
+.chip:hover {
+  color: var(--cor-texto);
+  border-color: var(--cor-primaria);
+}
+
+/* Chip selecionado no momento (classe aplicada pelo JavaScript) */
+.chip.ativo {
+  color: #17110a;
+  background: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+/* Contador de resultados exibido acima da grade */
+.contagem-resultados {
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cor-texto-suave);
+  margin-bottom: 1.25rem;
+}
+
+.contagem-resultados strong {
+  color: var(--cor-primaria);
+}
+
+/* ---------- Selo do tipo de sinal ---------- */
+.selo-sinal {
+  display: inline-block;
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cor-secundaria);
+  border: 1px solid rgba(90, 200, 250, 0.35);
+  background: rgba(90, 200, 250, 0.08);
+  border-radius: 3px;
+  padding: 0.1rem 0.5rem;
+}
+
+/* Fundo branco atrás das fotos dos módulos (fotos vêm com fundo claro) */
+.card-robo-imagem.imagem-sensor {
+  background: #ffffff;
+  height: 190px;
+}
+
+.card-robo-imagem.imagem-sensor img {
+  mix-blend-mode: normal;
+}
+
+/* Linha de metadados do card (categoria + sinal) */
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ---------- Ficha técnica do sensor ---------- */
+.sensor-hero-imagem {
+  background: #ffffff;
+}
+
+.sensor-hero-imagem img {
+  mix-blend-mode: normal;
+}
+
+/* Ficha de dados rápidos exibida abaixo do resumo */
+.ficha-rapida {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--cor-borda);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.ficha-rapida div {
+  background: var(--cor-superficie);
+  padding: 0.85rem 1rem;
+}
+
+.ficha-rapida dt {
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cor-texto-suave);
+  margin-bottom: 0.2rem;
+}
+
+.ficha-rapida dd {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+}
+
+/* Caixa de ligação elétrica do exemplo de projeto */
+.caixa-ligacao {
+  background: var(--cor-fundo-alt);
+  border: 1px solid var(--cor-borda);
+  border-left: 3px solid var(--cor-primaria);
+  border-radius: var(--raio);
+  padding: 1.2rem 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.caixa-ligacao h3 {
+  font-size: 0.82rem;
+  font-family: var(--fonte-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cor-primaria);
+  margin-bottom: 0.8rem;
+}
+
+.caixa-ligacao ul {
+  list-style: none;
+}
+
+.caixa-ligacao li {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  padding: 0.25rem 0;
+}
+
+/* ============================================================
+   12. BLOCOS DE CÓDIGO ARDUINO
+   ============================================================ */
+.bloco-codigo {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  background: #0b0e13;
+  margin: 1.5rem 0;
+}
+
+.codigo-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--cor-fundo-alt);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 0.6rem 1rem;
+}
+
+.codigo-titulo {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cor-texto-suave);
+}
+
+/* Botão "copiar" — o texto muda para "copiado!" via JavaScript */
+.botao-copiar {
+  font-family: var(--fonte-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cor-texto-suave);
+  background: transparent;
+  border: 1px solid var(--cor-borda);
+  border-radius: 3px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: color var(--transicao), border-color var(--transicao);
+}
+
+.botao-copiar:hover {
+  color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+.botao-copiar.copiado {
+  color: #7ee08a;
+  border-color: #7ee08a;
+}
+
+.bloco-codigo pre {
+  margin: 0;
+  padding: 1.2rem;
+  overflow-x: auto;   /* código longo rola dentro do bloco, nunca na página */
+}
+
+.bloco-codigo code {
+  font-family: var(--fonte-mono);
+  font-size: 0.83rem;
+  line-height: 1.7;
+  color: #d6dee9;
+  white-space: pre;
+}
+
+/* Realce de sintaxe simples aplicado pelo JavaScript */
+.cod-comentario { color: #6b7a8d; font-style: italic; }
+.cod-diretiva   { color: #c792ea; }
+.cod-texto      { color: #a5e8a0; }
+.cod-chave      { color: #ff9f1c; }
+.cod-funcao     { color: #5ac8fa; }
+.cod-numero     { color: #f7c26b; }
+
+/* ============================================================
+   13. PÁGINA DO ARDUINO
+   ============================================================ */
+.arduino-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.arduino-imagem {
+  background: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+}
+
+/* Figura com legenda (usada no diagrama de pinagem) */
+.figura {
+  margin: 2rem 0;
+}
+
+.figura img {
+  background: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.25rem;
+  width: 100%;
+}
+
+.figura figcaption {
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  color: var(--cor-texto-suave);
+  text-align: center;
+  margin-top: 0.8rem;
+}
+
+/* Seletor de exemplo de programação (lista de sensores) */
+.seletor-exemplo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Cabeçalho do exemplo exibido acima do código */
+.exemplo-cabecalho h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.exemplo-cabecalho p {
+  color: var(--cor-texto-suave);
+  max-width: 85ch;
+}
+
+/* Fluxo sensor → controlador → nuvem (página inicial) */
+.fluxo-dados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  counter-reset: etapa;
+}
+
+.fluxo-etapa {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.35rem;
+  position: relative;
+}
+
+.fluxo-etapa::before {
+  counter-increment: etapa;
+  content: counter(etapa, decimal-leading-zero);
+  font-family: var(--fonte-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.fluxo-etapa h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.fluxo-etapa p {
+  color: var(--cor-texto-suave);
+  font-size: 0.88rem;
+}
+
+/* Tabela de placas controladoras (integração com Arduino/ESP32/RPi) */
+.grade-placas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.card-placa {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  transition: transform var(--transicao), border-color var(--transicao);
+}
+
+.card-placa:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 159, 28, 0.55);
+}
+
+.card-placa-imagem {
+  background: #ffffff;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.card-placa-imagem img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card-placa-corpo {
+  padding: 1.35rem;
+}
+
+.card-placa-corpo h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-placa-corpo p {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Responsividade das seções de sensores e Arduino */
+@media (max-width: 900px) {
+  .arduino-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .filtros,
+  .seletor-exemplo {
+    /* Faixa de filtros rolável horizontalmente no celular */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .chip {
+    white-space: nowrap;
+  }
+
+  .bloco-codigo code {
+    font-size: 0.76rem;
   }
 }

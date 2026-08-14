@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Arduino: conceito, características, funcionamento, pinagem, formas de comunicação com sensores e 25 exemplos de programação com sensores IoT e industriais." />
+  <title>Arduino — SensorHub 4.0</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%2215%22 y=%2225%22 width=%2270%22 height=%2255%22 rx=%2210%22 fill=%22%23ff9f1c%22/><circle cx=%2238%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><circle cx=%2262%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><rect x=%2247%22 y=%2210%22 width=%226%22 height=%2215%22 fill=%22%23ff9f1c%22/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== CABEÇALHO / MENU DE NAVEGAÇÃO ===== -->
+  <header class="cabecalho">
+    <nav class="nav container">
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Sensor<span>Hub</span><em>4.0</em></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-lista" id="navLista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sensores.html">Sensores</a></li>
+        <li><a href="arduino.html" class="ativo">Arduino</a></li>
+        <li><a href="robos.html">Robôs</a></li>
+        <li><a href="index.html#protocolos">Protocolos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== 1. CONCEITO ===== -->
+    <section class="secao pagina-topo" id="conceito">
+      <div class="container">
+        <p class="kicker revelar">01 — conceito</p>
+        <h1 class="secao-titulo revelar">Arduino: a plataforma que dá vida aos sensores</h1>
+
+        <div class="arduino-hero revelar">
+          <div class="cartao-texto">
+            <p>
+              O <strong>Arduino</strong> é uma plataforma aberta de prototipagem eletrônica formada
+              por duas partes inseparáveis: uma <strong>placa de hardware</strong> baseada em
+              microcontrolador e um <strong>ambiente de desenvolvimento (IDE)</strong> com uma
+              linguagem de programação simplificada, derivada de C/C++.
+            </p>
+            <p>
+              Seu papel em um projeto de sensoriamento é ser o <strong>elemento de aquisição e
+              controle</strong>: ele energiza os sensores, lê os sinais que eles produzem, converte
+              esses sinais em valores numéricos, aplica a lógica de decisão programada e aciona
+              atuadores — relés, motores, válvulas, alarmes — ou envia os dados adiante.
+            </p>
+            <p>
+              Por ser <strong>open source</strong>, ter documentação farta e milhares de bibliotecas
+              prontas, o Arduino se tornou o padrão de fato no ensino técnico e na prototipagem de
+              soluções de <strong>Internet das Coisas</strong>. O conceito aprendido nele é o mesmo
+              aplicado em escala industrial pelos <strong>CLPs</strong>: ler entradas, processar a
+              lógica e comandar saídas, de forma cíclica e ininterrupta.
+            </p>
+          </div>
+          <div class="arduino-imagem">
+            <img src="img/arduino-uno.png" alt="Placa Arduino Uno R3" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. CARACTERÍSTICAS TÉCNICAS ===== -->
+    <section class="secao secao-alt" id="caracteristicas">
+      <div class="container">
+        <p class="kicker revelar">02 — hardware</p>
+        <h2 class="secao-titulo revelar">Características do Arduino Uno R3</h2>
+        <p class="secao-subtitulo revelar">
+          O Uno R3 é a placa de referência da plataforma e a mais utilizada em projetos didáticos
+          de sensoriamento. Estas são as especificações que determinam o que ela consegue medir e
+          controlar:
+        </p>
+
+        <div class="grade-2 revelar">
+          <div class="cartao-destaque">
+            <h3>Especificações principais</h3>
+            <ul class="lista-marcada">
+              <li><strong>Microcontrolador:</strong> ATmega328P (AVR de 8 bits, arquitetura RISC)</li>
+              <li><strong>Frequência de clock:</strong> 16 MHz</li>
+              <li><strong>Tensão de operação:</strong> 5 V (alimentação externa de 7 a 12 V)</li>
+              <li><strong>Memória de programa (Flash):</strong> 32 KB (0,5 KB usados pelo bootloader)</li>
+              <li><strong>Memória de dados (SRAM):</strong> 2 KB — <strong>EEPROM:</strong> 1 KB</li>
+              <li><strong>Pinos digitais:</strong> 14 (dos quais 6 com saída PWM)</li>
+              <li><strong>Entradas analógicas:</strong> 6 (A0 a A5), com conversor A/D de 10 bits</li>
+              <li><strong>Corrente máxima por pino:</strong> 20 mA (40 mA de pico absoluto)</li>
+              <li><strong>Interrupções externas:</strong> pinos digitais 2 e 3</li>
+              <li><strong>Conexão:</strong> USB tipo B (também usada para alimentação e gravação)</li>
+            </ul>
+          </div>
+          <div class="cartao-texto">
+            <p>
+              A <strong>resolução de 10 bits</strong> do conversor analógico-digital é o número mais
+              importante para quem trabalha com sensores: ela divide a faixa de 0 a 5 V em
+              <strong>1024 níveis</strong> (0 a 1023), o que dá um passo de aproximadamente
+              <strong>4,9 mV</strong>. É essa resolução que define a menor variação que o Arduino
+              consegue enxergar em um sensor analógico como o LM35 ou o ACS712.
+            </p>
+            <p>
+              As <strong>saídas PWM</strong> não são analógicas de verdade: elas simulam tensões
+              intermediárias ligando e desligando o pino muito rapidamente, técnica usada para
+              controlar velocidade de motores, brilho de LEDs e potência de resistências.
+            </p>
+            <p>
+              Já as <strong>interrupções externas</strong> (pinos 2 e 3) permitem reagir a um evento
+              no instante em que ele ocorre, sem depender do ciclo do programa — recurso
+              indispensável para contar pulsos de sensores rápidos como o YF-S201, o encoder KY-040
+              e o sensor Hall A3144.
+            </p>
+          </div>
+        </div>
+
+        <!-- Diagrama de pinagem: relaciona cada pino ao seu tipo de sinal -->
+        <figure class="figura revelar">
+          <img src="img/arduino-pinout.png" alt="Diagrama de pinagem do Arduino Uno R3, com identificação dos pinos de alimentação, entradas analógicas, pinos digitais, PWM, I2C, SPI, UART e interrupções" />
+          <figcaption>
+            Pinagem do Arduino Uno R3 — observe os grupos de comunicação usados pelos sensores:
+            <strong>I2C</strong> (A4/SDA e A5/SCL), <strong>SPI</strong> (pinos 10 a 13),
+            <strong>UART</strong> (pinos 0/RX e 1/TX) e as <strong>interrupções</strong> (pinos 2 e 3).
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== 3. FUNCIONAMENTO ===== -->
+    <section class="secao" id="funcionamento">
+      <div class="container">
+        <p class="kicker revelar">03 — funcionamento</p>
+        <h2 class="secao-titulo revelar">Como o Arduino funciona</h2>
+        <p class="secao-subtitulo revelar">
+          Todo programa de Arduino (chamado de <em>sketch</em>) tem duas funções obrigatórias, que
+          definem o comportamento cíclico da placa — exatamente como o ciclo de varredura
+          (<em>scan</em>) de um CLP industrial:
+        </p>
+
+        <div class="grade-2 revelar">
+          <div class="cartao-destaque">
+            <h3>Ciclo de execução</h3>
+            <ol class="lista-passos">
+              <li><strong>Energização —</strong> a placa liga e o bootloader entrega o controle ao programa gravado na memória Flash.</li>
+              <li><strong>setup() —</strong> executado uma única vez: configura os pinos, inicia a comunicação serial e as bibliotecas dos sensores.</li>
+              <li><strong>loop() —</strong> repetido infinitamente: lê as entradas, processa a lógica e atualiza as saídas.</li>
+              <li><strong>Interrupções —</strong> podem pausar o loop a qualquer instante para tratar um evento urgente e retornar ao ponto exato onde parou.</li>
+            </ol>
+          </div>
+          <div class="cartao-texto">
+            <p>
+              O programa é escrito na IDE, <strong>compilado</strong> para código de máquina do
+              ATmega328P e <strong>transferido pela USB</strong> para a memória Flash da placa. A
+              partir daí, o Arduino roda sozinho, sem computador: basta alimentá-lo.
+            </p>
+            <p>
+              A leitura de um sensor acontece por duas funções básicas.
+              <strong>digitalRead()</strong> devolve apenas dois estados possíveis, HIGH ou LOW —
+              usada em sensores de presença, chaves e sensores de proximidade.
+              <strong>analogRead()</strong> devolve um número inteiro de 0 a 1023, proporcional à
+              tensão aplicada ao pino — usada em sensores como LDR, LM35, MQ-2 e ACS712.
+            </p>
+            <p>
+              Sensores com protocolos próprios (I2C, SPI, 1-Wire) não são lidos por essas funções
+              diretas: eles usam <strong>bibliotecas</strong>, que encapsulam toda a temporização e
+              o formato dos quadros de dados em comandos simples como <code>sensor.begin()</code> e
+              <code>sensor.read()</code>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Estrutura básica de um sketch, realçada pelo js/codigo.js -->
+        <h3 class="secao-titulo revelar" style="font-size: 1.2rem; margin-top: 3rem;">
+          Estrutura básica de um sketch
+        </h3>
+        <div class="bloco-codigo revelar">
+          <div class="codigo-cabecalho">
+            <span class="codigo-titulo">estrutura-basica.ino</span>
+            <button class="botao-copiar" type="button">copiar</button>
+          </div>
+          <pre><code class="codigo-arduino">// 1. Bibliotecas e constantes globais
+#include &lt;DHT.h&gt;               // biblioteca do sensor (quando necessario)
+
+const int PINO_SENSOR = A0;    // entrada analogica onde o sensor esta ligado
+const int PINO_LED    = 13;    // saida digital que sera acionada
+
+// 2. setup(): executado UMA vez, ao ligar ou apos o reset
+void setup() {
+  Serial.begin(9600);          // inicia a comunicacao serial (UART) a 9600 bps
+  pinMode(PINO_SENSOR, INPUT); // define o pino como ENTRADA
+  pinMode(PINO_LED, OUTPUT);   // define o pino como SAIDA
+}
+
+// 3. loop(): repetido infinitamente enquanto a placa estiver ligada
+void loop() {
+  // LER: adquire o dado do sensor (0 a 1023 no conversor de 10 bits)
+  int leitura = analogRead(PINO_SENSOR);
+
+  // CONVERTER: transforma a leitura bruta em grandeza fisica
+  float tensao = leitura * (5.0 / 1023.0);
+
+  // PROCESSAR: aplica a logica de controle programada
+  if (tensao &gt; 2.5) {
+    digitalWrite(PINO_LED, HIGH);   // ATUAR: liga a saida
+  } else {
+    digitalWrite(PINO_LED, LOW);    // ATUAR: desliga a saida
+  }
+
+  // COMUNICAR: envia o valor para o monitor serial ou para a rede
+  Serial.println(tensao);
+
+  delay(1000);                 // aguarda 1 segundo ate a proxima leitura
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. COMUNICAÇÃO COM OS SENSORES (Capacidade C4) ===== -->
+    <section class="secao secao-alt" id="comunicacao">
+      <div class="container">
+        <p class="kicker revelar">04 — comunicação de dados</p>
+        <h2 class="secao-titulo revelar">Como o Arduino conversa com cada sensor</h2>
+        <p class="secao-subtitulo revelar">
+          O tipo de sinal do sensor determina como ele deve ser ligado e lido. Estas são as formas
+          de comunicação usadas pelos 25 sensores do catálogo:
+        </p>
+
+        <div class="grade-cartoes revelar">
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg>
+            </div>
+            <h3>Analógico</h3>
+            <p>Tensão contínua e variável, lida por <code>analogRead()</code> nos pinos A0–A5 com resolução de 10 bits. Usado por LM35, LDR, MQ-2, MQ-135, ACS712 e ZMPT101B.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16h5V8h5v8h5V8h5"/></svg>
+            </div>
+            <h3>Digital</h3>
+            <p>Apenas dois estados (HIGH/LOW), lidos por <code>digitalRead()</code>. Usado por PIR, sensores de proximidade indutivo e capacitivo, SW-420, boia e Hall A3144.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 17h16"/><circle cx="9" cy="7" r="2"/><circle cx="15" cy="17" r="2"/></svg>
+            </div>
+            <h3>I2C</h3>
+            <p>Barramento de 2 fios (SDA/SCL, pinos A4 e A5) que endereça vários sensores na mesma linha. Usado pelo BH1750 e por displays e módulos de relógio.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/><circle cx="7" cy="6" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+            </div>
+            <h3>SPI</h3>
+            <p>Barramento síncrono de 4 fios (SCK, MOSI, MISO e SS) e alta velocidade, nos pinos 10 a 13. Usado pelo leitor RFID MFRC522 e por cartões SD.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h10l-3-3"/><path d="M20 16H10l3 3"/></svg>
+            </div>
+            <h3>UART / Serial</h3>
+            <p>Comunicação assíncrona de 2 fios (RX/TX, pinos 0 e 1), usada pelo Monitor Serial, por módulos GPS, GSM e para conversar com o ESP32.</p>
+          </article>
+          <article class="cartao-icone">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <h3>Protocolos de 1 fio</h3>
+            <p>Barramentos que trafegam dados em um único condutor: 1-Wire (DS18B20) e o protocolo proprietário por temporização de pulsos do DHT11 e do DHT22.</p>
+          </article>
+        </div>
+
+        <div class="cartao-destaque revelar" style="margin-top: 2rem;">
+          <h3>E na indústria? O padrão 4–20 mA</h3>
+          <p>
+            Em painéis industriais, o sinal analógico não trafega em tensão, e sim em
+            <strong>corrente de 4 a 20 mA</strong>. A razão é prática: a corrente não sofre queda ao
+            longo de cabos longos e o valor mínimo de 4 mA funciona como diagnóstico — se a leitura
+            cair a 0 mA, o sistema sabe que houve <strong>rompimento do cabo</strong>, e não que a
+            grandeza medida chegou a zero. Transdutores industriais equivalentes aos sensores deste
+            catálogo (temperatura, pressão, vazão, corrente) entregam o sinal nesse padrão para as
+            entradas analógicas do CLP.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. EXEMPLOS DE PROGRAMAÇÃO ===== -->
+    <section class="secao" id="exemplos">
+      <div class="container">
+        <p class="kicker revelar">05 — programação</p>
+        <h2 class="secao-titulo revelar">Exemplos de Programação com Sensores</h2>
+        <p class="secao-subtitulo revelar">
+          São <strong><span id="totalExemplos">25</span> exemplos completos</strong>, um para cada
+          sensor do catálogo, com esquema de ligação e código comentado. Selecione um sensor para
+          ver o projeto correspondente:
+        </p>
+
+        <!-- Chips gerados pelo js/arduino.js a partir do array SENSORES -->
+        <div class="seletor-exemplo revelar" id="seletorExemplo"></div>
+
+        <!-- Exemplo exibido no momento (descrição + ligação + código) -->
+        <div id="exemploArduino"></div>
+      </div>
+    </section>
+
+    <!-- ===== 6. INTEGRAÇÃO COM OUTRAS PLACAS (Capacidade C4) ===== -->
+    <section class="secao secao-alt" id="placas">
+      <div class="container">
+        <p class="kicker revelar">06 — integração</p>
+        <h2 class="secao-titulo revelar">Arduino, ESP32 e Raspberry Pi</h2>
+        <p class="secao-subtitulo revelar">
+          Os mesmos sensores podem ser integrados a diferentes controladores. A escolha depende da
+          necessidade de conectividade, de processamento e do custo do nó:
+        </p>
+
+        <div class="grade-placas revelar">
+          <article class="card-placa">
+            <div class="card-placa-imagem">
+              <img src="img/arduino-uno.png" alt="Placa Arduino Uno R3" loading="lazy" />
+            </div>
+            <div class="card-placa-corpo">
+              <h3>Arduino Uno</h3>
+              <p>
+                Microcontrolador de 8 bits sem conectividade nativa. Ideal para aquisição e controle
+                local, com resposta em tempo real e consumo previsível. Para IoT, precisa de um
+                módulo externo (ESP-01, Ethernet Shield ou GSM).
+              </p>
+              <span class="selo-sinal">5 V · 10 bits · sem Wi-Fi</span>
+            </div>
+          </article>
+
+          <article class="card-placa">
+            <div class="card-placa-imagem">
+              <img src="img/esp32.png" alt="Placa ESP32 DevKit" loading="lazy" />
+            </div>
+            <div class="card-placa-corpo">
+              <h3>ESP32</h3>
+              <p>
+                Microcontrolador de 32 bits com <strong>Wi-Fi e Bluetooth integrados</strong> e ADC
+                de 12 bits. É a escolha natural para o nó IoT: lê o sensor e publica o dado
+                diretamente na nuvem por MQTT ou HTTP. Atenção: opera em 3,3 V.
+              </p>
+              <span class="selo-sinal">3,3 V · 12 bits · Wi-Fi + BLE</span>
+            </div>
+          </article>
+
+          <article class="card-placa">
+            <div class="card-placa-imagem">
+              <img src="img/raspberry-pi.png" alt="Placa Raspberry Pi 4 Model B" loading="lazy" />
+            </div>
+            <div class="card-placa-corpo">
+              <h3>Raspberry Pi</h3>
+              <p>
+                Computador completo com Linux, usado como <strong>gateway IoT</strong>: concentra os
+                dados de vários nós, roda o broker MQTT, o banco de dados e o painel de supervisão.
+                Não possui conversor A/D — sensores analógicos exigem um ADC externo (ADS1115).
+              </p>
+              <span class="selo-sinal">3,3 V · GPIO · Linux</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Exemplo de nó IoT: leitura do sensor + publicação MQTT -->
+        <h3 class="secao-titulo revelar" style="font-size: 1.2rem; margin-top: 3rem;">
+          Do sensor à nuvem: um nó IoT com ESP32 e MQTT
+        </h3>
+        <p class="secao-subtitulo revelar">
+          Este exemplo mostra a etapa que fecha o ciclo da Internet das Coisas: o mesmo DHT11 dos
+          exemplos anteriores, agora publicando a leitura em um <strong>broker MQTT</strong>, de
+          onde qualquer painel de supervisão pode assinar os dados.
+        </p>
+        <div class="bloco-codigo revelar">
+          <div class="codigo-cabecalho">
+            <span class="codigo-titulo">no-iot-esp32-mqtt.ino</span>
+            <button class="botao-copiar" type="button">copiar</button>
+          </div>
+          <pre><code class="codigo-arduino">// --- No IoT: ESP32 le o sensor e publica os dados via MQTT ---
+#include &lt;WiFi.h&gt;
+#include &lt;PubSubClient.h&gt;
+#include &lt;DHT.h&gt;
+
+#define PINO_DHT 4
+#define TIPO_DHT DHT11
+
+// Credenciais da rede e endereco do broker MQTT
+const char* SSID     = "rede-industrial";
+const char* SENHA    = "senha-da-rede";
+const char* BROKER   = "broker.hivemq.com";
+const int   PORTA    = 1883;
+
+// Topico onde os dados serao publicados (hierarquia planta/setor/sensor)
+const char* TOPICO = "fabrica/setor-a/temperatura";
+
+WiFiClient clienteWiFi;
+PubSubClient mqtt(clienteWiFi);
+DHT dht(PINO_DHT, TIPO_DHT);
+
+// Conecta o ESP32 a rede Wi-Fi
+void conectarWiFi() {
+  WiFi.begin(SSID, SENHA);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println(" Wi-Fi conectado!");
+}
+
+// Garante a conexao com o broker, reconectando se necessario
+void conectarMQTT() {
+  while (!mqtt.connected()) {
+    if (mqtt.connect("esp32-no-01")) {
+      Serial.println("MQTT conectado!");
+    } else {
+      delay(2000);
+    }
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+  conectarWiFi();
+  mqtt.setServer(BROKER, PORTA);
+}
+
+void loop() {
+  if (!mqtt.connected()) conectarMQTT();
+  mqtt.loop();
+
+  float temperatura = dht.readTemperature();
+  float umidade = dht.readHumidity();
+
+  if (isnan(temperatura) || isnan(umidade)) {
+    Serial.println("Falha na leitura do sensor!");
+    delay(2000);
+    return;
+  }
+
+  // Monta o dado no formato JSON, padrao das plataformas IoT
+  char payload[80];
+  sprintf(payload, "{\"temperatura\":%.1f,\"umidade\":%.1f}", temperatura, umidade);
+
+  // PUBLICA: o dado sai do chao de fabrica e chega a nuvem
+  mqtt.publish(TOPICO, payload);
+  Serial.print("Publicado em ");
+  Serial.print(TOPICO);
+  Serial.print(" -&gt; ");
+  Serial.println(payload);
+
+  delay(10000);   // envia uma leitura a cada 10 segundos
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Sensor<span>Hub</span><em>4.0</em></a>
+      <p>Catálogo técnico de Sensores, Internet das Coisas &amp; Automação Industrial</p>
+      <p class="rodape-copy">© <span id="anoAtual"></span> SensorHub 4.0</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: base de dados + comportamento + realce de código + exemplos -->
+  <script src="js/dados-sensores.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/codigo.js"></script>
+  <script src="js/arduino.js"></script>
+</body>
+</html>

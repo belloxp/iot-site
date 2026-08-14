@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo técnico com 25 sensores IoT e industriais: conceito, princípio de funcionamento, especificações, tipo de sinal, aplicações e exemplos com Arduino." />
+  <title>Catálogo de Sensores — SensorHub 4.0</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%2215%22 y=%2225%22 width=%2270%22 height=%2255%22 rx=%2210%22 fill=%22%23ff9f1c%22/><circle cx=%2238%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><circle cx=%2262%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><rect x=%2247%22 y=%2210%22 width=%226%22 height=%2215%22 fill=%22%23ff9f1c%22/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== CABEÇALHO / MENU DE NAVEGAÇÃO ===== -->
+  <header class="cabecalho">
+    <nav class="nav container">
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Sensor<span>Hub</span><em>4.0</em></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-lista" id="navLista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sensores.html" class="ativo">Sensores</a></li>
+        <li><a href="arduino.html">Arduino</a></li>
+        <li><a href="robos.html">Robôs</a></li>
+        <li><a href="index.html#protocolos">Protocolos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="secao pagina-topo">
+      <div class="container">
+        <p class="kicker revelar">catálogo — 25 sensores</p>
+        <h1 class="secao-titulo revelar">Catálogo de Sensores IoT e Industriais</h1>
+        <p class="secao-subtitulo revelar">
+          Cada ficha apresenta conceito, princípio de funcionamento, especificações técnicas,
+          tipo de sinal, aplicações industriais e um exemplo completo de projeto com Arduino.
+          Use a busca ou filtre pela categoria desejada.
+        </p>
+
+        <!-- Campo de busca: o filtro é aplicado em tempo real pelo JavaScript -->
+        <div class="busca-caixa revelar">
+          <input
+            type="search"
+            id="buscaSensor"
+            placeholder="buscar_sensor → ex.: temperatura, i2c, corrente, gás"
+            aria-label="Buscar sensor"
+          />
+        </div>
+
+        <!-- Chips de categoria gerados dinamicamente pelo js/catalogo-sensores.js -->
+        <div class="filtros revelar" id="filtrosCategoria"></div>
+
+        <!-- Contador de resultados atualizado a cada filtragem -->
+        <p class="contagem-resultados" id="contagemSensores"></p>
+
+        <!-- Grade preenchida dinamicamente a partir de dados-sensores.js -->
+        <div class="grade-robos" id="gradeSensores"></div>
+
+        <!-- Mensagem exibida quando nenhum sensor atende aos filtros -->
+        <p class="sem-resultados" id="semSensores" hidden>
+          [ nenhum sensor encontrado para essa busca ]
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Sensor<span>Hub</span><em>4.0</em></a>
+      <p>Catálogo técnico de Sensores, Internet das Coisas &amp; Automação Industrial</p>
+      <p class="rodape-copy">© <span id="anoAtual"></span> SensorHub 4.0</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: base de dados + comportamento geral + renderização do catálogo -->
+  <script src="js/dados-sensores.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/catalogo-sensores.js"></script>
+</body>
+</html>

@@ -72,7 +72,7 @@ if (!robo) {
   `;
 } else {
   // Atualiza o título da aba do navegador com o nome do robô
-  document.title = `${robo.nome} — RoboHub 4.0`;
+  document.title = `${robo.nome} — SensorHub 4.0`;
 
   conteudoRobo.innerHTML = `
     <section class="secao">

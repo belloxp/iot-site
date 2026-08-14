@@ -6,7 +6,7 @@
    1. nome            6. tipoSinal (Analógico, Digital, I2C, SPI, UART, 4-20 mA)
    2. categoria       7. aplicacoes (industriais / IoT)
    3. conceito        8. exemplo (projeto + código Arduino)
-   4. funcionamento   9. imagem (ilustração vetorial)
+   4. funcionamento   9. imagem (foto ilustrativa do módulo)
    5. especificacoes 10. fabricantes / modelos comerciais
 
    Campos auxiliares: id (usado na URL), resumo (card) e
@@ -20,7 +20,7 @@ const SENSORES = [
     nome: "DHT11",
     categoria: "Temperatura e Umidade",
     sinal: "Digital",
-    imagem: "img/sensores/dht11.svg",
+    imagem: "img/sensores/dht11.png",
     resumo:
       "Sensor digital combinado de temperatura e umidade relativa do ar, de baixo custo e leitura por protocolo proprietário de 1 fio.",
     conceito:
@@ -108,7 +108,7 @@ void loop() {
     nome: "DHT22 / AM2302",
     categoria: "Temperatura e Umidade",
     sinal: "Digital",
-    imagem: "img/sensores/dht22.svg",
+    imagem: "img/sensores/dht22.png",
     resumo:
       "Versão de maior precisão e faixa de medição do DHT11, com resolução decimal e leitura de temperaturas negativas.",
     conceito:
@@ -196,7 +196,7 @@ void loop() {
     nome: "LM35",
     categoria: "Temperatura",
     sinal: "Analógico",
-    imagem: "img/sensores/lm35.svg",
+    imagem: "img/sensores/lm35.png",
     resumo:
       "Sensor analógico de temperatura com saída linear de 10 mV/°C, calibrado diretamente em graus Celsius.",
     conceito:
@@ -294,7 +294,7 @@ void loop() {
     nome: "DS18B20",
     categoria: "Temperatura",
     sinal: "Digital (1-Wire)",
-    imagem: "img/sensores/ds18b20.svg",
+    imagem: "img/sensores/ds18b20.png",
     resumo:
       "Termômetro digital de alta precisão com barramento 1-Wire e endereço único de 64 bits — vários sensores em um único fio.",
     conceito:
@@ -386,7 +386,7 @@ void loop() {
     nome: "LDR (Fotorresistor)",
     categoria: "Luminosidade",
     sinal: "Analógico",
-    imagem: "img/sensores/ldr.svg",
+    imagem: "img/sensores/ldr.png",
     resumo:
       "Resistor dependente de luz: sua resistência cai à medida que a iluminação aumenta. O sensor de luz mais simples e barato.",
     conceito:
@@ -466,7 +466,7 @@ void loop() {
     nome: "BH1750",
     categoria: "Luminosidade",
     sinal: "I2C",
-    imagem: "img/sensores/bh1750.svg",
+    imagem: "img/sensores/bh1750.png",
     resumo:
       "Sensor digital de luz ambiente que entrega o valor diretamente em lux pelo barramento I2C, já com resposta próxima à do olho humano.",
     conceito:
@@ -557,7 +557,7 @@ void loop() {
     nome: "HC-SR04",
     categoria: "Distância",
     sinal: "Digital",
-    imagem: "img/sensores/hcsr04.svg",
+    imagem: "img/sensores/hcsr04.png",
     resumo:
       "Sensor ultrassônico que mede distância pelo tempo de eco de um pulso sonoro de 40 kHz, sem contato com o objeto.",
     conceito:
@@ -658,7 +658,7 @@ void loop() {
     nome: "PIR HC-SR501",
     categoria: "Movimento",
     sinal: "Digital",
-    imagem: "img/sensores/pir.svg",
+    imagem: "img/sensores/pir.png",
     resumo:
       "Sensor infravermelho passivo que detecta a movimentação de corpos quentes (pessoas e animais) pela variação da radiação térmica.",
     conceito:
@@ -751,7 +751,7 @@ void loop() {
     nome: "Sensor Indutivo LJ12A3",
     categoria: "Proximidade",
     sinal: "Digital (PNP/NPN)",
-    imagem: "img/sensores/indutivo.svg",
+    imagem: "img/sensores/indutivo.png",
     resumo:
       "Sensor de proximidade industrial que detecta objetos metálicos sem contato, por variação de campo eletromagnético.",
     conceito:
@@ -848,7 +848,7 @@ void loop() {
     nome: "Sensor Capacitivo LJ18A3",
     categoria: "Proximidade",
     sinal: "Digital (PNP/NPN)",
-    imagem: "img/sensores/capacitivo.svg",
+    imagem: "img/sensores/capacitivo.png",
     resumo:
       "Sensor de proximidade que detecta qualquer material — sólidos, líquidos, plásticos e pós — por variação de capacitância.",
     conceito:
@@ -937,7 +937,7 @@ void loop() {
     nome: "MQ-2",
     categoria: "Gás",
     sinal: "Analógico + Digital",
-    imagem: "img/sensores/mq2.svg",
+    imagem: "img/sensores/mq2.png",
     resumo:
       "Sensor de gases combustíveis e fumaça (GLP, metano, propano, hidrogênio, álcool) baseado em óxido de estanho aquecido.",
     conceito:
@@ -1032,7 +1032,7 @@ void loop() {
     nome: "MQ-135",
     categoria: "Gás",
     sinal: "Analógico + Digital",
-    imagem: "img/sensores/mq135.svg",
+    imagem: "img/sensores/mq135.png",
     resumo:
       "Sensor de qualidade do ar sensível a amônia, óxidos de nitrogênio, benzeno, fumaça e CO₂ — usado como índice geral de poluição.",
     conceito:
@@ -1126,7 +1126,7 @@ void loop() {
     nome: "Sensor Capacitivo de Umidade do Solo",
     categoria: "Umidade",
     sinal: "Analógico",
-    imagem: "img/sensores/solo.svg",
+    imagem: "img/sensores/solo.png",
     resumo:
       "Sonda que mede a umidade do solo por variação de capacitância, sem eletrodos expostos — logo, sem corrosão.",
     conceito:
@@ -1217,7 +1217,7 @@ void loop() {
     nome: "Sensor de Chuva FC-37",
     categoria: "Chuva",
     sinal: "Analógico + Digital",
-    imagem: "img/sensores/fc37.svg",
+    imagem: "img/sensores/fc37.png",
     resumo:
       "Placa com trilhas condutoras interdigitadas que detecta a presença e a intensidade de água da chuva sobre a superfície.",
     conceito:
@@ -1302,7 +1302,7 @@ void loop() {
     nome: "Sensor de Nível (Boia)",
     categoria: "Nível",
     sinal: "Digital (contato seco)",
-    imagem: "img/sensores/boia.svg",
+    imagem: "img/sensores/boia.png",
     resumo:
       "Chave de nível que abre ou fecha um contato elétrico quando o flutuador é deslocado pelo líquido do reservatório.",
     conceito:
@@ -1397,7 +1397,7 @@ void loop() {
     nome: "YF-S201",
     categoria: "Fluxo",
     sinal: "Digital (frequência)",
-    imagem: "img/sensores/yfs201.svg",
+    imagem: "img/sensores/yfs201.png",
     resumo:
       "Sensor de vazão de água com turbina interna e sensor Hall, que gera pulsos proporcionais ao volume que passa pela tubulação.",
     conceito:
@@ -1486,6 +1486,904 @@ void loop() {
       "YF-S201, YF-S401 (1/4 pol.) e YF-B5 (corpo metálico) — família de sensores de turbina",
       "Seeed Studio — G1/2 Water Flow Sensor (mesma base construtiva)",
       "Industriais: medidores eletromagnéticos e ultrassônicos da Endress+Hauser, Krohne e Siemens (saída 4-20 mA / Modbus)"
+    ]
+  },
+
+  /* ---------------------------------------------------------- 17 */
+  {
+    id: "acs712",
+    nome: "ACS712",
+    categoria: "Corrente",
+    sinal: "Analógico",
+    imagem: "img/sensores/acs712.png",
+    resumo:
+      "Sensor de corrente por efeito Hall com isolação galvânica, capaz de medir corrente contínua e alternada sem contato elétrico com o circuito medido.",
+    conceito:
+      "O ACS712 é um sensor de corrente linear baseado no efeito Hall. A corrente a ser medida atravessa uma trilha de cobre interna ao próprio chip, e o sensor devolve uma tensão analógica proporcional a essa corrente. Sua característica mais importante é a isolação galvânica: o circuito de potência (que pode operar em 220 V) fica eletricamente separado do circuito de medição de 5 V, permitindo que um Arduino monitore com segurança cargas de alta tensão. Por medir tanto corrente contínua quanto alternada, é a base de medidores de energia, monitores de motores e sistemas de proteção contra sobrecarga.",
+    funcionamento:
+      "A corrente medida percorre um condutor de cobre de baixíssima resistência (1,2 mΩ) integrado ao encapsulamento. Toda corrente elétrica gera ao seu redor um campo magnético proporcional à sua intensidade (lei de Ampère). Um elemento Hall de silício posicionado logo abaixo desse condutor converte o campo magnético em uma pequena tensão, que é amplificada, filtrada e ajustada por um circuito interno. A saída é ratiométrica e fica centrada na metade da alimentação: com 5 V e corrente zero, a saída é de 2,5 V. A partir daí, a tensão sobe para correntes em um sentido e desce para o sentido oposto, na proporção definida pela sensibilidade do modelo (por exemplo, 185 mV por ampère na versão de 5 A).",
+    especificacoes: [
+      "Tensão de alimentação: 5 V CC — corrente de consumo de 10 mA",
+      "Versões: 5 A (185 mV/A), 20 A (100 mV/A) e 30 A (66 mV/A)",
+      "Saída em repouso (0 A): VCC/2 = 2,5 V",
+      "Mede corrente contínua (CC) e alternada (CA)",
+      "Isolação: 2,1 kVRMS entre o circuito de potência e a saída",
+      "Resistência do condutor interno: 1,2 mΩ (baixa perda por aquecimento)",
+      "Largura de banda: até 80 kHz — tempo de resposta de 5 µs",
+      "Erro típico: ±1,5% a 25 °C"
+    ],
+    tipoSinal:
+      "Analógico — tensão contínua proporcional à corrente, lida por uma entrada ADC (A0 a A5 no Arduino). Por ser ratiométrica, a leitura depende da estabilidade da alimentação de 5 V. Em ambiente industrial, o equivalente é o transdutor de corrente com saída padronizada de 4-20 mA.",
+    aplicacoes: [
+      "Monitoramento de consumo elétrico e submedição de energia em IoT",
+      "Proteção de motores contra sobrecarga, subcarga e rotor travado",
+      "Manutenção preditiva pela assinatura de corrente do motor (análise MCSA)",
+      "Controle de carga e descarga de baterias em sistemas solares",
+      "Detecção de falha de fase e de queima de resistências em fornos industriais"
+    ],
+    exemplo: {
+      titulo: "Monitor de corrente de motor com proteção contra sobrecarga",
+      descricao:
+        "O ACS712 mede a corrente de um motor e o Arduino calcula o valor eficaz (RMS) a partir de uma janela de amostras. Se a corrente ultrapassar o limite nominal por mais de 3 segundos, um relé desliga a carga — evitando desarmes indevidos causados pelo pico de partida do motor.",
+      ligacao: [
+        "VCC → 5 V do Arduino",
+        "GND → GND",
+        "OUT → pino analógico A0",
+        "Terminais verdes (IP+ e IP-) → em SÉRIE com a carga a ser medida",
+        "Relé de proteção → pino digital 7"
+      ],
+      codigo: `// --- ACS712: medicao de corrente RMS com protecao ---
+const int PINO_SENSOR = A0;
+const int PINO_RELE   = 7;
+
+const float SENSIBILIDADE = 0.185;  // V/A -> 185 mV/A (versao 5 A)
+const float CORRENTE_MAX  = 4.0;    // limite de protecao em amperes
+float offset = 2.5;                 // tensao de saida com 0 A
+
+// Le uma janela de amostras e devolve a corrente eficaz (RMS)
+float lerCorrenteRMS() {
+  float somaQuadrados = 0;
+  const int AMOSTRAS = 500;
+
+  for (int i = 0; i < AMOSTRAS; i++) {
+    // Converte a leitura de 10 bits (0-1023) para volts
+    float tensao = analogRead(PINO_SENSOR) * (5.0 / 1023.0);
+    float corrente = (tensao - offset) / SENSIBILIDADE;
+    somaQuadrados += corrente * corrente;
+    delayMicroseconds(200);
+  }
+  return sqrt(somaQuadrados / AMOSTRAS);
+}
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PINO_RELE, OUTPUT);
+  digitalWrite(PINO_RELE, HIGH);   // carga ligada
+
+  // Calibracao: mede o offset real com a carga desligada
+  long soma = 0;
+  for (int i = 0; i < 1000; i++) soma += analogRead(PINO_SENSOR);
+  offset = (soma / 1000.0) * (5.0 / 1023.0);
+  Serial.print("Offset calibrado: "); Serial.println(offset, 3);
+}
+
+void loop() {
+  static int segundosAcima = 0;
+  float corrente = lerCorrenteRMS();
+
+  Serial.print("Corrente: ");
+  Serial.print(corrente, 2);
+  Serial.println(" A");
+
+  // A sobrecarga so desarma se persistir - ignora o pico de partida
+  if (corrente > CORRENTE_MAX) segundosAcima++;
+  else                         segundosAcima = 0;
+
+  if (segundosAcima >= 3) {
+    digitalWrite(PINO_RELE, LOW);
+    Serial.println("SOBRECARGA! Carga desligada pela protecao.");
+  }
+  delay(1000);
+}`
+    },
+    fabricantes: [
+      "Allegro MicroSystems — fabricante original das famílias ACS712, ACS758 (200 A) e ACS37800",
+      "Módulos prontos ACS712ELCTR-05B-T, -20A-T e -30A-T (placa azul com bornes)",
+      "Alternativas industriais: transdutores de corrente Weg, Schneider Electric e Sense (saída 4-20 mA)"
+    ]
+  },
+
+  /* ---------------------------------------------------------- 18 */
+  {
+    id: "zmpt",
+    nome: "ZMPT101B",
+    categoria: "Tensão",
+    sinal: "Analógico",
+    imagem: "img/sensores/zmpt.png",
+    resumo:
+      "Módulo sensor de tensão alternada com transformador de precisão, usado para medir a tensão da rede elétrica com isolação total.",
+    conceito:
+      "O ZMPT101B é um módulo para medição de tensão alternada (CA) construído em torno de um transformador de tensão de precisão. Ele reduz a tensão da rede elétrica — 127 V ou 220 V — a um nível seguro que pode ser lido pela entrada analógica de um microcontrolador. Como o acoplamento é magnético, existe isolação galvânica completa entre a rede e o circuito de baixa tensão. Junto com o ACS712, forma a dupla clássica de medidores de energia em IoT: um mede a tensão, o outro a corrente, e o produto dos dois fornece a potência consumida.",
+    funcionamento:
+      "O coração do módulo é um transformador de precisão do tipo corrente-corrente (2 mA : 2 mA) com alta linearidade e baixo defasamento angular. A tensão da rede é aplicada ao primário através de um resistor limitador, o que converte a tensão em uma corrente proporcional de poucos miliampères. O secundário reproduz essa corrente, que é transformada de volta em tensão por um resistor de carga. Como o microcontrolador não lê tensões negativas, um amplificador operacional na placa soma um nível contínuo de VCC/2 ao sinal: a senoide passa a oscilar em torno de 2,5 V. Um trimpot multivoltas ajusta o ganho. O firmware amostra rapidamente a forma de onda, subtrai o offset, eleva cada amostra ao quadrado e extrai a raiz da média — obtendo o valor eficaz (RMS) da tensão.",
+    especificacoes: [
+      "Tensão de alimentação do módulo: 5 V CC (versões 3,3 V disponíveis)",
+      "Faixa de medição: até 250 V CA (com o resistor limitador padrão)",
+      "Relação do transformador: 1000:1000 (2 mA : 2 mA)",
+      "Saída analógica centrada em VCC/2, com amplitude ajustável por trimpot",
+      "Linearidade: melhor que 0,2% — defasagem angular menor que 20'",
+      "Faixa de frequência: 50 Hz / 60 Hz",
+      "Isolação: transformador com rigidez dielétrica de 3000 V"
+    ],
+    tipoSinal:
+      "Analógico — senoide de baixa amplitude sobreposta a um nível CC de VCC/2, lida por uma entrada ADC. Exige amostragem rápida (centenas de leituras por ciclo) para o cálculo correto do valor RMS. Em quadros industriais, a função equivalente é feita por multimedidores de energia com saída Modbus RTU.",
+    aplicacoes: [
+      "Medidores de energia e submedição por setor da planta industrial (IoT energético)",
+      "Detecção de subtensão, sobretensão e falta de fase em quadros de distribuição",
+      "Monitoramento da qualidade da energia elétrica e proteção de equipamentos sensíveis",
+      "Sistemas de nobreak, geradores e transferência automática de fonte",
+      "Cálculo de potência ativa e fator de potência quando combinado ao ACS712"
+    ],
+    exemplo: {
+      titulo: "Monitor de tensão da rede com alarme de subtensão e sobretensão",
+      descricao:
+        "O Arduino amostra a forma de onda durante alguns ciclos completos, calcula a tensão eficaz e a compara com a faixa aceitável da rede. Fora da faixa, aciona um alerta — o mesmo princípio usado por protetores eletrônicos de geladeiras e servidores. ATENÇÃO: o primário do módulo é ligado diretamente à rede elétrica; a montagem exige circuito desenergizado, isolação adequada e acompanhamento do docente.",
+      ligacao: [
+        "VCC → 5 V do Arduino",
+        "GND → GND",
+        "OUT → pino analógico A0",
+        "Terminais do primário → fase e neutro da rede (com fusível de proteção)",
+        "Trimpot ajustado até a saída ficar em ~2,5 V com a rede desligada"
+      ],
+      codigo: `// --- ZMPT101B: medicao de tensao eficaz (RMS) da rede ---
+const int PINO_SENSOR = A0;
+
+// Constante obtida na calibracao com um multimetro de referencia
+const float FATOR_CALIBRACAO = 0.35;
+const float TENSAO_MINIMA = 198.0;   // limite inferior para rede 220 V
+const float TENSAO_MAXIMA = 242.0;   // limite superior para rede 220 V
+
+float lerTensaoRMS() {
+  float somaQuadrados = 0;
+  int amostras = 0;
+  unsigned long inicio = millis();
+
+  // Amostra por 200 ms = 12 ciclos completos em 60 Hz
+  while (millis() - inicio < 200) {
+    int leitura = analogRead(PINO_SENSOR);
+    // Remove o nivel CC de 512 (equivalente a 2,5 V)
+    float valor = leitura - 512.0;
+    somaQuadrados += valor * valor;
+    amostras++;
+  }
+
+  float rmsBruto = sqrt(somaQuadrados / amostras);
+  return rmsBruto * FATOR_CALIBRACAO;
+}
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  float tensao = lerTensaoRMS();
+
+  Serial.print("Tensao da rede: ");
+  Serial.print(tensao, 1);
+  Serial.print(" V -> ");
+
+  if (tensao < TENSAO_MINIMA) {
+    Serial.println("SUBTENSAO! Risco para motores e compressores.");
+  } else if (tensao > TENSAO_MAXIMA) {
+    Serial.println("SOBRETENSAO! Risco para equipamentos eletronicos.");
+  } else {
+    Serial.println("tensao normal.");
+  }
+  delay(1000);
+}`
+    },
+    fabricantes: [
+      "Qingxian Zeming Langxi Electronic — fabricante original do transformador ZMPT101B",
+      "Módulos comerciais ZMPT101B V1.0 (placa azul com trimpot multivoltas)",
+      "Alternativas: transformadores ZMPT107, sensores de tensão Hall LV 25-P (LEM) e multimedidores Weg MMW03"
+    ]
+  },
+
+  /* ---------------------------------------------------------- 19 */
+  {
+    id: "sw420",
+    nome: "SW-420",
+    categoria: "Vibração",
+    sinal: "Digital",
+    imagem: "img/sensores/sw420.png",
+    resumo:
+      "Módulo detector de vibração e impacto com sensibilidade ajustável, usado em alarmes e monitoramento de máquinas rotativas.",
+    conceito:
+      "O SW-420 é um sensor de vibração do tipo interruptor mecânico. Diferente de um acelerômetro, ele não mede a intensidade nem a direção da vibração: apenas informa se houve movimento acima de um limiar ajustável. Essa simplicidade o torna barato e imediato de usar, sendo aplicado em alarmes contra violação, detecção de impacto em transporte de cargas e, na indústria, como indicador de anormalidade em máquinas que deveriam operar suavemente.",
+    funcionamento:
+      "Dentro de um pequeno cilindro metálico existe uma mola condutora envolvendo um eletrodo central. Em repouso, a mola encosta no eletrodo e o circuito permanece fechado (nível lógico baixo). Quando o conjunto sofre vibração ou impacto, a mola oscila e perde momentaneamente o contato, abrindo e fechando o circuito rapidamente e produzindo um trem de pulsos irregulares. Na placa, esse sinal alimenta um comparador LM393: o trimpot define a tensão de referência, ou seja, o limiar de sensibilidade, e a saída DO comuta para nível alto sempre que a vibração ultrapassa esse limiar. Um LED indicador na placa acende junto com o disparo.",
+    especificacoes: [
+      "Tensão de operação: 3,3 V a 5 V CC",
+      "Saída digital (DO) via comparador LM393 — nível TTL",
+      "Sensibilidade ajustável por trimpot de 10 kΩ",
+      "Estado em repouso: contato fechado (nível lógico baixo)",
+      "Tempo de resposta: menor que 0,1 ms",
+      "Corrente de saída: até 15 mA",
+      "Não direcional — responde a vibração em qualquer eixo",
+      "Temperatura de operação: -40 °C a +85 °C"
+    ],
+    tipoSinal:
+      "Digital — saída binária de dois estados (com vibração / sem vibração), lida por entrada digital comum ou, preferencialmente, por interrupção externa para contar eventos sem travar o programa. Não fornece amplitude nem frequência: quando o projeto exige análise de vibração real, usa-se um acelerômetro (MPU-6050, ADXL345) ou um transdutor industrial de 4-20 mA.",
+    aplicacoes: [
+      "Manutenção preditiva: detecção de desbalanceamento e desalinhamento em motores e bombas",
+      "Alarmes contra violação de painéis, cofres, caixas eletrônicos e equipamentos",
+      "Monitoramento de impacto no transporte e na movimentação de cargas frágeis",
+      "Desligamento de segurança de máquinas com vibração anormal",
+      "Detecção de funcionamento (liga/desliga) de equipamentos sem acesso ao circuito elétrico"
+    ],
+    exemplo: {
+      titulo: "Monitor de vibração de motor para manutenção preditiva",
+      descricao:
+        "O sensor é fixado na carcaça de um motor. O Arduino conta os eventos de vibração em janelas de 10 segundos: uma contagem baixa indica operação normal, e uma contagem elevada sinaliza desbalanceamento ou desgaste de rolamento — a informação que, em um sistema IoT, seria publicada por MQTT para o painel de manutenção.",
+      ligacao: [
+        "VCC → 5 V do Arduino",
+        "GND → GND",
+        "DO → pino digital 2 (entrada de interrupção)",
+        "LED de alerta → pino digital 8",
+        "Módulo fixado rigidamente na carcaça do motor"
+      ],
+      codigo: `// --- SW-420: contagem de eventos de vibracao ---
+const int PINO_SW420 = 2;
+const int LED_ALERTA = 8;
+
+const int LIMITE_ALERTA = 50;   // eventos por janela de 10 s
+
+volatile unsigned int eventos = 0;
+unsigned long marcaTempo = 0;
+
+// Interrupcao: incrementa a cada pulso do sensor
+void registrarVibracao() {
+  eventos++;
+}
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PINO_SW420, INPUT);
+  pinMode(LED_ALERTA, OUTPUT);
+  attachInterrupt(digitalPinToInterrupt(PINO_SW420), registrarVibracao, RISING);
+  marcaTempo = millis();
+}
+
+void loop() {
+  // Fecha a janela de medicao a cada 10 segundos
+  if (millis() - marcaTempo < 10000) return;
+  marcaTempo = millis();
+
+  noInterrupts();
+  unsigned int total = eventos;
+  eventos = 0;
+  interrupts();
+
+  Serial.print("Eventos de vibracao (10 s): ");
+  Serial.print(total);
+
+  if (total > LIMITE_ALERTA) {
+    digitalWrite(LED_ALERTA, HIGH);
+    Serial.println(" -> ALERTA: vibracao acima do normal!");
+  } else {
+    digitalWrite(LED_ALERTA, LOW);
+    Serial.println(" -> operacao normal.");
+  }
+}`
+    },
+    fabricantes: [
+      "Sensor SW-420 e variante SW-18010P (mais sensível) — fabricação genérica asiática",
+      "Módulos KY-002 e KY-031 (versões com encapsulamento diferente do mesmo princípio)",
+      "Alternativas industriais: transmissores de vibração SKF, IFM Electronic e Banner (saída 4-20 mA / IO-Link)"
+    ]
+  },
+
+  /* ---------------------------------------------------------- 20 */
+  {
+    id: "hall",
+    nome: "Sensor Hall A3144",
+    categoria: "Rotação",
+    sinal: "Digital",
+    imagem: "img/sensores/hall.png",
+    resumo:
+      "Chave magnética de efeito Hall que detecta a aproximação de um ímã, usada em tacômetros, contadores de voltas e fim de curso sem contato.",
+    conceito:
+      "O A3144 é um sensor de efeito Hall do tipo interruptor: ele não mede a intensidade do campo magnético, apenas comuta a saída quando um ímã se aproxima o suficiente. Por não haver contato mecânico, tem vida útil praticamente ilimitada e é imune a poeira, água e sujeira — vantagem decisiva sobre chaves de contato. É a solução padrão para medir a velocidade de rotação de motores, eixos e ventiladores, bastando fixar um ímã na parte girante.",
+    funcionamento:
+      "Uma corrente elétrica atravessa uma fina lâmina de material semicondutor. Quando um campo magnético perpendicular incide sobre ela, a força de Lorentz desvia lateralmente os portadores de carga, criando uma diferença de potencial entre as bordas da lâmina — é a tensão Hall, proporcional à intensidade do campo. No A3144, essa tensão é amplificada e comparada com um limiar por um circuito Schmitt trigger, o que garante uma comutação limpa, sem oscilação. O sensor é unipolar: responde apenas ao polo sul do ímã. A saída é do tipo coletor aberto — o chip só consegue puxar a linha para o nível baixo, exigindo resistor de pull-up (já presente nos módulos prontos). Para medir rotação, conta-se quantos pulsos ocorrem por segundo e multiplica-se por 60 para obter o valor em RPM.",
+    especificacoes: [
+      "Tensão de operação: 4,5 V a 24 V CC (ampla faixa)",
+      "Corrente de alimentação: 9 mA (típica)",
+      "Saída em coletor aberto: suporta até 25 mA",
+      "Sensor unipolar — comuta com o polo sul do ímã",
+      "Frequência de operação: até 100 kHz",
+      "Tempos de subida e descida: menores que 0,5 µs",
+      "Temperatura de operação: -40 °C a +150 °C",
+      "Encapsulamento TO-92 de 3 pinos"
+    ],
+    tipoSinal:
+      "Digital em coletor aberto — trem de pulsos cuja frequência é proporcional à rotação. Lido por interrupção externa no microcontrolador ou por entrada rápida de contagem no CLP. Não confundir com os sensores Hall lineares (como o do ACS712), que fornecem saída analógica proporcional ao campo.",
+    aplicacoes: [
+      "Tacômetros e medição de RPM de motores, eixos e ventiladores",
+      "Contagem de peças e de voltas em esteiras e roletes",
+      "Fim de curso e detecção de posição sem contato em cilindros pneumáticos",
+      "Sensores de velocidade em veículos, bicicletas e sistemas ABS",
+      "Detecção de abertura de portas e tampas em sistemas de intertravamento de segurança"
+    ],
+    exemplo: {
+      titulo: "Tacômetro digital com detecção de motor parado",
+      descricao:
+        "Um ímã é fixado no eixo do motor e o sensor Hall é posicionado a poucos milímetros dele. Cada volta gera um pulso; o Arduino conta os pulsos em janelas de 1 segundo e converte para RPM. Se nenhum pulso for detectado com o motor acionado, o sistema sinaliza rotor travado — falha crítica que causa a queima do enrolamento.",
+      ligacao: [
+        "VCC → 5 V do Arduino",
+        "GND → GND",
+        "OUT → pino digital 2 (com pull-up de 10 kΩ, se sensor puro)",
+        "Ímã de neodímio fixado no eixo, com folga de 3 a 5 mm do sensor"
+      ],
+      codigo: `// --- Sensor Hall A3144: tacometro digital (RPM) ---
+const int PINO_HALL = 2;
+const int IMAS_POR_VOLTA = 1;   // quantidade de imas fixados no eixo
+
+volatile unsigned int pulsos = 0;
+unsigned long marcaTempo = 0;
+
+// Interrupcao: chamada a cada passagem do ima
+void contarPulso() {
+  pulsos++;
+}
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PINO_HALL, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(PINO_HALL), contarPulso, FALLING);
+  marcaTempo = millis();
+}
+
+void loop() {
+  // Calcula a rotacao uma vez por segundo
+  if (millis() - marcaTempo < 1000) return;
+  marcaTempo = millis();
+
+  noInterrupts();
+  unsigned int total = pulsos;
+  pulsos = 0;
+  interrupts();
+
+  // pulsos por segundo x 60 = rotacoes por minuto
+  int rpm = (total * 60) / IMAS_POR_VOLTA;
+
+  Serial.print("Rotacao: ");
+  Serial.print(rpm);
+  Serial.println(" RPM");
+
+  if (rpm == 0) {
+    Serial.println("ALERTA: eixo parado - verificar rotor travado!");
+  }
+}`
+    },
+    fabricantes: [
+      "Allegro MicroSystems — A3144, A1104 e família de chaves Hall",
+      "Honeywell — série SS400 e SS500 de sensores Hall digitais",
+      "Módulos prontos KY-003 (Hall digital) e KY-024 (Hall linear com saída analógica)",
+      "Industriais: sensores de rotação Pepperl+Fuchs, IFM e Turck com saída PNP/NPN"
+    ]
+  },
+
+  /* ---------------------------------------------------------- 21 */
+  {
+    id: "mfrc522",
+    nome: "MFRC522 (RFID)",
+    categoria: "RFID",
+    sinal: "SPI",
+    imagem: "img/sensores/mfrc522.png",
+    resumo:
+      "Leitor e gravador RFID de 13,56 MHz compatível com cartões MIFARE, usado em controle de acesso e identificação automática de itens.",
+    conceito:
+      "O MFRC522 é um módulo de identificação por radiofrequência (RFID) que lê e grava dados em cartões e tags que operam em 13,56 MHz, seguindo o padrão ISO/IEC 14443A — o mesmo dos cartões MIFARE. RFID é uma das tecnologias fundacionais da Internet das Coisas: ela dá a cada objeto físico uma identidade digital única, permitindo rastrear peças, ferramentas e pessoas sem digitação manual e sem contato. Na indústria, é o que permite saber, automaticamente, qual produto está em qual estação da linha de produção.",
+    funcionamento:
+      "A antena impressa na placa gera um campo eletromagnético de 13,56 MHz. Quando uma tag entra nesse campo, a bobina interna do cartão capta a energia por indução e alimenta seu próprio chip — por isso as tags são passivas, sem bateria. Energizado, o chip do cartão responde modulando a carga sobre o campo do leitor, técnica chamada modulação de carga, que o MFRC522 detecta e decodifica. O diálogo segue o protocolo ISO 14443A: o leitor emite um comando de requisição, as tags presentes respondem, um procedimento de anticolisão isola uma única tag e obtém seu UID (identificador único de fábrica), e então é possível autenticar um setor com chave criptográfica e ler ou gravar seus blocos de dados. O módulo conversa com o microcontrolador por SPI, atuando como escravo.",
+    especificacoes: [
+      "Tensão de operação: 3,3 V CC — os pinos NÃO são tolerantes a 5 V",
+      "Frequência de trabalho: 13,56 MHz (padrão ISO/IEC 14443A)",
+      "Distância de leitura: 0 a 60 mm (típica de 25 mm)",
+      "Corrente: 13 a 26 mA em operação e 10 µA em modo de repouso",
+      "Cartões suportados: MIFARE Classic 1K/4K, MIFARE Ultralight e NTAG",
+      "Taxa de transferência SPI: até 10 Mbit/s",
+      "Memória típica do cartão: 1 KB em 16 setores de 4 blocos",
+      "Interfaces disponíveis no chip: SPI, I2C e UART (módulos vêm em SPI)"
+    ],
+    tipoSinal:
+      "SPI — barramento síncrono de 4 fios (SCK, MOSI, MISO e SS), com o Arduino operando como mestre. Permite altas velocidades e vários dispositivos no mesmo barramento, cada um com seu próprio pino SS. Atenção ao nível lógico: o módulo é de 3,3 V e deve ser alimentado pelo pino 3V3 do Arduino, nunca pelo de 5 V.",
+    aplicacoes: [
+      "Controle de acesso a áreas restritas, catracas e armários de ferramentas",
+      "Identificação de operadores e liberação de máquinas conforme habilitação",
+      "Rastreabilidade de peças, paletes e ordens de produção na linha de montagem",
+      "Controle de estoque e inventário automatizado em almoxarifados",
+      "Registro de ponto e sistemas de bilhetagem em transporte público"
+    ],
+    exemplo: {
+      titulo: "Controle de acesso com liberação por cartão autorizado",
+      descricao:
+        "O leitor aguarda a aproximação de um cartão, lê seu UID e o compara com uma lista de identificadores autorizados. Sendo válido, aciona um relé que destrava a fechadura elétrica por 3 segundos e registra o evento; sendo inválido, sinaliza a negativa. Em um sistema IoT real, o UID seria consultado em um servidor e cada acesso enviado à nuvem.",
+      ligacao: [
+        "VCC (3,3 V) → pino 3V3 do Arduino — NUNCA em 5 V",
+        "GND → GND | RST → pino digital 9 | SDA (SS) → pino digital 10",
+        "MOSI → pino 11 | MISO → pino 12 | SCK → pino 13",
+        "Relé da fechadura → pino digital 4",
+        "LED verde → pino 5 | LED vermelho → pino 6"
+      ],
+      codigo: `// --- MFRC522: controle de acesso por RFID ---
+// Biblioteca: "MFRC522" (Miguel Balboa)
+#include <SPI.h>
+#include <MFRC522.h>
+
+#define PINO_SS  10
+#define PINO_RST 9
+
+const int RELE = 4, LED_VERDE = 5, LED_VERMELHO = 6;
+
+MFRC522 leitor(PINO_SS, PINO_RST);
+
+// Lista de UIDs autorizados (4 bytes cada)
+byte autorizados[][4] = {
+  {0xA1, 0xB2, 0xC3, 0xD4},
+  {0x12, 0x34, 0x56, 0x78}
+};
+const int TOTAL_AUTORIZADOS = 2;
+
+// Compara o UID lido com a lista de cartoes liberados
+bool cartaoAutorizado(byte *uid, byte tamanho) {
+  if (tamanho != 4) return false;
+
+  for (int i = 0; i < TOTAL_AUTORIZADOS; i++) {
+    bool igual = true;
+    for (int j = 0; j < 4; j++) {
+      if (uid[j] != autorizados[i][j]) { igual = false; break; }
+    }
+    if (igual) return true;
+  }
+  return false;
+}
+
+void setup() {
+  Serial.begin(9600);
+  SPI.begin();            // inicia o barramento SPI
+  leitor.PCD_Init();      // inicia o modulo RFID
+
+  pinMode(RELE, OUTPUT);
+  pinMode(LED_VERDE, OUTPUT);
+  pinMode(LED_VERMELHO, OUTPUT);
+  Serial.println("Aproxime o cartao do leitor...");
+}
+
+void loop() {
+  // Verifica se ha um novo cartao no campo do leitor
+  if (!leitor.PICC_IsNewCardPresent()) return;
+  if (!leitor.PICC_ReadCardSerial()) return;
+
+  Serial.print("UID lido: ");
+  for (byte i = 0; i < leitor.uid.size; i++) {
+    Serial.print(leitor.uid.uidByte[i], HEX);
+    Serial.print(" ");
+  }
+  Serial.println();
+
+  if (cartaoAutorizado(leitor.uid.uidByte, leitor.uid.size)) {
+    Serial.println("ACESSO LIBERADO");
+    digitalWrite(LED_VERDE, HIGH);
+    digitalWrite(RELE, HIGH);       // destrava a fechadura
+    delay(3000);
+    digitalWrite(RELE, LOW);
+    digitalWrite(LED_VERDE, LOW);
+  } else {
+    Serial.println("ACESSO NEGADO");
+    digitalWrite(LED_VERMELHO, HIGH);
+    delay(1500);
+    digitalWrite(LED_VERMELHO, LOW);
+  }
+
+  leitor.PICC_HaltA();          // encerra a comunicacao com o cartao
+  leitor.PCD_StopCrypto1();
+}`
+    },
+    fabricantes: [
+      "NXP Semiconductors — fabricante do chip MFRC522 e da tecnologia MIFARE",
+      "Módulos comerciais RC522 (kit com cartão e chaveiro) e RFID-RC522 da Sunfounder",
+      "Alternativas: PN532 (com suporte a NFC), RDM6300 (125 kHz) e leitores industriais Balluff, IFM e Turck com saída IO-Link"
+    ]
+  },
+
+  /* ---------------------------------------------------------- 22 */
+  {
+    id: "hx711",
+    nome: "Célula de Carga + HX711",
+    categoria: "Peso",
+    sinal: "Digital",
+    imagem: "img/sensores/hx711.png",
+    resumo:
+      "Conjunto formado por uma célula de carga com extensômetros e um conversor A/D de 24 bits, base de balanças e sistemas de pesagem industrial.",
+    conceito:
+      "A célula de carga é um transdutor que converte força ou peso em um sinal elétrico. Sozinha, ela gera uma variação de tensão da ordem de poucos milivolts — pequena demais para ser lida diretamente pelo conversor A/D de 10 bits do Arduino. Por isso ela é usada em conjunto com o HX711, um amplificador e conversor analógico-digital de 24 bits projetado especificamente para pontes de extensômetros. O par célula + HX711 é o padrão de fato para pesagem em projetos eletrônicos, de balanças de bancada a silos e dosadores industriais.",
+    funcionamento:
+      "A célula é um bloco metálico que se deforma elasticamente sob carga. Colados a ele há extensômetros (strain gauges) — grades condutoras cuja resistência elétrica varia quando são esticadas ou comprimidas. Quatro deles formam uma ponte de Wheatstone: dois se alongam e dois se contraem, o que desequilibra a ponte e produz entre suas saídas uma tensão diferencial proporcional ao peso, tipicamente 2 mV para cada volt de excitação em carga máxima. O HX711 alimenta a ponte, amplifica esse sinal diferencial com ganho de até 128 vezes e o digitaliza em 24 bits, alcançando resolução suficiente para distinguir gramas em uma escala de dezenas de quilos. A comunicação com o microcontrolador é feita por dois fios (DT e SCK) com protocolo serial próprio. Para transformar a leitura bruta em unidade de massa, o sistema precisa ser calibrado com um peso conhecido e ter a tara descontada.",
+    especificacoes: [
+      "HX711 — alimentação: 2,6 V a 5,5 V CC, consumo menor que 1,5 mA",
+      "Conversor A/D de 24 bits com ganho selecionável de 32, 64 ou 128",
+      "Taxa de amostragem: 10 SPS ou 80 SPS (selecionável)",
+      "Células comuns: 1 kg, 5 kg, 10 kg, 20 kg, 50 kg e 200 kg",
+      "Sensibilidade típica da célula: 1,0 a 2,0 mV/V",
+      "Precisão da célula: 0,05% da carga máxima (classe C3 em modelos industriais)",
+      "Tensão de excitação da ponte: 5 V (fornecida pelo HX711)",
+      "Ligação padrão de 4 fios: E+ (vermelho), E- (preto), A+ (branco), A- (verde)"
+    ],
+    tipoSinal:
+      "Digital — protocolo serial síncrono proprietário de 2 fios (DT para dados e SCK para clock), não compatível com I2C nem SPI. O sinal original da célula é analógico diferencial da ordem de milivolts. Em pesagem industrial, o equivalente são os indicadores e transmissores de peso com saída 4-20 mA, Modbus RTU ou Profibus.",
+    aplicacoes: [
+      "Balanças industriais, comerciais e de bancada",
+      "Dosagem gravimétrica de insumos em processos de mistura e envase",
+      "Monitoramento de nível por peso em silos, tanques e tolvas",
+      "Controle de estoque automatizado por variação de massa em prateleiras inteligentes",
+      "Ensaios de força, tração e compressão em bancadas de teste"
+    ],
+    exemplo: {
+      titulo: "Balança digital com tara e alarme de dosagem",
+      descricao:
+        "Após a calibração com um peso conhecido, o sistema exibe a massa em gramas e permite zerar a tara para descontar o recipiente. Ao atingir a massa alvo da receita, um alerta é acionado para interromper a alimentação do produto — princípio direto das dosadoras gravimétricas industriais.",
+      ligacao: [
+        "Célula: vermelho → E+ | preto → E- | branco → A- | verde → A+",
+        "HX711 VCC → 5 V do Arduino | GND → GND",
+        "HX711 DT → pino digital 3 | SCK → pino digital 2",
+        "Buzzer de alerta → pino digital 8",
+        "Célula fixada em um lado e com a carga aplicada no outro (viga em balanço)"
+      ],
+      codigo: `// --- Celula de carga + HX711: balanca digital ---
+// Biblioteca: "HX711" (Bogdan Necula)
+#include <HX711.h>
+
+const int PINO_DT  = 3;
+const int PINO_SCK = 2;
+const int BUZZER   = 8;
+
+// Fator obtido na calibracao: leitura bruta dividida pelo peso real
+const float FATOR_CALIBRACAO = 420.5;
+const float PESO_ALVO = 250.0;   // massa desejada em gramas
+
+HX711 balanca;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(BUZZER, OUTPUT);
+
+  balanca.begin(PINO_DT, PINO_SCK);
+  balanca.set_scale(FATOR_CALIBRACAO);  // aplica o fator de calibracao
+  balanca.tare();                       // zera com a balanca vazia
+
+  Serial.println("Balanca pronta. Coloque o produto.");
+}
+
+void loop() {
+  // Media de 10 leituras para reduzir o ruido
+  float peso = balanca.get_units(10);
+
+  Serial.print("Peso: ");
+  Serial.print(peso, 1);
+  Serial.println(" g");
+
+  // Dosagem atingida: sinaliza para interromper a alimentacao
+  if (peso >= PESO_ALVO) {
+    Serial.println("DOSAGEM COMPLETA - interromper alimentacao!");
+    digitalWrite(BUZZER, HIGH);
+    delay(500);
+    digitalWrite(BUZZER, LOW);
+  }
+  delay(500);
+}`
+    },
+    fabricantes: [
+      "Avia Semiconductor — fabricante do conversor HX711",
+      "Células de carga: Alfa Instrumentos, Líder Balanças e HBM (modelos industriais certificados)",
+      "Módulos prontos: HX711 vermelho e verde (placas de 2 e 4 canais)",
+      "Alternativas: conversores NAU7802 (I2C) e indicadores de pesagem Weg e Toledo com saída 4-20 mA"
+    ]
+  },
+
+  /* ---------------------------------------------------------- 23 */
+  {
+    id: "ky037",
+    nome: "KY-037",
+    categoria: "Som",
+    sinal: "Analógico + Digital",
+    imagem: "img/sensores/ky037.png",
+    resumo:
+      "Módulo sensor de som com microfone de eletreto, que fornece tanto o nível sonoro analógico quanto um disparo digital por limiar ajustável.",
+    conceito:
+      "O KY-037 é um módulo detector de som formado por um microfone de eletreto e um circuito comparador. Ele oferece duas saídas simultâneas: uma analógica, que acompanha a intensidade do som captado, e uma digital, que muda de estado quando o ruído ultrapassa um limiar ajustado no trimpot. Não é um decibelímetro calibrado — mede variação relativa de intensidade —, mas atende bem a aplicações de detecção de ruído anormal em máquinas, acionamento por palma e monitoramento ambiental em IoT.",
+    funcionamento:
+      "A cápsula de eletreto contém um diafragma metalizado sobre uma placa com carga elétrica permanente, formando um capacitor. As ondas sonoras fazem o diafragma vibrar, alterando a distância entre as placas e, consequentemente, a capacitância. Essa variação produz um pequeno sinal elétrico, amplificado por um transistor JFET embutido na própria cápsula. Na placa, o sinal passa por um estágio de amplificação e segue por dois caminhos: a saída AO entrega a forma de onda amplificada, cuja envoltória o microcontrolador amostra para estimar o nível sonoro; e um comparador LM393 confronta o sinal com a tensão de referência definida pelo trimpot, comutando a saída DO sempre que o som ultrapassa esse limiar.",
+    especificacoes: [
+      "Tensão de operação: 3,3 V a 5 V CC",
+      "Saídas: AO (analógica) e DO (digital, via comparador LM393)",
+      "Sensibilidade do microfone: -46 dB (típica, com desvio de ±2 dB)",
+      "Faixa de frequência captada: 50 Hz a 20 kHz",
+      "Limiar de disparo ajustável por trimpot de 10 kΩ",
+      "LEDs indicadores de alimentação e de disparo na placa",
+      "Impedância do microfone: 2,2 kΩ",
+      "Medição relativa — não fornece leitura calibrada em decibéis"
+    ],
+    tipoSinal:
+      "Analógico e digital simultaneamente — a saída AO é lida por entrada ADC e permite acompanhar a intensidade do ruído, enquanto a DO funciona como um gatilho binário para eventos. Para medição normativa de ruído ocupacional, usam-se decibelímetros calibrados de classe 1 ou 2, e não este módulo.",
+    aplicacoes: [
+      "Monitoramento de ruído ambiental e ocupacional em ambientes fabris",
+      "Detecção de ruído anormal em máquinas — indício de falha mecânica ou cavitação",
+      "Detecção de vazamento de ar comprimido pelo ruído característico de alta frequência",
+      "Acionamento de iluminação e dispositivos por palma ou comando sonoro",
+      "Alarmes acionados por quebra de vidro, impacto ou som de sirene"
+    ],
+    exemplo: {
+      titulo: "Monitor de nível de ruído com registro de picos",
+      descricao:
+        "O programa amostra a saída analógica por 50 milissegundos, extrai a amplitude entre o pico máximo e mínimo e converte esse valor em um nível relativo de ruído. Quando o limite configurado é ultrapassado, aciona um alerta e conta o evento — dado que, em um projeto IoT, alimentaria um painel de conforto acústico da fábrica.",
+      ligacao: [
+        "VCC → 5 V do Arduino",
+        "GND → GND",
+        "AO → pino analógico A0 (intensidade do som)",
+        "DO → pino digital 2 (disparo por limiar)",
+        "LED de alerta → pino digital 8"
+      ],
+      codigo: `// --- KY-037: monitor de nivel de ruido ---
+const int PINO_AO = A0;
+const int PINO_DO = 2;
+const int LED_ALERTA = 8;
+
+const int LIMITE_RUIDO = 250;   // amplitude considerada ruido alto
+int eventosAltos = 0;
+
+// Mede a amplitude do som em uma janela de 50 ms
+int medirAmplitude() {
+  int maximo = 0;
+  int minimo = 1023;
+  unsigned long inicio = millis();
+
+  while (millis() - inicio < 50) {
+    int leitura = analogRead(PINO_AO);
+    if (leitura > maximo) maximo = leitura;
+    if (leitura < minimo) minimo = leitura;
+  }
+  return maximo - minimo;   // amplitude pico a pico
+}
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PINO_DO, INPUT);
+  pinMode(LED_ALERTA, OUTPUT);
+}
+
+void loop() {
+  int amplitude = medirAmplitude();
+
+  Serial.print("Nivel de ruido: ");
+  Serial.print(amplitude);
+
+  if (amplitude > LIMITE_RUIDO) {
+    eventosAltos++;
+    digitalWrite(LED_ALERTA, HIGH);
+    Serial.print(" -> RUIDO ALTO! Ocorrencias: ");
+    Serial.println(eventosAltos);
+  } else {
+    digitalWrite(LED_ALERTA, LOW);
+    Serial.println(" -> nivel normal.");
+  }
+  delay(200);
+}`
+    },
+    fabricantes: [
+      "Módulos KY-037 (microfone grande) e KY-038 (microfone pequeno) — linha Keyes",
+      "Cápsulas de eletreto: CUI Devices, PUI Audio e Knowles",
+      "Alternativas: MAX9814 (com controle automático de ganho), INMP441 (I2S digital) e decibelímetros industriais Instrutherm e Minipa"
+    ]
+  },
+
+  /* ---------------------------------------------------------- 24 */
+  {
+    id: "chama",
+    nome: "Sensor de Chama IR",
+    categoria: "Chama",
+    sinal: "Analógico + Digital",
+    imagem: "img/sensores/chama.png",
+    resumo:
+      "Detector de fogo por radiação infravermelha, que identifica a presença de chama pela emissão característica de sua combustão.",
+    conceito:
+      "O sensor de chama infravermelho detecta a radiação emitida pelo fogo em uma faixa específica do infravermelho próximo, entre aproximadamente 760 e 1100 nanômetros. Ele responde muito mais rápido que um detector de fumaça, pois identifica a chama diretamente, sem esperar que a fumaça se desloque até o sensor. Por isso é aplicado em sistemas de segurança contra incêndio, em fornos e caldeiras — onde é preciso confirmar se o queimador realmente acendeu — e em robôs de competição de combate a fogo.",
+    funcionamento:
+      "O elemento sensor é um fotodiodo de infravermelho encapsulado em resina escura, que filtra a luz visível e restringe a resposta à faixa infravermelha típica da combustão. Ao ser atingido por essa radiação, o fotodiodo gera uma corrente proporcional à intensidade recebida, convertida em tensão por um resistor de carga. A placa disponibiliza essa tensão na saída AO, permitindo estimar a distância ou a intensidade do fogo, e a compara com um limiar ajustável em um comparador LM393, que aciona a saída DO. O ângulo de detecção é de cerca de 60 graus e o alcance típico chega a 100 cm para uma chama de vela. Como a luz solar direta e as lâmpadas incandescentes também emitem infravermelho, o posicionamento do sensor exige cuidado para evitar alarmes falsos — nos detectores industriais esse problema é resolvido pela análise da frequência de cintilação da chama e pelo uso combinado das faixas ultravioleta e infravermelha.",
+    especificacoes: [
+      "Tensão de operação: 3,3 V a 5 V CC",
+      "Faixa espectral de detecção: 760 nm a 1100 nm (infravermelho próximo)",
+      "Ângulo de detecção: aproximadamente 60 graus",
+      "Distância de detecção: até 100 cm (chama de vela) — até 200 cm para fogo maior",
+      "Saídas: AO (analógica) e DO (digital, via comparador LM393)",
+      "Tempo de resposta: menor que 15 µs",
+      "Limiar de disparo ajustável por trimpot",
+      "Temperatura de operação: -25 °C a +85 °C"
+    ],
+    tipoSinal:
+      "Analógico e digital — a saída AO indica a intensidade da radiação captada (quanto mais próxima e intensa a chama, menor a leitura, pois o fotodiodo puxa a tensão para baixo) e a DO fornece um alarme binário. Em plantas industriais, os detectores de chama certificados usam saídas 4-20 mA, contatos de relé ou protocolos endereçáveis integrados ao painel de incêndio.",
+    aplicacoes: [
+      "Sistemas de detecção e alarme de incêndio em ambientes industriais",
+      "Supervisão de chama em queimadores de fornos, caldeiras e estufas",
+      "Proteção de áreas de armazenamento de líquidos e gases inflamáveis",
+      "Acionamento automático de sistemas de extinção e corte de gás",
+      "Robótica de segurança e competições de robôs de combate a incêndio"
+    ],
+    exemplo: {
+      titulo: "Sistema de alarme de incêndio com corte automático de gás",
+      descricao:
+        "O sensor monitora continuamente a presença de chama. Ao detectar fogo, o Arduino aciona uma sirene, acende um sinalizador e fecha a válvula solenoide de gás por meio de um relé. A leitura analógica permite ainda estimar a proximidade da chama e diferenciar um foco pequeno de um incêndio já desenvolvido.",
+      ligacao: [
+        "VCC → 5 V do Arduino",
+        "GND → GND",
+        "AO → pino analógico A0 | DO → pino digital 2",
+        "Buzzer/sirene → pino digital 8",
+        "Relé da válvula de gás → pino digital 7 (normalmente aberto)"
+      ],
+      codigo: `// --- Sensor de Chama IR: alarme de incendio ---
+const int PINO_AO = A0;
+const int PINO_DO = 2;
+const int SIRENE  = 8;
+const int RELE_GAS = 7;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PINO_DO, INPUT);
+  pinMode(SIRENE, OUTPUT);
+  pinMode(RELE_GAS, OUTPUT);
+  digitalWrite(RELE_GAS, HIGH);   // valvula de gas aberta
+  Serial.println("Sistema de deteccao de chama ativo.");
+}
+
+void loop() {
+  int intensidade = analogRead(PINO_AO);
+  // A saida DO vai para nivel BAIXO quando ha chama
+  bool chamaDetectada = (digitalRead(PINO_DO) == LOW);
+
+  Serial.print("Leitura IR: ");
+  Serial.print(intensidade);
+
+  if (chamaDetectada) {
+    Serial.println(" -> CHAMA DETECTADA!");
+
+    // Quanto menor a leitura, mais proxima ou intensa e a chama
+    if (intensidade < 200) {
+      Serial.println("EMERGENCIA: fogo proximo - evacuar a area!");
+    }
+
+    digitalWrite(RELE_GAS, LOW);   // corta o fornecimento de gas
+    tone(SIRENE, 2000);            // sirene de alarme
+  } else {
+    Serial.println(" -> ambiente seguro.");
+    noTone(SIRENE);
+  }
+  delay(300);
+}`
+    },
+    fabricantes: [
+      "Módulos KY-026 e Flame Sensor de 3 e 4 pinos — fabricação genérica",
+      "Fotodiodos IR: Vishay, Everlight e Osram Opto Semiconductors",
+      "Detectores industriais certificados: Honeywell, Det-Tronics, Spectrex e MSA (chama UV/IR e IR3)"
+    ]
+  },
+
+  /* ---------------------------------------------------------- 25 */
+  {
+    id: "ky040",
+    nome: "Encoder Incremental KY-040",
+    categoria: "Encoder",
+    sinal: "Digital (quadratura)",
+    imagem: "img/sensores/ky040.png",
+    resumo:
+      "Encoder rotativo incremental com saída em quadratura, que informa a quantidade e o sentido de rotação para controle de posição e ajuste de parâmetros.",
+    conceito:
+      "O KY-040 é um encoder rotativo incremental: um dispositivo que converte o movimento de rotação de um eixo em pulsos elétricos. Diferente de um potenciômetro, ele gira indefinidamente e não indica uma posição absoluta — informa apenas quanto girou e para que lado, a partir de um ponto de referência. Esse é exatamente o princípio dos encoders acoplados a servomotores e a eixos de máquinas CNC, que fecham a malha de realimentação dos sistemas de controle de posição. O módulo ainda inclui um botão embutido, acionado ao pressionar o eixo.",
+    funcionamento:
+      "Dentro do encoder existe um disco com trilhas condutoras interrompidas e dois contatos deslizantes, defasados fisicamente entre si. Ao girar, cada contato produz uma onda quadrada, e a defasagem construtiva faz com que os dois sinais — chamados CLK (A) e DT (B) — fiquem 90 graus fora de fase. É a chamada saída em quadratura, e ela é o que revela o sentido da rotação: no momento em que o sinal CLK muda de estado, basta observar DT. Se os dois estiverem em níveis diferentes, o giro é em um sentido; se estiverem iguais, é no sentido oposto. Contando as transições, obtém-se o deslocamento angular. Como os contatos são mecânicos, existe repique elétrico (bounce), que precisa ser filtrado por software ou por um filtro RC. O KY-040 possui 20 pulsos por volta e 30 detentes — os pontos de encaixe que se sentem ao girar.",
+    especificacoes: [
+      "Tensão de operação: 3,3 V a 5 V CC",
+      "Resolução: 20 pulsos por volta (30 detentes mecânicos)",
+      "Saídas: CLK (canal A), DT (canal B) e SW (botão do eixo)",
+      "Rotação contínua sem batente — giro ilimitado nos dois sentidos",
+      "Resistores de pull-up já presentes na placa",
+      "Vida útil: aproximadamente 30.000 ciclos de rotação",
+      "Botão momentâneo integrado, acionado pela pressão no eixo",
+      "Necessita tratamento de repique (debounce) por software"
+    ],
+    tipoSinal:
+      "Digital em quadratura — dois trens de pulsos defasados em 90 graus, lidos por interrupção externa para não perder passos durante giros rápidos. Encoders industriais seguem o mesmo princípio, porém em versão óptica ou magnética, com milhares de pulsos por volta, canal Z de referência e saídas diferenciais (RS-422) para imunidade a ruído em cabos longos.",
+    aplicacoes: [
+      "Realimentação de posição e velocidade em servomotores e eixos de máquinas CNC",
+      "Medição de comprimento e controle de corte em bobinas e esteiras transportadoras",
+      "Interfaces de operador (IHM): ajuste de setpoints, navegação em menus e seleção de receitas",
+      "Controle de posicionamento em robôs, mesas móveis e sistemas de dosagem",
+      "Contagem de peças pelo deslocamento linear da esteira em linhas de produção"
+    ],
+    exemplo: {
+      titulo: "Ajuste de setpoint de temperatura com encoder e botão de confirmação",
+      descricao:
+        "O encoder é lido por interrupção: girar no sentido horário aumenta o valor de referência e no anti-horário o reduz. Pressionar o eixo confirma o ajuste e zera o contador — a interface típica de controladores industriais de temperatura e de painéis de operação de máquinas.",
+      ligacao: [
+        "+ (VCC) → 5 V do Arduino | GND → GND",
+        "CLK → pino digital 2 (interrupção)",
+        "DT → pino digital 3",
+        "SW (botão) → pino digital 4, configurado com INPUT_PULLUP"
+      ],
+      codigo: `// --- KY-040: ajuste de setpoint com encoder rotativo ---
+const int PINO_CLK = 2;
+const int PINO_DT  = 3;
+const int PINO_SW  = 4;
+
+volatile int setpoint = 25;        // temperatura desejada em graus C
+volatile int ultimoEstadoCLK;
+volatile unsigned long ultimoGiro = 0;
+
+// Interrupcao: identifica o sentido do giro pela quadratura
+void lerEncoder() {
+  // Filtro de repique: ignora transicoes com menos de 5 ms
+  if (millis() - ultimoGiro < 5) return;
+
+  int estadoCLK = digitalRead(PINO_CLK);
+
+  if (estadoCLK != ultimoEstadoCLK) {
+    // Se DT esta diferente de CLK, o giro e horario
+    if (digitalRead(PINO_DT) != estadoCLK) setpoint++;
+    else                                   setpoint--;
+
+    // Mantem o valor dentro da faixa util do processo
+    setpoint = constrain(setpoint, 10, 90);
+    ultimoGiro = millis();
+  }
+  ultimoEstadoCLK = estadoCLK;
+}
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PINO_CLK, INPUT);
+  pinMode(PINO_DT,  INPUT);
+  pinMode(PINO_SW,  INPUT_PULLUP);
+
+  ultimoEstadoCLK = digitalRead(PINO_CLK);
+  attachInterrupt(digitalPinToInterrupt(PINO_CLK), lerEncoder, CHANGE);
+
+  Serial.println("Gire o encoder para ajustar o setpoint.");
+}
+
+void loop() {
+  static int ultimoValor = -1;
+
+  // So imprime quando o valor muda, evitando poluir o monitor serial
+  if (setpoint != ultimoValor) {
+    Serial.print("Setpoint: ");
+    Serial.print(setpoint);
+    Serial.println(" C");
+    ultimoValor = setpoint;
+  }
+
+  // Botao do eixo confirma o ajuste
+  if (digitalRead(PINO_SW) == LOW) {
+    Serial.print("SETPOINT CONFIRMADO: ");
+    Serial.print(setpoint);
+    Serial.println(" C");
+    delay(300);   // debounce simples do botao
+  }
+}`
+    },
+    fabricantes: [
+      "Módulos KY-040 e HW-040 — linha Keyes de encoders rotativos",
+      "Bourns e ALPS Alpine — encoders incrementais mecânicos de uso profissional",
+      "Industriais: encoders ópticos e magnéticos Hengstler, Kübler, Heidenhain, Omron e Sick (com canal Z e saída RS-422)"
     ]
   }
 ];
