@@ -1317,3 +1317,235 @@ ul, ol {
     font-size: 0.76rem;
   }
 }
+
+/* ============================================================
+   14. PÁGINA DE DESAFIOS PRÁTICOS (desafios.html)
+   ============================================================ */
+
+/* Cards de atalho para cada desafio */
+.cartao-icone.cartao-link {
+  display: block;
+  color: inherit;
+}
+
+.cartao-link .card-robo-link {
+  display: inline-block;
+  margin-top: 0.9rem;
+}
+
+/* Lista de entregas exigidas (checklist) */
+.lista-entregas {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.lista-entregas li {
+  font-family: var(--fonte-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cor-primaria);
+  border: 1px solid rgba(255, 159, 28, 0.35);
+  background: rgba(255, 159, 28, 0.08);
+  border-radius: 3px;
+  padding: 0.2rem 0.6rem;
+}
+
+/* Tabela de lógica / comparativo */
+.tabela-rolagem {
+  overflow-x: auto;
+  margin-top: 0.5rem;
+}
+
+.tabela-logica {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tabela-logica th,
+.tabela-logica td {
+  text-align: left;
+  padding: 0.65rem 0.8rem;
+  border-bottom: 1px solid var(--cor-borda);
+  vertical-align: top;
+}
+
+.tabela-logica th {
+  font-family: var(--fonte-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cor-texto-suave);
+  font-weight: 600;
+}
+
+.tabela-logica td {
+  color: #b9c3cf;
+}
+
+/* Indicador de estado do LED dentro das tabelas */
+.estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.estado::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cor-cor, #3a4350);
+  box-shadow: 0 0 8px var(--cor-cor, transparent);
+}
+
+.estado-off    { --cor-cor: #3a4350; color: var(--cor-texto-suave); }
+.estado-on     { --cor-cor: var(--cor-primaria); color: var(--cor-primaria); }
+.estado-verde  { --cor-cor: #2ecc71; color: #2ecc71; }
+.estado-verm   { --cor-cor: #ff4d4d; color: #ff6b6b; }
+.estado-amar   { --cor-cor: #f4d03f; color: #f4d03f; }
+.estado-azul   { --cor-cor: var(--cor-secundaria); color: var(--cor-secundaria); }
+
+.estado-pisca::before {
+  animation: piscar 0.6s steps(1) infinite;
+}
+
+.estado-alterna::before {
+  animation: alternar 1s steps(1) infinite;
+}
+
+@keyframes piscar {
+  50% { opacity: 0.15; box-shadow: none; }
+}
+
+@keyframes alternar {
+  0%   { background: #ff4d4d; box-shadow: 0 0 8px #ff4d4d; }
+  50%  { background: #f4d03f; box-shadow: 0 0 8px #f4d03f; }
+}
+
+/* Subtítulo interno de cada bloco do desafio */
+.desafio-bloco-titulo {
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cor-primaria);
+  margin: 3rem 0 1.1rem;
+}
+
+/* Botão do Tinkercad ao lado da lista de ligações */
+.tinkercad-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tinkercad-acoes small {
+  color: var(--cor-texto-suave);
+  font-size: 0.8rem;
+}
+
+/* Abas dos códigos: o bloco de código ocupa o painel inteiro */
+.abas-codigo {
+  margin-bottom: 0;
+}
+
+.abas-codigo .aba-painel {
+  padding: 1.25rem;
+}
+
+.abas-codigo .bloco-codigo {
+  margin: 0;
+}
+
+.abas-codigo .aba-painel > p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Grade de vídeos (gravados na vertical, 9:16) */
+.grupo-videos + .grupo-videos {
+  margin-top: 2rem;
+}
+
+.grupo-videos h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+  color: var(--cor-texto);
+}
+
+.grupo-videos h4 span {
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  color: var(--cor-primaria);
+  margin-right: 0.5rem;
+}
+
+.grade-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.card-video {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  margin: 0;
+}
+
+.card-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  object-fit: cover;
+}
+
+.card-video figcaption {
+  padding: 0.8rem 1rem 1rem;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.card-video figcaption strong {
+  display: block;
+  color: var(--cor-texto);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Espaço reservado para vídeo ainda não gravado */
+.video-pendente {
+  border: 1px dashed var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-family: var(--fonte-mono);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 720px) {
+  .grade-videos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .card-video figcaption {
+    padding: 0.6rem 0.7rem 0.8rem;
+    font-size: 0.78rem;
+  }
+}

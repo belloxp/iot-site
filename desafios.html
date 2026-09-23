@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Desafios práticos com Arduino e ESP32/ESP8266: iluminação inteligente, estacionamento inteligente e ambiente inteligente — circuito no Tinkercad, código, vídeos e explicação." />
+  <title>Desafios Arduino &amp; ESP32 — SensorHub 4.0</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%2215%22 y=%2225%22 width=%2270%22 height=%2255%22 rx=%2210%22 fill=%22%23ff9f1c%22/><circle cx=%2238%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><circle cx=%2262%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><rect x=%2247%22 y=%2210%22 width=%226%22 height=%2215%22 fill=%22%23ff9f1c%22/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== CABEÇALHO / MENU DE NAVEGAÇÃO ===== -->
+  <header class="cabecalho">
+    <nav class="nav container">
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Sensor<span>Hub</span><em>4.0</em></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-lista" id="navLista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sensores.html">Sensores</a></li>
+        <li><a href="arduino.html">Arduino</a></li>
+        <li><a href="desafios.html" class="ativo">Desafios</a></li>
+        <li><a href="robos.html">Robôs</a></li>
+        <li><a href="index.html#protocolos">Protocolos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== APRESENTAÇÃO ===== -->
+    <section class="secao pagina-topo" id="apresentacao">
+      <div class="container">
+        <p class="kicker revelar">desafios práticos — arduino &amp; esp32 / esp8266</p>
+        <h1 class="secao-titulo revelar">Três desafios: do sensor à decisão automática</h1>
+        <p class="secao-subtitulo revelar">
+          Cada desafio combina dois sensores para tomar uma decisão que um sensor sozinho não
+          conseguiria. Todos foram montados no <strong>Tinkercad</strong>, programados no
+          <strong>Arduino Uno</strong> e têm uma versão para <strong>ESP32 / ESP8266</strong> que
+          mantém a mesma lógica e ainda publica o estado do sistema em um painel web via Wi-Fi.
+        </p>
+
+        <div class="grade-cartoes revelar">
+          <a class="cartao-icone cartao-link" href="#desafio-1">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+            </div>
+            <h3>01 · Iluminação Inteligente</h3>
+            <p>Sensor de presença (PIR) + sensor de luminosidade (LDR): o LED só acende quando há alguém no ambiente <em>e</em> está escuro.</p>
+            <span class="card-robo-link">Ver desafio →</span>
+          </a>
+          <a class="cartao-icone cartao-link" href="#desafio-2">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14"/><path d="M6 17V9l2-4h8l2 4v8"/><circle cx="8.5" cy="13" r="1.2"/><circle cx="15.5" cy="13" r="1.2"/><path d="M2 21h20"/></svg>
+            </div>
+            <h3>02 · Estacionamento Inteligente</h3>
+            <p>Sensor ultrassônico mede a distância; o potenciômetro define o limite de segurança. O LED pisca cada vez mais rápido conforme o objeto se aproxima.</p>
+            <span class="card-robo-link">Ver desafio →</span>
+          </a>
+          <a class="cartao-icone cartao-link" href="#desafio-3">
+            <div class="icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/><path d="M19 4c1.5 2 2 3.2 2 4.2a2 2 0 0 1-4 0c0-1 .5-2.2 2-4.2z"/></svg>
+            </div>
+            <h3>03 · Ambiente Inteligente</h3>
+            <p>Temperatura + umidade da estufa com um LED RGB como indicador: verde, vermelho, amarelo — e as duas condições ao mesmo tempo.</p>
+            <span class="card-robo-link">Ver desafio →</span>
+          </a>
+        </div>
+
+        <div class="cartao-destaque revelar" style="margin-top: 2rem;">
+          <h3>O que cada desafio entrega nesta página</h3>
+          <ul class="lista-entregas">
+            <li>Circuito no Tinkercad</li>
+            <li>Código do Arduino</li>
+            <li>Versão ESP32 / ESP8266</li>
+            <li>Vídeos de teste</li>
+            <li>Explicação dos sensores e da lógica</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DESAFIO 1 — ILUMINAÇÃO INTELIGENTE
+         ============================================================ -->
+    <section class="secao secao-alt" id="desafio-1">
+      <div class="container">
+        <p class="kicker revelar">desafio 01 — iluminação inteligente</p>
+        <h2 class="secao-titulo revelar">Luz só quando há alguém e está escuro</h2>
+
+        <div class="grade-2 revelar">
+          <div class="cartao-texto">
+            <p>
+              O sistema controla automaticamente um LED a partir de <strong>dois sensores com
+              papéis diferentes</strong>. Nenhum deles decide sozinho: a lâmpada só acende quando
+              as duas condições são verdadeiras ao mesmo tempo — um <strong>E lógico</strong>
+              (<code>&amp;&amp;</code>) no código.
+            </p>
+            <p>
+              <strong>Sensor de presença (PIR HC-SR501) —</strong> detecta a variação de radiação
+              infravermelha causada pelo corpo humano em movimento. Ele entrega um sinal
+              <strong>digital</strong>: <code>HIGH</code> quando há pessoa, <code>LOW</code> quando
+              não há. É lido com <code>digitalRead()</code>.
+            </p>
+            <p>
+              <strong>Sensor de luminosidade (LDR) —</strong> é um resistor cuja resistência cai
+              quando recebe luz. Montado em um divisor de tensão com um resistor de 10 kΩ, ele gera
+              uma tensão <strong>analógica</strong> proporcional à claridade, lida com
+              <code>analogRead()</code> (0 a 1023). Abaixo do <strong>limite de 400</strong> o
+              ambiente é considerado escuro.
+            </p>
+            <p>
+              Assim, em uma sala iluminada pelo sol, o LED não acende mesmo com gente passando — o
+              que economiza energia — e à noite ele só liga quando alguém realmente entra.
+            </p>
+          </div>
+          <div class="cartao-destaque">
+            <h3>Lógica de funcionamento</h3>
+            <div class="tabela-rolagem">
+              <table class="tabela-logica">
+                <thead>
+                  <tr><th>Presença (PIR)</th><th>Ambiente (LDR)</th><th>LED</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Pessoa presente</td><td>Escuro (&lt; 400)</td><td><span class="estado estado-on">Ligado</span></td></tr>
+                  <tr><td>Pessoa presente</td><td>Claro (≥ 400)</td><td><span class="estado estado-off">Desligado</span></td></tr>
+                  <tr><td>Sem pessoa</td><td>Qualquer</td><td><span class="estado estado-off">Desligado</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h3 style="margin-top: 1.5rem;">Componentes</h3>
+            <ul class="lista-marcada">
+              <li><strong>Arduino Uno</strong></li>
+              <li><strong>LED</strong> + resistor de 220 Ω</li>
+              <li><strong>Sensor PIR</strong> HC-SR501 (presença/movimento)</li>
+              <li><strong>LDR</strong> (fotorresistor) + resistor de 10 kΩ</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Circuito no Tinkercad -->
+        <h3 class="desafio-bloco-titulo revelar">1 · Circuito no Tinkercad</h3>
+        <div class="caixa-ligacao revelar">
+          <h3>Ligações</h3>
+          <ul>
+            <li>PIR: VCC → 5V · GND → GND · OUT → pino 2</li>
+            <li>LDR: um terminal → 5V · outro terminal → A0 e resistor de 10 kΩ → GND</li>
+            <li>LED: ânodo (+) → resistor 220 Ω → pino 9 · cátodo (−) → GND</li>
+          </ul>
+          <div class="tinkercad-acoes">
+            <!-- TROCAR: cole aqui o link público do circuito do Desafio 1 no Tinkercad -->
+            <a class="botao" href="https://www.tinkercad.com/" target="_blank" rel="noopener">Abrir circuito no Tinkercad</a>
+            <small>No simulador, clique no PIR para gerar movimento e arraste o controle de luz do fotorresistor.</small>
+          </div>
+        </div>
+
+        <!-- Código -->
+        <h3 class="desafio-bloco-titulo revelar">2 · Código</h3>
+        <div class="abas abas-codigo revelar">
+          <div class="abas-botoes" role="tablist">
+            <button class="aba-botao ativo" data-aba="d1-arduino" role="tab" aria-selected="true">Arduino Uno</button>
+            <button class="aba-botao" data-aba="d1-esp" role="tab" aria-selected="false">ESP32 · ESP8266</button>
+          </div>
+          <div class="aba-painel ativo" data-painel="d1-arduino" role="tabpanel">
+            <div data-codigo="d1-arduino"></div>
+          </div>
+          <div class="aba-painel" data-painel="d1-esp" role="tabpanel">
+            <p>
+              Mesma lógica, com o limite de escuridão em porcentagem (o ESP32 tem conversor de 12
+              bits e o ESP8266 de 10 bits). A placa também hospeda uma página que mostra presença,
+              luz e o estado do LED em tempo real.
+            </p>
+            <div data-codigo="d1-esp"></div>
+          </div>
+        </div>
+
+        <!-- Vídeo -->
+        <h3 class="desafio-bloco-titulo revelar">3 · Vídeo de demonstração</h3>
+        <div class="video-pendente revelar">
+          [ vídeo do Desafio 1 ainda não enviado — adicione o arquivo em <code>video/</code> ]
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DESAFIO 2 — ESTACIONAMENTO INTELIGENTE
+         ============================================================ -->
+    <section class="secao" id="desafio-2">
+      <div class="container">
+        <p class="kicker revelar">desafio 02 — estacionamento inteligente</p>
+        <h2 class="secao-titulo revelar">Um sensor de ré com limite ajustável</h2>
+
+        <div class="grade-2 revelar">
+          <div class="cartao-texto">
+            <p>
+              O <strong>sensor ultrassônico HC-SR04</strong> emite um pulso de som de 40 kHz pelo
+              pino <em>TRIG</em> e mede quanto tempo o eco leva para voltar pelo pino
+              <em>ECHO</em>. Como o som viaja a 343 m/s e percorre o caminho de ida e volta, a
+              distância é <code>tempo × 0,0343 ÷ 2</code> centímetros.
+            </p>
+            <p>
+              O <strong>potenciômetro</strong> é o “botão de configuração” do sistema. Sua leitura
+              analógica (0 a 1023) é convertida com <code>map()</code> em uma
+              <strong>distância limite de 10 a 100 cm</strong>. A metade desse limite vira a
+              <strong>zona crítica</strong>. Girar o potenciômetro, portanto, não liga nem desliga
+              o LED diretamente: ele <strong>move as fronteiras</strong> entre as três zonas.
+            </p>
+            <p>
+              <strong>Desafio adicional —</strong> dentro da zona de aproximação, o intervalo de
+              piscada também é calculado com <code>map()</code>: vale 500 ms quando o objeto acabou
+              de entrar no limite e cai até 60 ms quando ele encosta na zona crítica. Quanto mais
+              perto, mais rápido o LED pisca, como o bipe de um sensor de estacionamento real. A
+              piscada usa <code>millis()</code> em vez de <code>delay()</code>, para que a
+              distância continue sendo medida o tempo todo.
+            </p>
+          </div>
+          <div class="cartao-destaque">
+            <h3>Exemplo com limite de 20 cm</h3>
+            <div class="tabela-rolagem">
+              <table class="tabela-logica">
+                <thead>
+                  <tr><th>Distância</th><th>Zona</th><th>LED</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Mais de 20 cm</td><td>Distante</td><td><span class="estado estado-off">Desligado</span></td></tr>
+                  <tr><td>Entre 10 e 20 cm</td><td>Aproximação</td><td><span class="estado estado-on estado-pisca">Piscando</span></td></tr>
+                  <tr><td>Menos de 10 cm</td><td>Crítica</td><td><span class="estado estado-on">Ligado</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h3 style="margin-top: 1.5rem;">Componentes</h3>
+            <ul class="lista-marcada">
+              <li><strong>Arduino Uno</strong></li>
+              <li><strong>LED</strong> + resistor de 220 Ω</li>
+              <li><strong>Sensor ultrassônico</strong> HC-SR04</li>
+              <li><strong>Potenciômetro</strong> de 10 kΩ</li>
+              <li>Buzzer (opcional, alerta sonoro)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Como o potenciômetro altera o sistema -->
+        <h3 class="desafio-bloco-titulo revelar">Como o potenciômetro altera o funcionamento</h3>
+        <div class="tabela-rolagem revelar">
+          <table class="tabela-logica">
+            <thead>
+              <tr><th>Posição do potenciômetro</th><th>Leitura A0</th><th>Limite</th><th>Pisca entre</th><th>LED fixo abaixo de</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Todo à esquerda</td><td>0</td><td>10 cm</td><td>5 e 10 cm</td><td>5 cm</td></tr>
+              <tr><td>Próximo de 10 %</td><td>~114</td><td>20 cm</td><td>10 e 20 cm</td><td>10 cm</td></tr>
+              <tr><td>No meio</td><td>~512</td><td>55 cm</td><td>27 e 55 cm</td><td>27 cm</td></tr>
+              <tr><td>Todo à direita</td><td>1023</td><td>100 cm</td><td>50 e 100 cm</td><td>50 cm</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="secao-subtitulo revelar" style="margin-top: 1rem;">
+          Com o objeto parado a 30 cm, por exemplo, o LED fica <strong>desligado</strong> com o
+          potenciômetro à esquerda (limite de 10 cm), <strong>piscando</strong> no meio (limite de
+          55 cm) e <strong>ligado continuamente</strong> à direita, onde 30 cm já está dentro da
+          zona crítica de 50 cm. É isso que os vídeos de teste do
+          potenciômetro mostram pelo Monitor Serial.
+        </p>
+
+        <!-- Circuito no Tinkercad -->
+        <h3 class="desafio-bloco-titulo revelar">1 · Circuito no Tinkercad</h3>
+        <div class="caixa-ligacao revelar">
+          <h3>Ligações</h3>
+          <ul>
+            <li>HC-SR04: VCC → 5V · GND → GND · TRIG → pino 7 · ECHO → pino 6</li>
+            <li>Potenciômetro: extremidades → 5V e GND · pino central → A0</li>
+            <li>LED: ânodo (+) → resistor 220 Ω → pino 9 · cátodo (−) → GND</li>
+            <li>Buzzer (opcional): (+) → pino 11 · (−) → GND</li>
+          </ul>
+          <div class="tinkercad-acoes">
+            <!-- TROCAR: cole aqui o link público do circuito do Desafio 2 no Tinkercad -->
+            <a class="botao" href="https://www.tinkercad.com/" target="_blank" rel="noopener">Abrir circuito no Tinkercad</a>
+            <small>No simulador, clique no sensor ultrassônico e arraste o objeto; gire o potenciômetro para mudar o limite.</small>
+          </div>
+        </div>
+
+        <!-- Código -->
+        <h3 class="desafio-bloco-titulo revelar">2 · Código</h3>
+        <div class="abas abas-codigo revelar">
+          <div class="abas-botoes" role="tablist">
+            <button class="aba-botao ativo" data-aba="d2-arduino" role="tab" aria-selected="true">Arduino Uno</button>
+            <button class="aba-botao" data-aba="d2-esp" role="tab" aria-selected="false">ESP32 · ESP8266</button>
+          </div>
+          <div class="aba-painel ativo" data-painel="d2-arduino" role="tabpanel">
+            <div data-codigo="d2-arduino"></div>
+          </div>
+          <div class="aba-painel" data-painel="d2-esp" role="tabpanel">
+            <p>
+              O ESP opera em 3,3 V: o pino ECHO do HC-SR04 (5 V) precisa de um divisor de tensão
+              antes de chegar à placa. O painel web mostra a distância, o limite escolhido no
+              potenciômetro e uma barra de proximidade.
+            </p>
+            <div data-codigo="d2-esp"></div>
+          </div>
+        </div>
+
+        <!-- Vídeos -->
+        <h3 class="desafio-bloco-titulo revelar">3 · Vídeos</h3>
+        <p class="secao-subtitulo revelar">
+          No protótipo físico foi usado um LED RGB, que muda de cor a cada zona de distância,
+          deixando as três situações fáceis de distinguir na gravação.
+        </p>
+
+        <div class="grupo-videos revelar">
+          <h4><span>entrega 3</span>Teste com diferentes distâncias</h4>
+          <div class="grade-videos">
+            <figure class="card-video">
+              <video controls preload="none" playsinline poster="img/videos/desafio2-distancia-celular.jpg">
+                <source src="video/desafio2-distancia-celular.mp4" type="video/mp4" />
+              </video>
+              <figcaption><strong>Objeto se aproximando e se afastando</strong>Um celular é levado para perto e para longe do sensor, passando pelas três zonas.</figcaption>
+            </figure>
+            <figure class="card-video">
+              <video controls preload="none" playsinline poster="img/videos/desafio2-aproximacao.jpg">
+                <source src="video/desafio2-aproximacao.mp4" type="video/mp4" />
+              </video>
+              <figcaption><strong>Aproximação gradual</strong>O LED sai do estado desligado e muda de comportamento à medida que o objeto chega mais perto.</figcaption>
+            </figure>
+            <figure class="card-video">
+              <video controls preload="none" playsinline poster="img/videos/desafio2-distancia-mao.jpg">
+                <source src="video/desafio2-distancia-mao.mp4" type="video/mp4" />
+              </video>
+              <figcaption><strong>Teste com a mão</strong>A mão em diferentes distâncias à frente do HC-SR04.</figcaption>
+            </figure>
+            <figure class="card-video">
+              <video controls preload="none" playsinline poster="img/videos/desafio2-alerta-proximo.jpg">
+                <source src="video/desafio2-alerta-proximo.mp4" type="video/mp4" />
+              </video>
+              <figcaption><strong>Alerta de objeto próximo</strong>Detalhe do LED com o obstáculo dentro da distância de segurança.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="grupo-videos revelar">
+          <h4><span>entregas 4 e 5</span>Posições do potenciômetro e como ele altera o sistema</h4>
+          <div class="grade-videos">
+            <figure class="card-video">
+              <video controls preload="none" playsinline poster="img/videos/desafio2-potenciometro-serial.jpg">
+                <source src="video/desafio2-potenciometro-serial.mp4" type="video/mp4" />
+              </video>
+              <figcaption><strong>Potenciômetro + Monitor Serial</strong>A distância medida, a porcentagem do potenciômetro e os limites calculados aparecem no Monitor Serial.</figcaption>
+            </figure>
+            <figure class="card-video">
+              <video controls preload="none" playsinline poster="img/videos/desafio2-potenciometro-limites.jpg">
+                <source src="video/desafio2-potenciometro-limites.mp4" type="video/mp4" />
+              </video>
+              <figcaption><strong>Girando o potenciômetro</strong>Com o potenciômetro em outra posição, os limites mudam e o mesmo objeto provoca uma reação diferente do LED.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DESAFIO 3 — AMBIENTE INTELIGENTE
+         ============================================================ -->
+    <section class="secao secao-alt" id="desafio-3">
+      <div class="container">
+        <p class="kicker revelar">desafio 03 — ambiente inteligente</p>
+        <h2 class="secao-titulo revelar">Monitoramento da estufa com indicador RGB</h2>
+
+        <div class="grade-2 revelar">
+          <div class="cartao-texto">
+            <p>
+              O sistema monitora a <strong>temperatura</strong> e a <strong>umidade</strong> de uma
+              estufa e usa um <strong>LED RGB</strong> como painel visual. Os valores de referência
+              escolhidos para a estufa são: <strong>temperatura adequada até 30 °C</strong> e
+              <strong>umidade adequada a partir de 40 %</strong>.
+            </p>
+            <p>
+              Na montagem física foi usado o <strong>DHT11</strong>, que mede as duas grandezas e
+              as envia em um único fio digital, lidas pela biblioteca <code>DHT.h</code>. O
+              Tinkercad não tem o DHT11, então no simulador a temperatura vem do
+              <strong>TMP36</strong> (10 mV por °C, lido em A0) e a umidade é simulada por um
+              <strong>potenciômetro</strong> convertido em 0–100 % (A1). Uma única constante,
+              <code>USAR_DHT11</code>, troca entre os dois modos sem mexer na lógica.
+            </p>
+            <p>
+              <strong>Lógica do programa —</strong> cada condição é avaliada de forma
+              independente e guardada em uma variável booleana: <code>tempAlta</code> e
+              <code>umidBaixa</code>. Depois, um <code>if / else if</code> testa
+              <em>primeiro</em> o caso combinado, depois cada problema isolado e, por último, a
+              condição adequada. Se a leitura do sensor falhar (<code>isnan</code>), o LED fica
+              azul, para que uma falha nunca seja confundida com “tudo certo”.
+            </p>
+            <p>
+              <strong>Desafio adicional —</strong> com temperatura alta <em>e</em> umidade baixa, o
+              LED <strong>alterna entre vermelho e amarelo</strong> a cada 500 ms e o buzzer bipa.
+              Assim as duas condições são indicadas ao mesmo tempo com um único LED, e o som
+              chama a atenção para a situação mais grave.
+            </p>
+          </div>
+          <div class="cartao-destaque">
+            <h3>Indicação visual</h3>
+            <div class="tabela-rolagem">
+              <table class="tabela-logica">
+                <thead>
+                  <tr><th>Condição</th><th>LED RGB</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Temperatura ≤ 30 °C e umidade ≥ 40 %</td><td><span class="estado estado-verde">Verde</span></td></tr>
+                  <tr><td>Temperatura acima de 30 °C</td><td><span class="estado estado-verm">Vermelho</span></td></tr>
+                  <tr><td>Umidade abaixo de 40 %</td><td><span class="estado estado-amar">Amarelo</span></td></tr>
+                  <tr><td>Temperatura alta + umidade baixa</td><td><span class="estado estado-verm estado-alterna">Alterna + bipe</span></td></tr>
+                  <tr><td>Falha de leitura do sensor</td><td><span class="estado estado-azul">Azul</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h3 style="margin-top: 1.5rem;">Componentes</h3>
+            <ul class="lista-marcada">
+              <li><strong>Arduino Uno</strong></li>
+              <li><strong>LED RGB</strong> (cátodo comum) + 3 resistores de 220 Ω</li>
+              <li><strong>Sensor de temperatura e umidade</strong> DHT11</li>
+              <li>No Tinkercad: <strong>TMP36</strong> + <strong>potenciômetro</strong> no lugar do DHT11</li>
+              <li>Buzzer (alerta das duas condições)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Circuito no Tinkercad -->
+        <h3 class="desafio-bloco-titulo revelar">1 · Circuito no Tinkercad</h3>
+        <div class="caixa-ligacao revelar">
+          <h3>Ligações</h3>
+          <ul>
+            <li>TMP36: pino esquerdo → 5V · central → A0 · direito → GND</li>
+            <li>Potenciômetro (umidade simulada): extremidades → 5V e GND · central → A1</li>
+            <li>LED RGB: R → 220 Ω → pino 9 · G → 220 Ω → pino 10 · B → 220 Ω → pino 11 · cátodo comum → GND</li>
+            <li>Buzzer: (+) → pino 8 · (−) → GND</li>
+            <li>Montagem física: DHT11 VCC → 5V · DATA → pino 2 (resistor de 10 kΩ para 5V) · GND → GND</li>
+          </ul>
+          <div class="tinkercad-acoes">
+            <!-- TROCAR: cole aqui o link público do circuito do Desafio 3 no Tinkercad -->
+            <a class="botao" href="https://www.tinkercad.com/" target="_blank" rel="noopener">Abrir circuito no Tinkercad</a>
+            <small>No simulador, clique no TMP36 para mudar a temperatura e gire o potenciômetro para mudar a umidade.</small>
+          </div>
+        </div>
+
+        <!-- Código -->
+        <h3 class="desafio-bloco-titulo revelar">2 · Código</h3>
+        <div class="abas abas-codigo revelar">
+          <div class="abas-botoes" role="tablist">
+            <button class="aba-botao ativo" data-aba="d3-arduino" role="tab" aria-selected="true">Arduino Uno</button>
+            <button class="aba-botao" data-aba="d3-esp" role="tab" aria-selected="false">ESP32 · ESP8266</button>
+          </div>
+          <div class="aba-painel ativo" data-painel="d3-arduino" role="tabpanel">
+            <div data-codigo="d3-arduino"></div>
+          </div>
+          <div class="aba-painel" data-painel="d3-esp" role="tabpanel">
+            <p>
+              Versão com o DHT11 real. A leitura acontece a cada 2 segundos (o intervalo mínimo do
+              sensor) e o painel web da estufa mostra temperatura, umidade e selos com cada alerta
+              ativo — inclusive os dois juntos.
+            </p>
+            <div data-codigo="d3-esp"></div>
+          </div>
+        </div>
+
+        <!-- Vídeos -->
+        <h3 class="desafio-bloco-titulo revelar">3 · Vídeos</h3>
+        <div class="grupo-videos revelar">
+          <h4><span>entregas 3, 4 e 5</span>Testes de temperatura, umidade e lógica do programa</h4>
+          <div class="grade-videos">
+            <figure class="card-video">
+              <video controls preload="none" playsinline poster="img/videos/desafio3-temperatura.jpg">
+                <source src="video/desafio3-temperatura.mp4" type="video/mp4" />
+              </video>
+              <figcaption><strong>Variando a temperatura</strong>Teste simulando diferentes temperaturas: o LED muda de estado quando a leitura passa do limite.</figcaption>
+            </figure>
+            <figure class="card-video">
+              <video controls preload="none" playsinline poster="img/videos/desafio3-umidade.jpg">
+                <source src="video/desafio3-umidade.mp4" type="video/mp4" />
+              </video>
+              <figcaption><strong>Variando a umidade</strong>Teste com diferentes níveis de umidade e a resposta do indicador RGB.</figcaption>
+            </figure>
+            <figure class="card-video">
+              <video controls preload="none" playsinline poster="img/videos/desafio3-condicoes.jpg">
+                <source src="video/desafio3-condicoes.mp4" type="video/mp4" />
+              </video>
+              <figcaption><strong>Mudança entre condições</strong>O LED passa de uma cor para outra conforme as leituras cruzam os valores de referência.</figcaption>
+            </figure>
+            <figure class="card-video">
+              <video controls preload="none" playsinline poster="img/videos/desafio3-indicador-rgb.jpg">
+                <source src="video/desafio3-indicador-rgb.mp4" type="video/mp4" />
+              </video>
+              <figcaption><strong>Indicador RGB</strong>Detalhe do LED RGB usado como painel visual da estufa.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ARDUINO × ESP32 × ESP8266 ===== -->
+    <section class="secao" id="esp">
+      <div class="container">
+        <p class="kicker revelar">integração iot — esp32 / esp8266</p>
+        <h2 class="secao-titulo revelar">Da bancada para a rede: as versões com Wi-Fi</h2>
+
+        <div class="grade-2 revelar">
+          <div class="cartao-texto">
+            <p>
+              No Arduino Uno, cada desafio termina no LED: a decisão é local e só quem está perto
+              do circuito vê o resultado. Com um <strong>ESP32</strong> ou <strong>ESP8266</strong>
+              a mesma lógica continua rodando na placa, mas ela passa a ser também um
+              <strong>servidor web</strong> na rede Wi-Fi.
+            </p>
+            <p>
+              O código usa <code>#if defined(ESP32)</code> para escolher as bibliotecas e os pinos
+              certos na hora da compilação: <code>WiFi.h</code> + <code>WebServer.h</code> no ESP32,
+              <code>ESP8266WiFi.h</code> + <code>ESP8266WebServer.h</code> no ESP8266. Um único
+              arquivo atende às duas placas.
+            </p>
+            <p>
+              A placa responde em duas rotas: <code>/</code> entrega a página do painel e
+              <code>/dados</code> entrega o estado atual em <strong>JSON</strong>. A página
+              consulta <code>/dados</code> a cada segundo com <code>fetch()</code> e atualiza os
+              valores sem recarregar. O mesmo JSON pode ser lido por qualquer outro sistema — é o
+              primeiro passo para publicar os dados via MQTT, como no
+              <a href="arduino.html#placas">nó IoT da página do Arduino</a>.
+            </p>
+          </div>
+          <div class="cartao-destaque">
+            <h3>Como gravar e testar</h3>
+            <ol class="lista-passos">
+              <li><strong>Placa —</strong> instale o pacote “esp32” ou “esp8266” no Gerenciador de Placas da IDE Arduino.</li>
+              <li><strong>Rede —</strong> troque <code>NOME_DA_REDE</code> e <code>SENHA_DA_REDE</code> no início do código.</li>
+              <li><strong>Gravação —</strong> selecione a placa (ex.: ESP32 Dev Module ou NodeMCU 1.0) e envie o sketch.</li>
+              <li><strong>Painel —</strong> abra o Monitor Serial em 115200 bps e acesse o IP exibido pelo navegador, na mesma rede.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="tabela-rolagem revelar" style="margin-top: 2.5rem;">
+          <table class="tabela-logica">
+            <thead>
+              <tr><th></th><th>Arduino Uno</th><th>ESP8266 (NodeMCU)</th><th>ESP32</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Processador</td><td>ATmega328P, 8 bits, 16 MHz</td><td>Tensilica L106, 32 bits, 80/160 MHz</td><td>Xtensa LX6 dual-core, 32 bits, 240 MHz</td></tr>
+              <tr><td>Tensão lógica</td><td>5 V</td><td>3,3 V</td><td>3,3 V</td></tr>
+              <tr><td>Entradas analógicas</td><td>6 (10 bits)</td><td>1 — A0 (10 bits)</td><td>até 18 (12 bits)</td></tr>
+              <tr><td>Conectividade</td><td>nenhuma nativa</td><td>Wi-Fi</td><td>Wi-Fi + Bluetooth</td></tr>
+              <tr><td>No Tinkercad</td><td>sim</td><td>não</td><td>não</td></tr>
+              <tr><td>Papel nos desafios</td><td>lógica local + Tinkercad</td><td>lógica local + painel web</td><td>lógica local + painel web</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cartao-destaque revelar" style="margin-top: 2rem;">
+          <h3>Cuidados ao migrar do Arduino para o ESP</h3>
+          <ul class="lista-marcada">
+            <li><strong>3,3 V:</strong> sensores que devolvem 5 V (como o ECHO do HC-SR04) precisam de divisor de tensão.</li>
+            <li><strong>Uma entrada analógica no ESP8266:</strong> cada desafio usa só um sensor analógico, então todos cabem no A0.</li>
+            <li><strong>ADC2 do ESP32:</strong> não funciona com o Wi-Fi ligado — por isso os códigos usam pinos do ADC1 (GPIO 32 a 39).</li>
+            <li><strong>Sem <code>delay()</code> longo:</strong> o <code>loop()</code> precisa chamar <code>servidor.handleClient()</code> com frequência para o painel responder.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Sensor<span>Hub</span><em>4.0</em></a>
+      <p>Catálogo técnico de Sensores, Internet das Coisas &amp; Automação Industrial</p>
+      <p class="rodape-copy">© <span id="anoAtual"></span> SensorHub 4.0</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: códigos dos desafios + comportamento geral + realce de código + página -->
+  <script src="js/dados-desafios.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/codigo.js"></script>
+  <script src="js/desafios.js"></script>
+</body>
+</html>

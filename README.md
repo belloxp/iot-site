@@ -27,6 +27,15 @@ de sinal, aplicações e exemplos completos de programação em **Arduino**.
 - **25 exemplos de programação** (um por sensor), com esquema de ligação e código comentado
 - Integração com **ESP32** e **Raspberry Pi** + exemplo de nó IoT publicando via **MQTT**
 
+**Desafios práticos (`desafios.html`)** — Arduino e ESP32/ESP8266
+- **Desafio 1 – Iluminação Inteligente:** PIR + LDR controlando um LED (presente + escuro → LED ligado)
+- **Desafio 2 – Estacionamento Inteligente:** HC-SR04 + potenciômetro definindo o limite; LED piscando
+  cada vez mais rápido conforme o objeto se aproxima
+- **Desafio 3 – Ambiente Inteligente:** temperatura + umidade da estufa com LED RGB (verde, vermelho,
+  amarelo e alternância para as duas condições simultâneas)
+- Para cada desafio: ligações do circuito no **Tinkercad**, **código Arduino**, versão **ESP32/ESP8266**
+  com painel web (Wi-Fi), **vídeos dos testes** e explicação da lógica
+
 **Catálogo de sensores (`sensores.html`)**
 - Busca textual em tempo real e filtro por categoria (20 categorias)
 - Ficha técnica individual (`sensor.html?id=<sensor>`) organizada em 7 abas
@@ -77,6 +86,7 @@ cilíndrico, delta, polar e colaborativo) e sua relação com o sensoriamento.
 ├── sensores.html             # Catálogo de sensores com busca e filtro por categoria
 ├── sensor.html               # Ficha técnica dinâmica (?id=<sensor>)
 ├── arduino.html              # Arduino: características, funcionamento e 25 exemplos
+├── desafios.html             # Desafios práticos Arduino + ESP32/ESP8266 (código e vídeos)
 ├── robos.html                # Catálogo de robôs industriais
 ├── robo.html                 # Ficha técnica dinâmica do robô (?id=<robo>)
 ├── css/
@@ -90,13 +100,17 @@ cilíndrico, delta, polar e colaborativo) e sua relação com o sensoriamento.
 │   ├── sensor.js             # Montagem dinâmica da ficha do sensor + abas
 │   ├── robo.js               # Montagem dinâmica da ficha do robô + abas
 │   ├── codigo.js             # Realce de sintaxe e botão "copiar" dos códigos
-│   └── arduino.js            # Seletor e renderização dos exemplos de programação
+│   ├── arduino.js            # Seletor e renderização dos exemplos de programação
+│   ├── dados-desafios.js     # Códigos dos 3 desafios (Arduino e ESP32/ESP8266)
+│   └── desafios.js           # Abas de código e vídeos da página de desafios
+├── video/                    # Vídeos de teste dos desafios (.mp4)
 └── img/
     ├── sensores/             # Imagens ilustrativas dos 25 sensores
     ├── arduino-uno.png       # Placa Arduino Uno R3
     ├── arduino-pinout.png    # Diagrama de pinagem
     ├── esp32.png             # Placa ESP32 DevKit
     ├── raspberry-pi.png      # Raspberry Pi 4 Model B
+    ├── videos/               # Capas (posters) dos vídeos dos desafios
     └── *.png                 # Imagens dos robôs industriais
 ```
 
