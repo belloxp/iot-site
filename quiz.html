@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quiz interativo de IoT, Arduino, sensores, programação e robótica com ranking dinâmico." />
+  <title>Quiz IoT &amp; Automação — SensorHub 4.0</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%2215%22 y=%2225%22 width=%2270%22 height=%2255%22 rx=%2210%22 fill=%22%23ff9f1c%22/><circle cx=%2238%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><circle cx=%2262%22 cy=%2250%22 r=%228%22 fill=%22%230a0c10%22/><rect x=%2247%22 y=%2210%22 width=%226%22 height=%2215%22 fill=%22%23ff9f1c%22/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="nav container">
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Sensor<span>Hub</span><em>4.0</em></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-lista" id="navLista">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sensores.html">Sensores</a></li>
+        <li><a href="arduino.html">Arduino</a></li>
+        <li><a href="desafios.html">Desafios</a></li>
+        <li><a href="robos.html">Robôs</a></li>
+        <li><a href="quiz.html" class="ativo">Quiz</a></li>
+        <li><a href="index.html#protocolos">Protocolos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="secao">
+    <div class="container">
+      <div class="quiz-shell">
+        <section id="inicioQuiz" class="quiz-card">
+          <p class="kicker revelar">desafio prático</p>
+          <h1 class="quiz-titulo revelar">Teste seus conhecimentos em IoT e automação</h1>
+          <p class="quiz-subtitulo revelar">
+            Você terá 10 perguntas, com foco em Arduino, multímetro, ESP, codificação, robótica e sensores.
+            Ao finalizar, seu desempenho entra no ranking dinâmico do site.
+          </p>
+
+          <form id="formNomeUsuario" class="quiz-form revelar">
+            <label for="nomeParticipante">Digite seu nome para começar</label>
+            <input id="nomeParticipante" type="text" maxlength="30" placeholder="Ex.: Ana Silva" required />
+            <button type="submit" class="botao">Iniciar desafio</button>
+          </form>
+        </section>
+
+        <section id="quizCard" class="quiz-card hidden">
+          <div class="quiz-header">
+            <span id="indicadorPergunta" class="quiz-badge">Pergunta 1/10</span>
+            <span id="pontosAtuais" class="quiz-badge quiz-badge-alt">0 pts</span>
+          </div>
+
+          <div class="quiz-questao">
+            <p id="categoriaPergunta" class="quiz-categoria">Arduino</p>
+            <h2 id="textoPergunta">Pergunta</h2>
+          </div>
+
+          <div id="opcoesContainer" class="quiz-opcoes" aria-live="polite"></div>
+
+          <div class="quiz-acoes">
+            <button id="proximoBtn" type="button" class="botao" disabled>Próxima</button>
+          </div>
+        </section>
+
+        <section id="resultadoContainer" class="quiz-card hidden">
+          <p class="kicker">resultado final</p>
+          <h2 id="resultadoTitulo">Desafio concluído!</h2>
+          <p id="resultadoTexto"></p>
+
+          <div class="resultado-estatisticas">
+            <div>
+              <span>Pontuação</span>
+              <strong id="resultadoPontos">0</strong>
+            </div>
+            <div>
+              <span>Acertos</span>
+              <strong id="resultadoAcertos">0/10</strong>
+            </div>
+            <div>
+              <span>Percentual</span>
+              <strong id="resultadoPercentual">0%</strong>
+            </div>
+          </div>
+
+          <button id="reiniciarBtn" type="button" class="botao">Jogar novamente</button>
+        </section>
+
+        <aside class="ranking-card">
+          <p class="kicker">ranking dinâmico</p>
+          <h3>Top 10 participantes</h3>
+          <ol id="rankingLista" class="ranking-lista"></ol>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <a href="index.html" class="logo"><span class="logo-marca">▣</span> Sensor<span>Hub</span><em>4.0</em></a>
+      <p>Desenvolvimento de competências em sensoriamento, IoT, automação e robótica.</p>
+      <p class="rodape-copy">© <span id="anoAtual">2026</span> SensorHub 4.0</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
